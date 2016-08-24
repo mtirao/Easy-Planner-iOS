@@ -1,0 +1,548 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DAE291CA1D6E432B005799CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE291C91D6E432B005799CB /* AppDelegate.swift */; };
+		DAE291CC1D6E432B005799CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE291CB1D6E432B005799CB /* ViewController.swift */; };
+		DAE291CF1D6E432B005799CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAE291CD1D6E432B005799CB /* Main.storyboard */; };
+		DAE291D21D6E432B005799CB /* Easy_Planner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DAE291D01D6E432B005799CB /* Easy_Planner.xcdatamodeld */; };
+		DAE291D41D6E432B005799CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAE291D31D6E432B005799CB /* Assets.xcassets */; };
+		DAE291D71D6E432B005799CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAE291D51D6E432B005799CB /* LaunchScreen.storyboard */; };
+		DAE291E21D6E432B005799CB /* Easy_PlannerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE291E11D6E432B005799CB /* Easy_PlannerTests.swift */; };
+		DAE291ED1D6E432B005799CB /* Easy_PlannerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE291EC1D6E432B005799CB /* Easy_PlannerUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DAE291DE1D6E432B005799CB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DAE291BE1D6E432A005799CB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DAE291C51D6E432A005799CB;
+			remoteInfo = "Easy Planner";
+		};
+		DAE291E91D6E432B005799CB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DAE291BE1D6E432A005799CB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DAE291C51D6E432A005799CB;
+			remoteInfo = "Easy Planner";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DAE291C61D6E432B005799CB /* Easy Planner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Easy Planner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DAE291C91D6E432B005799CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DAE291CB1D6E432B005799CB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DAE291CE1D6E432B005799CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DAE291D11D6E432B005799CB /* Easy_Planner.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Easy_Planner.xcdatamodel; sourceTree = "<group>"; };
+		DAE291D31D6E432B005799CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DAE291D61D6E432B005799CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DAE291D81D6E432B005799CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DAE291DD1D6E432B005799CB /* Easy PlannerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Easy PlannerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DAE291E11D6E432B005799CB /* Easy_PlannerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Easy_PlannerTests.swift; sourceTree = "<group>"; };
+		DAE291E31D6E432B005799CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DAE291E81D6E432B005799CB /* Easy PlannerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Easy PlannerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DAE291EC1D6E432B005799CB /* Easy_PlannerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Easy_PlannerUITests.swift; sourceTree = "<group>"; };
+		DAE291EE1D6E432B005799CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DAE291C31D6E432A005799CB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DAE291DA1D6E432B005799CB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DAE291E51D6E432B005799CB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DAE291BD1D6E432A005799CB = {
+			isa = PBXGroup;
+			children = (
+				DAE291C81D6E432B005799CB /* Easy Planner */,
+				DAE291E01D6E432B005799CB /* Easy PlannerTests */,
+				DAE291EB1D6E432B005799CB /* Easy PlannerUITests */,
+				DAE291C71D6E432B005799CB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DAE291C71D6E432B005799CB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DAE291C61D6E432B005799CB /* Easy Planner.app */,
+				DAE291DD1D6E432B005799CB /* Easy PlannerTests.xctest */,
+				DAE291E81D6E432B005799CB /* Easy PlannerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DAE291C81D6E432B005799CB /* Easy Planner */ = {
+			isa = PBXGroup;
+			children = (
+				DAE291C91D6E432B005799CB /* AppDelegate.swift */,
+				DAE291CB1D6E432B005799CB /* ViewController.swift */,
+				DAE291CD1D6E432B005799CB /* Main.storyboard */,
+				DAE291D31D6E432B005799CB /* Assets.xcassets */,
+				DAE291D51D6E432B005799CB /* LaunchScreen.storyboard */,
+				DAE291D81D6E432B005799CB /* Info.plist */,
+				DAE291D01D6E432B005799CB /* Easy_Planner.xcdatamodeld */,
+			);
+			path = "Easy Planner";
+			sourceTree = "<group>";
+		};
+		DAE291E01D6E432B005799CB /* Easy PlannerTests */ = {
+			isa = PBXGroup;
+			children = (
+				DAE291E11D6E432B005799CB /* Easy_PlannerTests.swift */,
+				DAE291E31D6E432B005799CB /* Info.plist */,
+			);
+			path = "Easy PlannerTests";
+			sourceTree = "<group>";
+		};
+		DAE291EB1D6E432B005799CB /* Easy PlannerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DAE291EC1D6E432B005799CB /* Easy_PlannerUITests.swift */,
+				DAE291EE1D6E432B005799CB /* Info.plist */,
+			);
+			path = "Easy PlannerUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DAE291C51D6E432A005799CB /* Easy Planner */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DAE291F11D6E432B005799CB /* Build configuration list for PBXNativeTarget "Easy Planner" */;
+			buildPhases = (
+				DAE291C21D6E432A005799CB /* Sources */,
+				DAE291C31D6E432A005799CB /* Frameworks */,
+				DAE291C41D6E432A005799CB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Easy Planner";
+			productName = "Easy Planner";
+			productReference = DAE291C61D6E432B005799CB /* Easy Planner.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DAE291DC1D6E432B005799CB /* Easy PlannerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DAE291F41D6E432B005799CB /* Build configuration list for PBXNativeTarget "Easy PlannerTests" */;
+			buildPhases = (
+				DAE291D91D6E432B005799CB /* Sources */,
+				DAE291DA1D6E432B005799CB /* Frameworks */,
+				DAE291DB1D6E432B005799CB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DAE291DF1D6E432B005799CB /* PBXTargetDependency */,
+			);
+			name = "Easy PlannerTests";
+			productName = "Easy PlannerTests";
+			productReference = DAE291DD1D6E432B005799CB /* Easy PlannerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DAE291E71D6E432B005799CB /* Easy PlannerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DAE291F71D6E432B005799CB /* Build configuration list for PBXNativeTarget "Easy PlannerUITests" */;
+			buildPhases = (
+				DAE291E41D6E432B005799CB /* Sources */,
+				DAE291E51D6E432B005799CB /* Frameworks */,
+				DAE291E61D6E432B005799CB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DAE291EA1D6E432B005799CB /* PBXTargetDependency */,
+			);
+			name = "Easy PlannerUITests";
+			productName = "Easy PlannerUITests";
+			productReference = DAE291E81D6E432B005799CB /* Easy PlannerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DAE291BE1D6E432A005799CB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = "Marcos Tirao";
+				TargetAttributes = {
+					DAE291C51D6E432A005799CB = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = E5YV4NK229;
+						ProvisioningStyle = Automatic;
+					};
+					DAE291DC1D6E432B005799CB = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = E5YV4NK229;
+						ProvisioningStyle = Automatic;
+						TestTargetID = DAE291C51D6E432A005799CB;
+					};
+					DAE291E71D6E432B005799CB = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = E5YV4NK229;
+						ProvisioningStyle = Automatic;
+						TestTargetID = DAE291C51D6E432A005799CB;
+					};
+				};
+			};
+			buildConfigurationList = DAE291C11D6E432A005799CB /* Build configuration list for PBXProject "Easy Planner" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DAE291BD1D6E432A005799CB;
+			productRefGroup = DAE291C71D6E432B005799CB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DAE291C51D6E432A005799CB /* Easy Planner */,
+				DAE291DC1D6E432B005799CB /* Easy PlannerTests */,
+				DAE291E71D6E432B005799CB /* Easy PlannerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DAE291C41D6E432A005799CB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DAE291D71D6E432B005799CB /* LaunchScreen.storyboard in Resources */,
+				DAE291D41D6E432B005799CB /* Assets.xcassets in Resources */,
+				DAE291CF1D6E432B005799CB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DAE291DB1D6E432B005799CB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DAE291E61D6E432B005799CB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DAE291C21D6E432A005799CB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DAE291CC1D6E432B005799CB /* ViewController.swift in Sources */,
+				DAE291CA1D6E432B005799CB /* AppDelegate.swift in Sources */,
+				DAE291D21D6E432B005799CB /* Easy_Planner.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DAE291D91D6E432B005799CB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DAE291E21D6E432B005799CB /* Easy_PlannerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DAE291E41D6E432B005799CB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DAE291ED1D6E432B005799CB /* Easy_PlannerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DAE291DF1D6E432B005799CB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DAE291C51D6E432A005799CB /* Easy Planner */;
+			targetProxy = DAE291DE1D6E432B005799CB /* PBXContainerItemProxy */;
+		};
+		DAE291EA1D6E432B005799CB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DAE291C51D6E432A005799CB /* Easy Planner */;
+			targetProxy = DAE291E91D6E432B005799CB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DAE291CD1D6E432B005799CB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DAE291CE1D6E432B005799CB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DAE291D51D6E432B005799CB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DAE291D61D6E432B005799CB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DAE291EF1D6E432B005799CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DAE291F01D6E432B005799CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DAE291F21D6E432B005799CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = E5YV4NK229;
+				INFOPLIST_FILE = "Easy Planner/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ar.com.argsoftsolutions.Easy-Planner";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		DAE291F31D6E432B005799CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = E5YV4NK229;
+				INFOPLIST_FILE = "Easy Planner/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ar.com.argsoftsolutions.Easy-Planner";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		DAE291F51D6E432B005799CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = E5YV4NK229;
+				INFOPLIST_FILE = "Easy PlannerTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ar.com.argsoftsolutions.Easy-PlannerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Easy Planner.app/Easy Planner";
+			};
+			name = Debug;
+		};
+		DAE291F61D6E432B005799CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = E5YV4NK229;
+				INFOPLIST_FILE = "Easy PlannerTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ar.com.argsoftsolutions.Easy-PlannerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Easy Planner.app/Easy Planner";
+			};
+			name = Release;
+		};
+		DAE291F81D6E432B005799CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = E5YV4NK229;
+				INFOPLIST_FILE = "Easy PlannerUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ar.com.argsoftsolutions.Easy-PlannerUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "Easy Planner";
+			};
+			name = Debug;
+		};
+		DAE291F91D6E432B005799CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = E5YV4NK229;
+				INFOPLIST_FILE = "Easy PlannerUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ar.com.argsoftsolutions.Easy-PlannerUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "Easy Planner";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DAE291C11D6E432A005799CB /* Build configuration list for PBXProject "Easy Planner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DAE291EF1D6E432B005799CB /* Debug */,
+				DAE291F01D6E432B005799CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DAE291F11D6E432B005799CB /* Build configuration list for PBXNativeTarget "Easy Planner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DAE291F21D6E432B005799CB /* Debug */,
+				DAE291F31D6E432B005799CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		DAE291F41D6E432B005799CB /* Build configuration list for PBXNativeTarget "Easy PlannerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DAE291F51D6E432B005799CB /* Debug */,
+				DAE291F61D6E432B005799CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		DAE291F71D6E432B005799CB /* Build configuration list for PBXNativeTarget "Easy PlannerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DAE291F81D6E432B005799CB /* Debug */,
+				DAE291F91D6E432B005799CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DAE291D01D6E432B005799CB /* Easy_Planner.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DAE291D11D6E432B005799CB /* Easy_Planner.xcdatamodel */,
+			);
+			currentVersion = DAE291D11D6E432B005799CB /* Easy_Planner.xcdatamodel */;
+			path = Easy_Planner.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = DAE291BE1D6E432A005799CB /* Project object */;
+}
