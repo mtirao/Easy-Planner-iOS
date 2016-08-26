@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10171" systemVersion="15G31" minimumToolsVersion="Automatic">
+    <entity name="Chair" representedClassName="Chair" syncable="YES">
+        <attribute name="posx" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="posy" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="contact" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Contact" inverseName="chair" inverseEntity="Contact" indexed="YES" syncable="YES"/>
+        <relationship name="table" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Tables" inverseName="chair" inverseEntity="Tables" indexed="YES" syncable="YES"/>
+    </entity>
+    <entity name="Contact" representedClassName="Contact" syncable="YES">
+        <attribute name="email" optional="YES" attributeType="String" defaultValueString="username@domain.com" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" defaultValueString="Unnanme" syncable="YES"/>
+        <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="chair" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Chair" inverseName="contact" inverseEntity="Chair" indexed="YES" syncable="YES"/>
+        <relationship name="event" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Event" inverseName="contact" inverseEntity="Event" indexed="YES" syncable="YES"/>
+    </entity>
+    <entity name="Event" representedClassName="Event" syncable="YES">
+        <attribute name="date" attributeType="Date" syncable="YES"/>
+        <attribute name="id" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" attributeType="String" defaultValueString="EVENT NAME" syncable="YES"/>
+        <attribute name="serverId" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="contact" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Contact" inverseName="event" inverseEntity="Contact" indexed="YES" syncable="YES"/>
+        <relationship name="extras" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="EventMisc" inverseName="event" inverseEntity="EventMisc" syncable="YES"/>
+        <relationship name="food" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Menu" inverseName="event" inverseEntity="Menu" indexed="YES" syncable="YES"/>
+        <relationship name="invitation" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Invitation" inverseName="event" inverseEntity="Invitation" syncable="YES"/>
+        <relationship name="misc" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Misc" inverseName="event" inverseEntity="Misc" indexed="YES" syncable="YES"/>
+        <relationship name="music" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Music" inverseName="event" inverseEntity="Music" indexed="YES" syncable="YES"/>
+        <relationship name="place" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Place" inverseName="Event" inverseEntity="Place" indexed="YES" syncable="YES"/>
+        <relationship name="tables" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Tables" inverseName="event" inverseEntity="Tables" indexed="YES" syncable="YES"/>
+    </entity>
+    <entity name="EventMisc" representedClassName="EventMisc" syncable="YES">
+        <attribute name="address" optional="YES" attributeType="String" defaultValueString="NO ADDRESS" syncable="YES"/>
+        <attribute name="contact" optional="YES" attributeType="String" defaultValueString="NO CONTACT" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" defaultValueString="NO NAME" syncable="YES"/>
+        <attribute name="note" optional="YES" attributeType="String" defaultValueString="NO NOTE" syncable="YES"/>
+        <attribute name="price" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="priceGroup" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="event" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Event" inverseName="extras" inverseEntity="Event" syncable="YES"/>
+    </entity>
+    <entity name="Image" representedClassName="Image" syncable="YES">
+        <attribute name="file" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="heigth" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="posx" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="posy" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="width" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="invitation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Invitation" inverseName="image" inverseEntity="Invitation" syncable="YES"/>
+    </entity>
+    <entity name="Invitation" representedClassName="Invitation" syncable="YES">
+        <attribute name="heigth" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="unit" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="width" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="event" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Event" inverseName="invitation" inverseEntity="Event" syncable="YES"/>
+        <relationship name="image" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Image" inverseName="invitation" inverseEntity="Image" syncable="YES"/>
+        <relationship name="text" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Text" inverseName="invitation" inverseEntity="Text" syncable="YES"/>
+    </entity>
+    <entity name="Menu" representedClassName="Menu" syncable="YES">
+        <attribute name="menuname" attributeType="String" defaultValueString="SOME NAME" syncable="YES"/>
+        <attribute name="price" optional="YES" attributeType="Decimal" defaultValueString="0" syncable="YES"/>
+        <attribute name="priceGroup" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="selected" attributeType="Boolean" syncable="YES"/>
+        <relationship name="event" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Event" inverseName="food" inverseEntity="Event" syncable="YES"/>
+        <relationship name="option" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Option" inverseName="menu" inverseEntity="Option" syncable="YES"/>
+    </entity>
+    <entity name="Misc" representedClassName="Misc" syncable="YES">
+        <attribute name="height" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="misc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="posx" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="posy" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="width" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="event" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Event" inverseName="misc" inverseEntity="Event" indexed="YES" syncable="YES"/>
+    </entity>
+    <entity name="Music" representedClassName="Music" syncable="YES">
+        <attribute name="album" optional="YES" attributeType="String" defaultValueString="NO ALBUM" syncable="YES"/>
+        <attribute name="artist" optional="YES" attributeType="String" defaultValueString="NO ARTIST" syncable="YES"/>
+        <attribute name="compositeName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" defaultValueString="NO NAME" syncable="YES"/>
+        <relationship name="event" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Event" inverseName="music" inverseEntity="Event" indexed="YES" syncable="YES"/>
+    </entity>
+    <entity name="Option" representedClassName="Option" syncable="YES">
+        <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="menu" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Menu" inverseName="option" inverseEntity="Menu" syncable="YES"/>
+    </entity>
+    <entity name="Place" representedClassName="Place" syncable="YES">
+        <attribute name="Address" optional="YES" attributeType="String" defaultValueString="ADDRESS" syncable="YES"/>
+        <attribute name="City" optional="YES" attributeType="String" defaultValueString="CITY" syncable="YES"/>
+        <attribute name="Country" optional="YES" attributeType="String" defaultValueString="COUNTRY" syncable="YES"/>
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="Name" optional="YES" attributeType="String" defaultValueString="NAME" syncable="YES"/>
+        <attribute name="price" optional="YES" attributeType="Decimal" minValueString="0" maxValueString="999999999" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="priceGroup" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="State" optional="YES" attributeType="String" defaultValueString="STATE" syncable="YES"/>
+        <relationship name="Event" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Event" inverseName="place" inverseEntity="Event" indexed="YES" syncable="YES"/>
+    </entity>
+    <entity name="Tables" representedClassName="Tables" syncable="YES">
+        <attribute name="height" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="number" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="persons" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="posx" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="posy" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="width" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="chair" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Chair" inverseName="table" inverseEntity="Chair" indexed="YES" syncable="YES"/>
+        <relationship name="event" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Event" inverseName="tables" inverseEntity="Event" indexed="YES" syncable="YES"/>
+    </entity>
+    <entity name="Text" representedClassName="Text" syncable="YES">
+        <attribute name="bluevalue" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="greenvalue" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="heigth" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="posx" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="posy" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="redvalue" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="textfont" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="textsize" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="width" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="invitation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Invitation" inverseName="text" inverseEntity="Invitation" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Chair" positionX="-2529" positionY="102" width="128" height="105"/>
+        <element name="Contact" positionX="-2943" positionY="-9" width="128" height="120"/>
+        <element name="Event" positionX="-3159" positionY="-364" width="128" height="225"/>
+        <element name="EventMisc" positionX="-3096" positionY="-495" width="128" height="165"/>
+        <element name="Image" positionX="-3105" positionY="-504" width="128" height="133"/>
+        <element name="Invitation" positionX="-3303" positionY="45" width="128" height="133"/>
+        <element name="Menu" positionX="-2592" positionY="-99" width="128" height="133"/>
+        <element name="Misc" positionX="-2540" positionY="-258" width="128" height="150"/>
+        <element name="Music" positionX="-2648" positionY="-378" width="128" height="120"/>
+        <element name="Option" positionX="-2763" positionY="-72" width="128" height="88"/>
+        <element name="Place" positionX="-2655" positionY="-639" width="128" height="195"/>
+        <element name="Tables" positionX="-2925" positionY="-648" width="128" height="180"/>
+        <element name="Text" positionX="-3096" positionY="-495" width="128" height="210"/>
+    </elements>
+</model>

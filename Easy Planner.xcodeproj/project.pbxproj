@@ -8,13 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		DAE291CA1D6E432B005799CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE291C91D6E432B005799CB /* AppDelegate.swift */; };
-		DAE291CC1D6E432B005799CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE291CB1D6E432B005799CB /* ViewController.swift */; };
 		DAE291CF1D6E432B005799CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAE291CD1D6E432B005799CB /* Main.storyboard */; };
-		DAE291D21D6E432B005799CB /* Easy_Planner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DAE291D01D6E432B005799CB /* Easy_Planner.xcdatamodeld */; };
 		DAE291D41D6E432B005799CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAE291D31D6E432B005799CB /* Assets.xcassets */; };
 		DAE291D71D6E432B005799CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAE291D51D6E432B005799CB /* LaunchScreen.storyboard */; };
 		DAE291E21D6E432B005799CB /* Easy_PlannerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE291E11D6E432B005799CB /* Easy_PlannerTests.swift */; };
 		DAE291ED1D6E432B005799CB /* Easy_PlannerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE291EC1D6E432B005799CB /* Easy_PlannerUITests.swift */; };
+		DAE292071D70D6EF005799CB /* EasyPlanner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DAE291FB1D70D6EF005799CB /* EasyPlanner.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,9 +36,7 @@
 /* Begin PBXFileReference section */
 		DAE291C61D6E432B005799CB /* Easy Planner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Easy Planner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAE291C91D6E432B005799CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DAE291CB1D6E432B005799CB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DAE291CE1D6E432B005799CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		DAE291D11D6E432B005799CB /* Easy_Planner.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Easy_Planner.xcdatamodel; sourceTree = "<group>"; };
 		DAE291D31D6E432B005799CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DAE291D61D6E432B005799CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DAE291D81D6E432B005799CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +46,17 @@
 		DAE291E81D6E432B005799CB /* Easy PlannerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Easy PlannerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAE291EC1D6E432B005799CB /* Easy_PlannerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Easy_PlannerUITests.swift; sourceTree = "<group>"; };
 		DAE291EE1D6E432B005799CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DAE291FC1D70D6EF005799CB /* EasyPlanner 10.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "EasyPlanner 10.xcdatamodel"; sourceTree = "<group>"; };
+		DAE291FD1D70D6EF005799CB /* EasyPlanner 11.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "EasyPlanner 11.xcdatamodel"; sourceTree = "<group>"; };
+		DAE291FE1D70D6EF005799CB /* EasyPlanner 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "EasyPlanner 2.xcdatamodel"; sourceTree = "<group>"; };
+		DAE291FF1D70D6EF005799CB /* EasyPlanner 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "EasyPlanner 3.xcdatamodel"; sourceTree = "<group>"; };
+		DAE292001D70D6EF005799CB /* EasyPlanner 4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "EasyPlanner 4.xcdatamodel"; sourceTree = "<group>"; };
+		DAE292011D70D6EF005799CB /* EasyPlanner 5.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "EasyPlanner 5.xcdatamodel"; sourceTree = "<group>"; };
+		DAE292021D70D6EF005799CB /* EasyPlanner 6.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "EasyPlanner 6.xcdatamodel"; sourceTree = "<group>"; };
+		DAE292031D70D6EF005799CB /* EasyPlanner 7.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "EasyPlanner 7.xcdatamodel"; sourceTree = "<group>"; };
+		DAE292041D70D6EF005799CB /* EasyPlanner 8.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "EasyPlanner 8.xcdatamodel"; sourceTree = "<group>"; };
+		DAE292051D70D6EF005799CB /* EasyPlanner 9.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "EasyPlanner 9.xcdatamodel"; sourceTree = "<group>"; };
+		DAE292061D70D6EF005799CB /* EasyPlanner.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EasyPlanner.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +107,12 @@
 		DAE291C81D6E432B005799CB /* Easy Planner */ = {
 			isa = PBXGroup;
 			children = (
+				DAE292091D70DD80005799CB /* View Controller */,
+				DAE292081D70DD4A005799CB /* Storyboard & xib */,
+				DAE291FA1D70D6D2005799CB /* CoreData */,
 				DAE291C91D6E432B005799CB /* AppDelegate.swift */,
-				DAE291CB1D6E432B005799CB /* ViewController.swift */,
-				DAE291CD1D6E432B005799CB /* Main.storyboard */,
 				DAE291D31D6E432B005799CB /* Assets.xcassets */,
-				DAE291D51D6E432B005799CB /* LaunchScreen.storyboard */,
 				DAE291D81D6E432B005799CB /* Info.plist */,
-				DAE291D01D6E432B005799CB /* Easy_Planner.xcdatamodeld */,
 			);
 			path = "Easy Planner";
 			sourceTree = "<group>";
@@ -126,6 +133,30 @@
 				DAE291EE1D6E432B005799CB /* Info.plist */,
 			);
 			path = "Easy PlannerUITests";
+			sourceTree = "<group>";
+		};
+		DAE291FA1D70D6D2005799CB /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				DAE291FB1D70D6EF005799CB /* EasyPlanner.xcdatamodeld */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
+		DAE292081D70DD4A005799CB /* Storyboard & xib */ = {
+			isa = PBXGroup;
+			children = (
+				DAE291D51D6E432B005799CB /* LaunchScreen.storyboard */,
+				DAE291CD1D6E432B005799CB /* Main.storyboard */,
+			);
+			name = "Storyboard & xib";
+			sourceTree = "<group>";
+		};
+		DAE292091D70DD80005799CB /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "View Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,9 +296,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DAE291CC1D6E432B005799CB /* ViewController.swift in Sources */,
+				DAE292071D70D6EF005799CB /* EasyPlanner.xcdatamodeld in Sources */,
 				DAE291CA1D6E432B005799CB /* AppDelegate.swift in Sources */,
-				DAE291D21D6E432B005799CB /* Easy_Planner.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,6 +449,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = E5YV4NK229;
 				INFOPLIST_FILE = "Easy Planner/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ar.com.argsoftsolutions.Easy-Planner";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -432,6 +463,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = E5YV4NK229;
 				INFOPLIST_FILE = "Easy Planner/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ar.com.argsoftsolutions.Easy-Planner";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -512,6 +544,7 @@
 				DAE291F31D6E432B005799CB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DAE291F41D6E432B005799CB /* Build configuration list for PBXNativeTarget "Easy PlannerTests" */ = {
 			isa = XCConfigurationList;
@@ -520,6 +553,7 @@
 				DAE291F61D6E432B005799CB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DAE291F71D6E432B005799CB /* Build configuration list for PBXNativeTarget "Easy PlannerUITests" */ = {
 			isa = XCConfigurationList;
@@ -528,17 +562,29 @@
 				DAE291F91D6E432B005799CB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		DAE291D01D6E432B005799CB /* Easy_Planner.xcdatamodeld */ = {
+		DAE291FB1D70D6EF005799CB /* EasyPlanner.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				DAE291D11D6E432B005799CB /* Easy_Planner.xcdatamodel */,
+				DAE291FC1D70D6EF005799CB /* EasyPlanner 10.xcdatamodel */,
+				DAE291FD1D70D6EF005799CB /* EasyPlanner 11.xcdatamodel */,
+				DAE291FE1D70D6EF005799CB /* EasyPlanner 2.xcdatamodel */,
+				DAE291FF1D70D6EF005799CB /* EasyPlanner 3.xcdatamodel */,
+				DAE292001D70D6EF005799CB /* EasyPlanner 4.xcdatamodel */,
+				DAE292011D70D6EF005799CB /* EasyPlanner 5.xcdatamodel */,
+				DAE292021D70D6EF005799CB /* EasyPlanner 6.xcdatamodel */,
+				DAE292031D70D6EF005799CB /* EasyPlanner 7.xcdatamodel */,
+				DAE292041D70D6EF005799CB /* EasyPlanner 8.xcdatamodel */,
+				DAE292051D70D6EF005799CB /* EasyPlanner 9.xcdatamodel */,
+				DAE292061D70D6EF005799CB /* EasyPlanner.xcdatamodel */,
 			);
-			currentVersion = DAE291D11D6E432B005799CB /* Easy_Planner.xcdatamodel */;
-			path = Easy_Planner.xcdatamodeld;
+			currentVersion = DAE291FD1D70D6EF005799CB /* EasyPlanner 11.xcdatamodel */;
+			name = EasyPlanner.xcdatamodeld;
+			path = ../CoreData/EasyPlanner.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
