@@ -9,7 +9,7 @@
         <!--Easy Planner-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Easy_Planner" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="Easy_Planner" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -20,21 +20,29 @@
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6ow-UA-aWg">
                                 <items>
-                                    <barButtonItem title="Today" id="ePd-1i-BsJ"/>
+                                    <barButtonItem title="Today" id="ePd-1i-BsJ">
+                                        <color key="tintColor" red="0.1450980392" green="0.66274509800000003" blue="0.51372549020000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="todayAction:" destination="BYZ-38-t0r" id="DlN-bj-Yg8"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="wZj-Gd-Mcp"/>
-                                    <barButtonItem systemItem="action" id="Z4x-cr-ZYA"/>
+                                    <barButtonItem systemItem="action" id="Z4x-cr-ZYA">
+                                        <color key="tintColor" red="0.1450980392" green="0.66274509800000003" blue="0.51372549020000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="cloudAction:" destination="BYZ-38-t0r" id="WI6-nn-ApP"/>
+                                            <segue destination="l66-YA-4xG" kind="show" identifier="cloudEventSegue" id="o7T-bv-Zzd"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xNb-0M-446">
-                                <color key="backgroundColor" name="gridColor" catalog="System" colorSpace="catalog"/>
-                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1qf-LC-S9z">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="321" id="7C8-t7-EMJ"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ux8-VC-wtT">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="homeEventCell" id="ux8-VC-wtT" customClass="HomeTableViewCell" customModule="Easy_Planner" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ux8-VC-wtT" id="rC5-1Z-gQz">
@@ -70,43 +78,72 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="nPp-MM-6jZ" kind="show" id="LZP-PH-cDN"/>
+                                            <segue destination="nPp-MM-6jZ" kind="show" identifier="eventDetailSegue" id="LZP-PH-cDN"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g33-Wm-gUV">
+                                <connections>
+                                    <segue destination="ZiD-kZ-7TV" kind="embed" identifier="embededCalendarSegue" id="43c-9m-KDq"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6ow-UA-aWg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="8by-vR-Zcf"/>
-                            <constraint firstItem="1qf-LC-S9z" firstAttribute="top" secondItem="xNb-0M-446" secondAttribute="bottom" id="9Er-qM-jcF"/>
+                            <constraint firstItem="g33-Wm-gUV" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="8c7-X2-SlK"/>
                             <constraint firstItem="6ow-UA-aWg" firstAttribute="top" secondItem="1qf-LC-S9z" secondAttribute="bottom" id="9be-Qy-0Wa"/>
-                            <constraint firstItem="1qf-LC-S9z" firstAttribute="top" secondItem="xNb-0M-446" secondAttribute="bottom" id="Tvc-qY-YcC"/>
                             <constraint firstAttribute="trailing" secondItem="6ow-UA-aWg" secondAttribute="trailing" id="atH-hc-JEy"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="6ow-UA-aWg" secondAttribute="bottom" id="bzZ-VF-sDk"/>
-                            <constraint firstItem="xNb-0M-446" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="gmT-ZO-oM2"/>
-                            <constraint firstItem="xNb-0M-446" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="hRS-MV-fzn"/>
-                            <constraint firstAttribute="trailing" secondItem="xNb-0M-446" secondAttribute="trailing" id="mJZ-nX-Hyf"/>
+                            <constraint firstItem="1qf-LC-S9z" firstAttribute="top" secondItem="g33-Wm-gUV" secondAttribute="bottom" id="g4u-8w-d5q"/>
                             <constraint firstItem="1qf-LC-S9z" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="nwK-uC-2X6"/>
+                            <constraint firstAttribute="trailing" secondItem="g33-Wm-gUV" secondAttribute="trailing" id="tsM-mU-Xxh"/>
                             <constraint firstItem="6ow-UA-aWg" firstAttribute="top" secondItem="1qf-LC-S9z" secondAttribute="bottom" id="yVy-x0-l9W"/>
+                            <constraint firstItem="g33-Wm-gUV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="yWP-4U-ju0"/>
                             <constraint firstAttribute="trailing" secondItem="1qf-LC-S9z" secondAttribute="trailing" id="zRs-ZQ-mnw"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Easy Planner" id="ICM-OA-Mtj">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="3g5-Mo-UHT"/>
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="add" id="3g5-Mo-UHT">
+                            <color key="tintColor" red="0.1450980392" green="0.66274509800000003" blue="0.51372549020000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="gia-yq-EJi" kind="show" identifier="addEventSegue" id="IFe-Zd-jFU"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="addButton" destination="3g5-Mo-UHT" id="Edp-KN-adg"/>
+                        <outlet property="eventTableView" destination="1qf-LC-S9z" id="3TA-OT-pkx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1661.5999999999999" y="-704.79760119940033"/>
+            <point key="canvasLocation" x="1622" y="-921"/>
         </scene>
-        <!--Storyboard Reference-->
+        <!--Event-->
+        <scene sceneID="edd-pi-eC6">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Event" id="gia-yq-EJi" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sII-nc-0Na" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2311" y="-961"/>
+        </scene>
+        <!--Event-->
         <scene sceneID="oaM-wA-0Oa">
             <objects>
-                <viewControllerPlaceholder id="nPp-MM-6jZ" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Event" id="nPp-MM-6jZ" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b9W-Ln-yZT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2292" y="-705"/>
+        </scene>
+        <!--Storyboard Reference-->
+        <scene sceneID="VBY-qk-ffD">
+            <objects>
+                <viewControllerPlaceholder id="l66-YA-4xG" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X6S-O9-41i" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2314" y="-533"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="OVv-jp-ubE">
@@ -125,6 +162,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bff-Md-dcx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="642" y="-703"/>
+        </scene>
+        <!--Calendar Controller-->
+        <scene sceneID="hu3-p1-s3j">
+            <objects>
+                <viewController id="ZiD-kZ-7TV" customClass="CalendarController" customModule="Easy_Planner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KiW-XD-PXk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="238"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Xg3-av-h0U" appends="YES" id="Hya-tn-M1O"/>
+                            <outletCollection property="gestureRecognizers" destination="RdM-Oa-YA6" appends="YES" id="6e8-RP-p9G"/>
+                        </connections>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WhL-4O-aaD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="up" id="Xg3-av-h0U">
+                    <connections>
+                        <action selector="upSwipe:" destination="ZiD-kZ-7TV" id="RdP-FM-Ecl"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="down" id="RdM-Oa-YA6">
+                    <connections>
+                        <action selector="downSwipe:" destination="ZiD-kZ-7TV" id="UTE-am-POv"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="2367" y="-1230"/>
         </scene>
     </scenes>
 </document>

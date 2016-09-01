@@ -14,16 +14,17 @@ import CoreData
 
 extension Event {
 
-    @NSManaged var Date: NSDate?
-    @NSManaged var ID: NSNumber?
-    @NSManaged var Name: String?
-    @NSManaged var Contact: NSOrderedSet?
+    @NSManaged var date: NSDate?
+    @NSManaged var id: NSNumber?
+    @NSManaged var name: String?
+    @NSManaged var contact: NSSet?
     @NSManaged var extras: NSSet?
     @NSManaged var food: NSSet?
     @NSManaged var invitation: Invitation?
     @NSManaged var misc: NSSet?
     @NSManaged var music: NSSet?
-    @NSManaged var Place: Place?
+    @NSManaged var place: Place?
     @NSManaged var tables: NSSet?
+    @NSManaged var serverId: String?
 
 }

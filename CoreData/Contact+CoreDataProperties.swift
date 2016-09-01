@@ -14,10 +14,10 @@ import CoreData
 
 extension Contact {
 
-    @NSManaged var Email: String?
-    @NSManaged var Name: String?
-    @NSManaged var Phone: String?
+    @NSManaged var email: String?
+    @NSManaged var name: String?
+    @NSManaged var phone: String?
     @NSManaged var chair: Chair?
-    @NSManaged var Event: Event?
+    @NSManaged var event: Event?
 
 }

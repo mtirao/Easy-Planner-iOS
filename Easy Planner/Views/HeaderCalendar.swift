@@ -8,20 +8,11 @@
 
 import UIKit
 
-class Calendar: UIView {
+class HeaderCalendar: UIView {
     
     let dayOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
     
     let header : CGFloat = 10.0
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-    
     
     override func draw(_ rect: CGRect) {
         
@@ -33,7 +24,7 @@ class Calendar: UIView {
 }
 
 
-extension Calendar {
+extension HeaderCalendar {
     
     func drawDayOfWeek(_ frame: CGRect ) {
         

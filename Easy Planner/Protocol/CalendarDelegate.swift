@@ -8,6 +8,14 @@
 
 import UIKit
 
-class CalendarDelegate: NSObject {
+protocol CalendarDelegate{
 
+    func didSelectDay(day: Day)
+    
+}
+
+protocol CalendarControllerDelegate {
+    
+    func daySelectionChange(selected: Bool)
+    
 }

@@ -12,6 +12,19 @@ import CoreData
 @objc(Menu)
 class Menu: NSManagedObject {
 
-// Insert code here to add functionality to your managed object subclass
+    func addOption(option:Option) {
+        var options: NSMutableSet
+        
+        options = self.mutableSetValue(forKey: "option")
+        options.add(option)
+    }
+    
+    func removeOption(option:Option) {
+        var options: NSMutableSet
+        
+        options = self.mutableSetValue(forKey: "option")
+        options.remove(option)
+    }
 
+    
 }

@@ -12,6 +12,20 @@ import CoreData
 @objc(Place)
 class Place: NSManagedObject {
 
-// Insert code here to add functionality to your managed object subclass
+    /*func addEvent(event: Event) {
+        var events: NSMutableOrderedSet
+        
+        events = self.mutableOrderedSetValueForKey("Event")
+        events.addObject(event)
+        
+    }
+    
+    func removeEvent(event: Event) {
+        var events: NSMutableOrderedSet
+        
+        events = self.mutableOrderedSetValueForKey("Event")
+        events.removeObject(event)
+    }*/
 
+    
 }

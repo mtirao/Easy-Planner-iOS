@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA11C2691D7398E400ADB348 /* HeaderCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA11C2681D7398E400ADB348 /* HeaderCalendar.swift */; };
+		DA11C26B1D73A91C00ADB348 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA11C26A1D73A91C00ADB348 /* Day.swift */; };
+		DA11C26D1D73AC4D00ADB348 /* CalendarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA11C26C1D73AC4D00ADB348 /* CalendarController.swift */; };
+		DA11C2701D75183B00ADB348 /* CalendarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA11C26F1D75183B00ADB348 /* CalendarDelegate.swift */; };
+		DA11C2721D761EA500ADB348 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA11C2711D761EA500ADB348 /* Theme.swift */; };
 		DAE291CA1D6E432B005799CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE291C91D6E432B005799CB /* AppDelegate.swift */; };
 		DAE291CF1D6E432B005799CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAE291CD1D6E432B005799CB /* Main.storyboard */; };
 		DAE291D41D6E432B005799CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAE291D31D6E432B005799CB /* Assets.xcassets */; };
@@ -14,6 +19,38 @@
 		DAE291E21D6E432B005799CB /* Easy_PlannerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE291E11D6E432B005799CB /* Easy_PlannerTests.swift */; };
 		DAE291ED1D6E432B005799CB /* Easy_PlannerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE291EC1D6E432B005799CB /* Easy_PlannerUITests.swift */; };
 		DAE292071D70D6EF005799CB /* EasyPlanner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DAE291FB1D70D6EF005799CB /* EasyPlanner.xcdatamodeld */; };
+		DAE2920B1D70DF8B005799CB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE2920A1D70DF8B005799CB /* HomeViewController.swift */; };
+		DAE2920E1D70E1AF005799CB /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE2920D1D70E1AF005799CB /* HomeTableViewCell.swift */; };
+		DAE292111D71E2DC005799CB /* Event.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAE2920F1D71E2DC005799CB /* Event.storyboard */; };
+		DAE292281D71E39E005799CB /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE292121D71E39E005799CB /* Event.swift */; };
+		DAE292291D71E39E005799CB /* Event+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE292131D71E39E005799CB /* Event+CoreDataProperties.swift */; };
+		DAE2922A1D71E39E005799CB /* EventMisc.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE292141D71E39E005799CB /* EventMisc.swift */; };
+		DAE2922B1D71E39E005799CB /* EventMisc+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE292151D71E39E005799CB /* EventMisc+CoreDataProperties.swift */; };
+		DAE2922C1D71E39E005799CB /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE292161D71E39E005799CB /* Image.swift */; };
+		DAE2922D1D71E39E005799CB /* Image+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE292171D71E39E005799CB /* Image+CoreDataProperties.swift */; };
+		DAE2922E1D71E39E005799CB /* Invitation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE292181D71E39E005799CB /* Invitation.swift */; };
+		DAE2922F1D71E39E005799CB /* Invitation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE292191D71E39E005799CB /* Invitation+CoreDataProperties.swift */; };
+		DAE292301D71E39E005799CB /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE2921A1D71E39E005799CB /* Menu.swift */; };
+		DAE292311D71E39E005799CB /* Menu+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE2921B1D71E39E005799CB /* Menu+CoreDataProperties.swift */; };
+		DAE292321D71E39E005799CB /* Misc.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE2921C1D71E39E005799CB /* Misc.swift */; };
+		DAE292331D71E39E005799CB /* Misc+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE2921D1D71E39E005799CB /* Misc+CoreDataProperties.swift */; };
+		DAE292341D71E39E005799CB /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE2921E1D71E39E005799CB /* Music.swift */; };
+		DAE292351D71E39E005799CB /* Music+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE2921F1D71E39E005799CB /* Music+CoreDataProperties.swift */; };
+		DAE292361D71E39E005799CB /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE292201D71E39E005799CB /* Option.swift */; };
+		DAE292371D71E39E005799CB /* Option+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE292211D71E39E005799CB /* Option+CoreDataProperties.swift */; };
+		DAE292381D71E39E005799CB /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE292221D71E39E005799CB /* Place.swift */; };
+		DAE292391D71E39E005799CB /* Place+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE292231D71E39E005799CB /* Place+CoreDataProperties.swift */; };
+		DAE2923A1D71E39E005799CB /* Tables.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE292241D71E39E005799CB /* Tables.swift */; };
+		DAE2923B1D71E39E005799CB /* Tables+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE292251D71E39E005799CB /* Tables+CoreDataProperties.swift */; };
+		DAE2923C1D71E39E005799CB /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE292261D71E39E005799CB /* Text.swift */; };
+		DAE2923D1D71E39E005799CB /* Text+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE292271D71E39E005799CB /* Text+CoreDataProperties.swift */; };
+		DAE292421D71E3A9005799CB /* Chair.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE2923E1D71E3A9005799CB /* Chair.swift */; };
+		DAE292431D71E3A9005799CB /* Chair+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE2923F1D71E3A9005799CB /* Chair+CoreDataProperties.swift */; };
+		DAE292441D71E3A9005799CB /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE292401D71E3A9005799CB /* Contact.swift */; };
+		DAE292451D71E3A9005799CB /* Contact+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE292411D71E3A9005799CB /* Contact+CoreDataProperties.swift */; };
+		DAE292471D71E578005799CB /* EventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE292461D71E578005799CB /* EventManager.swift */; };
+		DAE292491D71E5B0005799CB /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE292481D71E5B0005799CB /* DataController.swift */; };
+		DAE2924C1D71EB7E005799CB /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE2924B1D71EB7E005799CB /* NotificationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +71,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DA11C2681D7398E400ADB348 /* HeaderCalendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HeaderCalendar.swift; path = Views/HeaderCalendar.swift; sourceTree = "<group>"; };
+		DA11C26A1D73A91C00ADB348 /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Day.swift; path = Views/Day.swift; sourceTree = "<group>"; };
+		DA11C26C1D73AC4D00ADB348 /* CalendarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarController.swift; path = "View Controller/CalendarController.swift"; sourceTree = "<group>"; };
+		DA11C26F1D75183B00ADB348 /* CalendarDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarDelegate.swift; path = Protocol/CalendarDelegate.swift; sourceTree = "<group>"; };
+		DA11C2711D761EA500ADB348 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Theme.swift; path = Misc/Theme.swift; sourceTree = "<group>"; };
 		DAE291C61D6E432B005799CB /* Easy Planner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Easy Planner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAE291C91D6E432B005799CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DAE291CE1D6E432B005799CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -57,6 +99,38 @@
 		DAE292041D70D6EF005799CB /* EasyPlanner 8.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "EasyPlanner 8.xcdatamodel"; sourceTree = "<group>"; };
 		DAE292051D70D6EF005799CB /* EasyPlanner 9.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "EasyPlanner 9.xcdatamodel"; sourceTree = "<group>"; };
 		DAE292061D70D6EF005799CB /* EasyPlanner.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EasyPlanner.xcdatamodel; sourceTree = "<group>"; };
+		DAE2920A1D70DF8B005799CB /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = "View Controller/HomeViewController.swift"; sourceTree = "<group>"; };
+		DAE2920D1D70E1AF005799CB /* HomeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeTableViewCell.swift; path = Cells/HomeTableViewCell.swift; sourceTree = "<group>"; };
+		DAE292101D71E2DC005799CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Event.storyboard; sourceTree = "<group>"; };
+		DAE292121D71E39E005799CB /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Event.swift; path = CoreData/Event.swift; sourceTree = SOURCE_ROOT; };
+		DAE292131D71E39E005799CB /* Event+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Event+CoreDataProperties.swift"; path = "CoreData/Event+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		DAE292141D71E39E005799CB /* EventMisc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventMisc.swift; path = CoreData/EventMisc.swift; sourceTree = SOURCE_ROOT; };
+		DAE292151D71E39E005799CB /* EventMisc+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "EventMisc+CoreDataProperties.swift"; path = "CoreData/EventMisc+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		DAE292161D71E39E005799CB /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Image.swift; path = CoreData/Image.swift; sourceTree = SOURCE_ROOT; };
+		DAE292171D71E39E005799CB /* Image+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Image+CoreDataProperties.swift"; path = "CoreData/Image+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		DAE292181D71E39E005799CB /* Invitation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Invitation.swift; path = CoreData/Invitation.swift; sourceTree = SOURCE_ROOT; };
+		DAE292191D71E39E005799CB /* Invitation+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Invitation+CoreDataProperties.swift"; path = "CoreData/Invitation+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		DAE2921A1D71E39E005799CB /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Menu.swift; path = CoreData/Menu.swift; sourceTree = SOURCE_ROOT; };
+		DAE2921B1D71E39E005799CB /* Menu+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Menu+CoreDataProperties.swift"; path = "CoreData/Menu+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		DAE2921C1D71E39E005799CB /* Misc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Misc.swift; path = CoreData/Misc.swift; sourceTree = SOURCE_ROOT; };
+		DAE2921D1D71E39E005799CB /* Misc+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Misc+CoreDataProperties.swift"; path = "CoreData/Misc+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		DAE2921E1D71E39E005799CB /* Music.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Music.swift; path = CoreData/Music.swift; sourceTree = SOURCE_ROOT; };
+		DAE2921F1D71E39E005799CB /* Music+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Music+CoreDataProperties.swift"; path = "CoreData/Music+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		DAE292201D71E39E005799CB /* Option.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Option.swift; path = CoreData/Option.swift; sourceTree = SOURCE_ROOT; };
+		DAE292211D71E39E005799CB /* Option+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Option+CoreDataProperties.swift"; path = "CoreData/Option+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		DAE292221D71E39E005799CB /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Place.swift; path = CoreData/Place.swift; sourceTree = SOURCE_ROOT; };
+		DAE292231D71E39E005799CB /* Place+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Place+CoreDataProperties.swift"; path = "CoreData/Place+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		DAE292241D71E39E005799CB /* Tables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tables.swift; path = CoreData/Tables.swift; sourceTree = SOURCE_ROOT; };
+		DAE292251D71E39E005799CB /* Tables+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Tables+CoreDataProperties.swift"; path = "CoreData/Tables+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		DAE292261D71E39E005799CB /* Text.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Text.swift; path = CoreData/Text.swift; sourceTree = SOURCE_ROOT; };
+		DAE292271D71E39E005799CB /* Text+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Text+CoreDataProperties.swift"; path = "CoreData/Text+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		DAE2923E1D71E3A9005799CB /* Chair.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Chair.swift; path = CoreData/Chair.swift; sourceTree = SOURCE_ROOT; };
+		DAE2923F1D71E3A9005799CB /* Chair+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Chair+CoreDataProperties.swift"; path = "CoreData/Chair+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		DAE292401D71E3A9005799CB /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Contact.swift; path = CoreData/Contact.swift; sourceTree = SOURCE_ROOT; };
+		DAE292411D71E3A9005799CB /* Contact+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Contact+CoreDataProperties.swift"; path = "CoreData/Contact+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		DAE292461D71E578005799CB /* EventManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventManager.swift; path = CoreData/EventManager.swift; sourceTree = SOURCE_ROOT; };
+		DAE292481D71E5B0005799CB /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataController.swift; path = CoreData/DataController.swift; sourceTree = SOURCE_ROOT; };
+		DAE2924B1D71EB7E005799CB /* NotificationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationController.swift; path = Misc/NotificationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +158,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DA11C2671D73987D00ADB348 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DA11C2681D7398E400ADB348 /* HeaderCalendar.swift */,
+				DA11C26A1D73A91C00ADB348 /* Day.swift */,
+				DA11C26C1D73AC4D00ADB348 /* CalendarController.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		DA11C26E1D75180A00ADB348 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				DA11C26F1D75183B00ADB348 /* CalendarDelegate.swift */,
+			);
+			name = Protocol;
+			sourceTree = "<group>";
+		};
 		DAE291BD1D6E432A005799CB = {
 			isa = PBXGroup;
 			children = (
@@ -107,12 +199,17 @@
 		DAE291C81D6E432B005799CB /* Easy Planner */ = {
 			isa = PBXGroup;
 			children = (
+				DA11C26E1D75180A00ADB348 /* Protocol */,
+				DAE2924A1D71EB4F005799CB /* Misc */,
+				DAE2920C1D70E14F005799CB /* Cells */,
+				DA11C2671D73987D00ADB348 /* Views */,
 				DAE292091D70DD80005799CB /* View Controller */,
 				DAE292081D70DD4A005799CB /* Storyboard & xib */,
 				DAE291FA1D70D6D2005799CB /* CoreData */,
 				DAE291C91D6E432B005799CB /* AppDelegate.swift */,
 				DAE291D31D6E432B005799CB /* Assets.xcassets */,
 				DAE291D81D6E432B005799CB /* Info.plist */,
+				DAE2924B1D71EB7E005799CB /* NotificationController.swift */,
 			);
 			path = "Easy Planner";
 			sourceTree = "<group>";
@@ -138,7 +235,35 @@
 		DAE291FA1D70D6D2005799CB /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				DAE2923E1D71E3A9005799CB /* Chair.swift */,
+				DAE2923F1D71E3A9005799CB /* Chair+CoreDataProperties.swift */,
+				DAE292401D71E3A9005799CB /* Contact.swift */,
+				DAE292411D71E3A9005799CB /* Contact+CoreDataProperties.swift */,
+				DAE292121D71E39E005799CB /* Event.swift */,
+				DAE292131D71E39E005799CB /* Event+CoreDataProperties.swift */,
+				DAE292461D71E578005799CB /* EventManager.swift */,
+				DAE292141D71E39E005799CB /* EventMisc.swift */,
+				DAE292151D71E39E005799CB /* EventMisc+CoreDataProperties.swift */,
+				DAE292161D71E39E005799CB /* Image.swift */,
+				DAE292171D71E39E005799CB /* Image+CoreDataProperties.swift */,
+				DAE292181D71E39E005799CB /* Invitation.swift */,
+				DAE292191D71E39E005799CB /* Invitation+CoreDataProperties.swift */,
+				DAE2921A1D71E39E005799CB /* Menu.swift */,
+				DAE2921B1D71E39E005799CB /* Menu+CoreDataProperties.swift */,
+				DAE2921C1D71E39E005799CB /* Misc.swift */,
+				DAE2921D1D71E39E005799CB /* Misc+CoreDataProperties.swift */,
+				DAE2921E1D71E39E005799CB /* Music.swift */,
+				DAE2921F1D71E39E005799CB /* Music+CoreDataProperties.swift */,
+				DAE292201D71E39E005799CB /* Option.swift */,
+				DAE292211D71E39E005799CB /* Option+CoreDataProperties.swift */,
+				DAE292221D71E39E005799CB /* Place.swift */,
+				DAE292231D71E39E005799CB /* Place+CoreDataProperties.swift */,
+				DAE292241D71E39E005799CB /* Tables.swift */,
+				DAE292251D71E39E005799CB /* Tables+CoreDataProperties.swift */,
+				DAE292261D71E39E005799CB /* Text.swift */,
+				DAE292271D71E39E005799CB /* Text+CoreDataProperties.swift */,
 				DAE291FB1D70D6EF005799CB /* EasyPlanner.xcdatamodeld */,
+				DAE292481D71E5B0005799CB /* DataController.swift */,
 			);
 			name = CoreData;
 			sourceTree = "<group>";
@@ -148,6 +273,7 @@
 			children = (
 				DAE291D51D6E432B005799CB /* LaunchScreen.storyboard */,
 				DAE291CD1D6E432B005799CB /* Main.storyboard */,
+				DAE2920F1D71E2DC005799CB /* Event.storyboard */,
 			);
 			name = "Storyboard & xib";
 			sourceTree = "<group>";
@@ -155,8 +281,25 @@
 		DAE292091D70DD80005799CB /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
+				DAE2920A1D70DF8B005799CB /* HomeViewController.swift */,
 			);
 			name = "View Controller";
+			sourceTree = "<group>";
+		};
+		DAE2920C1D70E14F005799CB /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DAE2920D1D70E1AF005799CB /* HomeTableViewCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		DAE2924A1D71EB4F005799CB /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				DA11C2711D761EA500ADB348 /* Theme.swift */,
+			);
+			name = Misc;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,6 +413,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAE291D71D6E432B005799CB /* LaunchScreen.storyboard in Resources */,
+				DAE292111D71E2DC005799CB /* Event.storyboard in Resources */,
 				DAE291D41D6E432B005799CB /* Assets.xcassets in Resources */,
 				DAE291CF1D6E432B005799CB /* Main.storyboard in Resources */,
 			);
@@ -296,8 +440,44 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAE292421D71E3A9005799CB /* Chair.swift in Sources */,
+				DAE292311D71E39E005799CB /* Menu+CoreDataProperties.swift in Sources */,
+				DAE292351D71E39E005799CB /* Music+CoreDataProperties.swift in Sources */,
+				DAE2922A1D71E39E005799CB /* EventMisc.swift in Sources */,
+				DAE2922D1D71E39E005799CB /* Image+CoreDataProperties.swift in Sources */,
+				DAE292321D71E39E005799CB /* Misc.swift in Sources */,
+				DAE292391D71E39E005799CB /* Place+CoreDataProperties.swift in Sources */,
+				DAE2923D1D71E39E005799CB /* Text+CoreDataProperties.swift in Sources */,
+				DAE2924C1D71EB7E005799CB /* NotificationController.swift in Sources */,
+				DAE292441D71E3A9005799CB /* Contact.swift in Sources */,
+				DAE2923C1D71E39E005799CB /* Text.swift in Sources */,
+				DAE2922F1D71E39E005799CB /* Invitation+CoreDataProperties.swift in Sources */,
+				DAE292371D71E39E005799CB /* Option+CoreDataProperties.swift in Sources */,
+				DA11C2721D761EA500ADB348 /* Theme.swift in Sources */,
+				DAE292431D71E3A9005799CB /* Chair+CoreDataProperties.swift in Sources */,
+				DAE292491D71E5B0005799CB /* DataController.swift in Sources */,
+				DAE292361D71E39E005799CB /* Option.swift in Sources */,
+				DAE2922C1D71E39E005799CB /* Image.swift in Sources */,
+				DAE292291D71E39E005799CB /* Event+CoreDataProperties.swift in Sources */,
 				DAE292071D70D6EF005799CB /* EasyPlanner.xcdatamodeld in Sources */,
 				DAE291CA1D6E432B005799CB /* AppDelegate.swift in Sources */,
+				DAE292451D71E3A9005799CB /* Contact+CoreDataProperties.swift in Sources */,
+				DAE292381D71E39E005799CB /* Place.swift in Sources */,
+				DAE292341D71E39E005799CB /* Music.swift in Sources */,
+				DAE2920E1D70E1AF005799CB /* HomeTableViewCell.swift in Sources */,
+				DAE2923B1D71E39E005799CB /* Tables+CoreDataProperties.swift in Sources */,
+				DA11C26D1D73AC4D00ADB348 /* CalendarController.swift in Sources */,
+				DAE2920B1D70DF8B005799CB /* HomeViewController.swift in Sources */,
+				DAE292471D71E578005799CB /* EventManager.swift in Sources */,
+				DA11C2701D75183B00ADB348 /* CalendarDelegate.swift in Sources */,
+				DAE292301D71E39E005799CB /* Menu.swift in Sources */,
+				DA11C26B1D73A91C00ADB348 /* Day.swift in Sources */,
+				DAE2922E1D71E39E005799CB /* Invitation.swift in Sources */,
+				DAE2922B1D71E39E005799CB /* EventMisc+CoreDataProperties.swift in Sources */,
+				DAE292281D71E39E005799CB /* Event.swift in Sources */,
+				DA11C2691D7398E400ADB348 /* HeaderCalendar.swift in Sources */,
+				DAE2923A1D71E39E005799CB /* Tables.swift in Sources */,
+				DAE292331D71E39E005799CB /* Misc+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,6 +527,14 @@
 				DAE291D61D6E432B005799CB /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		DAE2920F1D71E2DC005799CB /* Event.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DAE292101D71E2DC005799CB /* Base */,
+			);
+			name = Event.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -449,7 +637,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = E5YV4NK229;
 				INFOPLIST_FILE = "Easy Planner/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ar.com.argsoftsolutions.Easy-Planner";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -463,7 +651,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = E5YV4NK229;
 				INFOPLIST_FILE = "Easy Planner/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ar.com.argsoftsolutions.Easy-Planner";
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -8,8 +8,20 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+let homeEventCell = "homeEventCell"
 
+//MARK: - Segue indentifiers
+let embededCalendarSegue = "embededCalendarSegue"
+let addEventSegue = "addEventSegue"
+
+
+class HomeViewController: UIViewController, CalendarControllerDelegate {
+    
+    @IBOutlet weak var eventTableView: UITableView!
+    @IBOutlet weak var addButton: UIBarButtonItem!
+    
+    var calendarController : CalendarController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,15 +33,63 @@ class HomeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == embededCalendarSegue {
+            
+            self.calendarController = segue.destination as? CalendarController
+            self.calendarController?.delegate = self
+        }
     }
-    */
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: AnyObject?) -> Bool {
+        
+        if identifier == addEventSegue {
+            return calendarController?.selectedDate != nil
+        }
+        
+        return true
+        
+    }
+    
+    func daySelectionChange(selected: Bool) {
+        self.addButton.isEnabled = selected
+    }
+    
+    
+}
 
+// MARK: - Action method
+extension HomeViewController {
+    
+    
+    
+    @IBAction func todayAction(_ sender: AnyObject) {
+        
+        self.calendarController?.setToday()
+        
+    }
+    
+    @IBAction func cloudAction(_ sender: AnyObject) {
+    }
+}
+
+// MARK: - Table view datasource methods
+extension HomeViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView,
+                   numberOfRowsInSection section: Int) -> Int {
+        
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView,
+                   cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: homeEventCell)
+        
+        return cell!
+        
+    }
+    
+    
 }

@@ -6,7 +6,7 @@
 //  Copyright © 2016 Marcos Tirao. All rights reserved.
 //
 
-import Cocoa
+import UIKit
 import CoreData
 
 @objc class EventManager: NSObject {
@@ -19,8 +19,7 @@ import CoreData
     var nextEvents : [Event] = [Event]()
     
     private override init() {
-        let delegate = NSApplication.shared().delegate as! EasyPlannerAppDelegate
-        managedObject = delegate.managedObjectContext
+        managedObject = DataController.defaultController.managedObjectContext
         
         super.init()
         _ = self.eventsForDate(firstDate: NSDate())
@@ -457,17 +456,8 @@ import CoreData
 
     //MARK: - Persist data
     func saveContext() {
+            DataController.defaultController.saveContext()
         
-        if !self.managedObject.commitEditing() {
-            print("Unabale to commit edditing before saving")
-        }
-        
-        do {
-            try managedObject.save()
-        }catch {
-            NSLog("Error saving data");
-        }
-    
     }
     
 }

@@ -12,6 +12,20 @@ import CoreData
 @objc(EventMisc)
 class EventMisc: NSManagedObject {
 
-// Insert code here to add functionality to your managed object subclass
+    
+    func addEvent(event:Event) {
+        var events: NSMutableSet
+        
+        events = self.mutableSetValue(forKey: "event")
+        events.add(event)
+    }
+    
+    func removeEvent(event: Event) {
+        var events: NSMutableSet
+        
+        events = self.mutableSetValue(forKey: "event")
+        events.add(event)
+    }
+
 
 }
