@@ -11,5 +11,6 @@ import UIKit
 class Theme: NSObject {
     
     static let todayColor = UIColor(red: 0.144, green: 0.66, blue: 0.511, alpha: 1.0)
+    static let backgroundColor = UIColor.lightGray
     
 }

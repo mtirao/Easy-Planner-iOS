@@ -12,6 +12,10 @@
 		DA11C26D1D73AC4D00ADB348 /* CalendarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA11C26C1D73AC4D00ADB348 /* CalendarController.swift */; };
 		DA11C2701D75183B00ADB348 /* CalendarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA11C26F1D75183B00ADB348 /* CalendarDelegate.swift */; };
 		DA11C2721D761EA500ADB348 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA11C2711D761EA500ADB348 /* Theme.swift */; };
+		DA11C2741D77B5A400ADB348 /* MainEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA11C2731D77B5A400ADB348 /* MainEventViewController.swift */; };
+		DA11C2771D7B59E700ADB348 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA11C2761D7B59E700ADB348 /* MapKit.framework */; };
+		DA11C2791D7B65CF00ADB348 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA11C2781D7B65CF00ADB348 /* ContactsViewController.swift */; };
+		DA11C27B1D7B6F1700ADB348 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA11C27A1D7B6F1700ADB348 /* MenuViewController.swift */; };
 		DAE291CA1D6E432B005799CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE291C91D6E432B005799CB /* AppDelegate.swift */; };
 		DAE291CF1D6E432B005799CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAE291CD1D6E432B005799CB /* Main.storyboard */; };
 		DAE291D41D6E432B005799CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAE291D31D6E432B005799CB /* Assets.xcassets */; };
@@ -76,6 +80,10 @@
 		DA11C26C1D73AC4D00ADB348 /* CalendarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarController.swift; path = "View Controller/CalendarController.swift"; sourceTree = "<group>"; };
 		DA11C26F1D75183B00ADB348 /* CalendarDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarDelegate.swift; path = Protocol/CalendarDelegate.swift; sourceTree = "<group>"; };
 		DA11C2711D761EA500ADB348 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Theme.swift; path = Misc/Theme.swift; sourceTree = "<group>"; };
+		DA11C2731D77B5A400ADB348 /* MainEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainEventViewController.swift; path = "View Controller/MainEventViewController.swift"; sourceTree = "<group>"; };
+		DA11C2761D7B59E700ADB348 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		DA11C2781D7B65CF00ADB348 /* ContactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactsViewController.swift; path = "View Controller/ContactsViewController.swift"; sourceTree = "<group>"; };
+		DA11C27A1D7B6F1700ADB348 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuViewController.swift; path = "View Controller/MenuViewController.swift"; sourceTree = "<group>"; };
 		DAE291C61D6E432B005799CB /* Easy Planner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Easy Planner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAE291C91D6E432B005799CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DAE291CE1D6E432B005799CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -138,6 +146,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA11C2771D7B59E700ADB348 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +185,14 @@
 			name = Protocol;
 			sourceTree = "<group>";
 		};
+		DA11C2751D7B59E700ADB348 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DA11C2761D7B59E700ADB348 /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DAE291BD1D6E432A005799CB = {
 			isa = PBXGroup;
 			children = (
@@ -183,6 +200,7 @@
 				DAE291E01D6E432B005799CB /* Easy PlannerTests */,
 				DAE291EB1D6E432B005799CB /* Easy PlannerUITests */,
 				DAE291C71D6E432B005799CB /* Products */,
+				DA11C2751D7B59E700ADB348 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -282,6 +300,9 @@
 			isa = PBXGroup;
 			children = (
 				DAE2920A1D70DF8B005799CB /* HomeViewController.swift */,
+				DA11C2731D77B5A400ADB348 /* MainEventViewController.swift */,
+				DA11C2781D7B65CF00ADB348 /* ContactsViewController.swift */,
+				DA11C27A1D7B6F1700ADB348 /* MenuViewController.swift */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -372,6 +393,11 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = E5YV4NK229;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					DAE291DC1D6E432B005799CB = {
 						CreatedOnToolsVersion = 8.0;
@@ -453,6 +479,7 @@
 				DAE2923C1D71E39E005799CB /* Text.swift in Sources */,
 				DAE2922F1D71E39E005799CB /* Invitation+CoreDataProperties.swift in Sources */,
 				DAE292371D71E39E005799CB /* Option+CoreDataProperties.swift in Sources */,
+				DA11C27B1D7B6F1700ADB348 /* MenuViewController.swift in Sources */,
 				DA11C2721D761EA500ADB348 /* Theme.swift in Sources */,
 				DAE292431D71E3A9005799CB /* Chair+CoreDataProperties.swift in Sources */,
 				DAE292491D71E5B0005799CB /* DataController.swift in Sources */,
@@ -469,8 +496,10 @@
 				DA11C26D1D73AC4D00ADB348 /* CalendarController.swift in Sources */,
 				DAE2920B1D70DF8B005799CB /* HomeViewController.swift in Sources */,
 				DAE292471D71E578005799CB /* EventManager.swift in Sources */,
+				DA11C2791D7B65CF00ADB348 /* ContactsViewController.swift in Sources */,
 				DA11C2701D75183B00ADB348 /* CalendarDelegate.swift in Sources */,
 				DAE292301D71E39E005799CB /* Menu.swift in Sources */,
+				DA11C2741D77B5A400ADB348 /* MainEventViewController.swift in Sources */,
 				DA11C26B1D73A91C00ADB348 /* Day.swift in Sources */,
 				DAE2922E1D71E39E005799CB /* Invitation.swift in Sources */,
 				DAE2922B1D71E39E005799CB /* EventMisc+CoreDataProperties.swift in Sources */,
