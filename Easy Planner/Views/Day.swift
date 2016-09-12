@@ -37,7 +37,7 @@ class Day: UIView {
         
         var attrs : [String : AnyObject] = [NSFontAttributeName : UIFont.systemFont(ofSize: 15)]
         
-        let num : NSString = "\(number)"
+        let num : NSString = "\(number)" as NSString
         let size = num.size(attributes: attrs)
 
         let rectSize = sqrt(size.width * size.width + size.height * size.height)

@@ -16,6 +16,10 @@
 		DA11C2771D7B59E700ADB348 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA11C2761D7B59E700ADB348 /* MapKit.framework */; };
 		DA11C2791D7B65CF00ADB348 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA11C2781D7B65CF00ADB348 /* ContactsViewController.swift */; };
 		DA11C27B1D7B6F1700ADB348 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA11C27A1D7B6F1700ADB348 /* MenuViewController.swift */; };
+		DA11C27E1D7DE80900ADB348 /* Contact.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA11C27C1D7DE80800ADB348 /* Contact.storyboard */; };
+		DA11C2801D7DE84B00ADB348 /* NewContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA11C27F1D7DE84B00ADB348 /* NewContactViewController.swift */; };
+		DAC4CF621D7F65E600577376 /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAC4CF601D7F65E600577376 /* Menu.storyboard */; };
+		DAC4CF641D7F671D00577376 /* NewMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC4CF631D7F671D00577376 /* NewMenuViewController.swift */; };
 		DAE291CA1D6E432B005799CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE291C91D6E432B005799CB /* AppDelegate.swift */; };
 		DAE291CF1D6E432B005799CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAE291CD1D6E432B005799CB /* Main.storyboard */; };
 		DAE291D41D6E432B005799CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAE291D31D6E432B005799CB /* Assets.xcassets */; };
@@ -55,6 +59,8 @@
 		DAE292471D71E578005799CB /* EventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE292461D71E578005799CB /* EventManager.swift */; };
 		DAE292491D71E5B0005799CB /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE292481D71E5B0005799CB /* DataController.swift */; };
 		DAE2924C1D71EB7E005799CB /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE2924B1D71EB7E005799CB /* NotificationController.swift */; };
+		DAE732CE1D833DC700B58160 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE732CD1D833DC700B58160 /* Preferences.swift */; };
+		DAE732D01D83596200B58160 /* FieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE732CF1D83596200B58160 /* FieldViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +90,10 @@
 		DA11C2761D7B59E700ADB348 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		DA11C2781D7B65CF00ADB348 /* ContactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactsViewController.swift; path = "View Controller/ContactsViewController.swift"; sourceTree = "<group>"; };
 		DA11C27A1D7B6F1700ADB348 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuViewController.swift; path = "View Controller/MenuViewController.swift"; sourceTree = "<group>"; };
+		DA11C27D1D7DE80800ADB348 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Contact.storyboard; sourceTree = "<group>"; };
+		DA11C27F1D7DE84B00ADB348 /* NewContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewContactViewController.swift; path = "View Controller/NewContactViewController.swift"; sourceTree = "<group>"; };
+		DAC4CF611D7F65E600577376 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Menu.storyboard; sourceTree = "<group>"; };
+		DAC4CF631D7F671D00577376 /* NewMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewMenuViewController.swift; path = "View Controller/NewMenuViewController.swift"; sourceTree = "<group>"; };
 		DAE291C61D6E432B005799CB /* Easy Planner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Easy Planner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAE291C91D6E432B005799CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DAE291CE1D6E432B005799CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -139,6 +149,8 @@
 		DAE292461D71E578005799CB /* EventManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventManager.swift; path = CoreData/EventManager.swift; sourceTree = SOURCE_ROOT; };
 		DAE292481D71E5B0005799CB /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataController.swift; path = CoreData/DataController.swift; sourceTree = SOURCE_ROOT; };
 		DAE2924B1D71EB7E005799CB /* NotificationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationController.swift; path = Misc/NotificationController.swift; sourceTree = "<group>"; };
+		DAE732CD1D833DC700B58160 /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Preferences.swift; path = Misc/Preferences.swift; sourceTree = "<group>"; };
+		DAE732CF1D83596200B58160 /* FieldViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FieldViewController.swift; path = "View Controller/FieldViewController.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,7 +239,6 @@
 				DAE291C91D6E432B005799CB /* AppDelegate.swift */,
 				DAE291D31D6E432B005799CB /* Assets.xcassets */,
 				DAE291D81D6E432B005799CB /* Info.plist */,
-				DAE2924B1D71EB7E005799CB /* NotificationController.swift */,
 			);
 			path = "Easy Planner";
 			sourceTree = "<group>";
@@ -292,6 +303,8 @@
 				DAE291D51D6E432B005799CB /* LaunchScreen.storyboard */,
 				DAE291CD1D6E432B005799CB /* Main.storyboard */,
 				DAE2920F1D71E2DC005799CB /* Event.storyboard */,
+				DA11C27C1D7DE80800ADB348 /* Contact.storyboard */,
+				DAC4CF601D7F65E600577376 /* Menu.storyboard */,
 			);
 			name = "Storyboard & xib";
 			sourceTree = "<group>";
@@ -303,6 +316,9 @@
 				DA11C2731D77B5A400ADB348 /* MainEventViewController.swift */,
 				DA11C2781D7B65CF00ADB348 /* ContactsViewController.swift */,
 				DA11C27A1D7B6F1700ADB348 /* MenuViewController.swift */,
+				DA11C27F1D7DE84B00ADB348 /* NewContactViewController.swift */,
+				DAC4CF631D7F671D00577376 /* NewMenuViewController.swift */,
+				DAE732CF1D83596200B58160 /* FieldViewController.swift */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -319,6 +335,8 @@
 			isa = PBXGroup;
 			children = (
 				DA11C2711D761EA500ADB348 /* Theme.swift */,
+				DAE2924B1D71EB7E005799CB /* NotificationController.swift */,
+				DAE732CD1D833DC700B58160 /* Preferences.swift */,
 			);
 			name = Misc;
 			sourceTree = "<group>";
@@ -441,7 +459,9 @@
 				DAE291D71D6E432B005799CB /* LaunchScreen.storyboard in Resources */,
 				DAE292111D71E2DC005799CB /* Event.storyboard in Resources */,
 				DAE291D41D6E432B005799CB /* Assets.xcassets in Resources */,
+				DAC4CF621D7F65E600577376 /* Menu.storyboard in Resources */,
 				DAE291CF1D6E432B005799CB /* Main.storyboard in Resources */,
+				DA11C27E1D7DE80900ADB348 /* Contact.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,7 +486,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAC4CF641D7F671D00577376 /* NewMenuViewController.swift in Sources */,
 				DAE292421D71E3A9005799CB /* Chair.swift in Sources */,
+				DAE732D01D83596200B58160 /* FieldViewController.swift in Sources */,
 				DAE292311D71E39E005799CB /* Menu+CoreDataProperties.swift in Sources */,
 				DAE292351D71E39E005799CB /* Music+CoreDataProperties.swift in Sources */,
 				DAE2922A1D71E39E005799CB /* EventMisc.swift in Sources */,
@@ -483,6 +505,7 @@
 				DA11C2721D761EA500ADB348 /* Theme.swift in Sources */,
 				DAE292431D71E3A9005799CB /* Chair+CoreDataProperties.swift in Sources */,
 				DAE292491D71E5B0005799CB /* DataController.swift in Sources */,
+				DAE732CE1D833DC700B58160 /* Preferences.swift in Sources */,
 				DAE292361D71E39E005799CB /* Option.swift in Sources */,
 				DAE2922C1D71E39E005799CB /* Image.swift in Sources */,
 				DAE292291D71E39E005799CB /* Event+CoreDataProperties.swift in Sources */,
@@ -506,6 +529,7 @@
 				DAE292281D71E39E005799CB /* Event.swift in Sources */,
 				DA11C2691D7398E400ADB348 /* HeaderCalendar.swift in Sources */,
 				DAE2923A1D71E39E005799CB /* Tables.swift in Sources */,
+				DA11C2801D7DE84B00ADB348 /* NewContactViewController.swift in Sources */,
 				DAE292331D71E39E005799CB /* Misc+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -542,6 +566,22 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		DA11C27C1D7DE80800ADB348 /* Contact.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DA11C27D1D7DE80800ADB348 /* Base */,
+			);
+			name = Contact.storyboard;
+			sourceTree = "<group>";
+		};
+		DAC4CF601D7F65E600577376 /* Menu.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DAC4CF611D7F65E600577376 /* Base */,
+			);
+			name = Menu.storyboard;
+			sourceTree = "<group>";
+		};
 		DAE291CD1D6E432B005799CB /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -609,7 +649,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -652,7 +692,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";

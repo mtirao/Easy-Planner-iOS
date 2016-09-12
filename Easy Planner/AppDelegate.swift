@@ -8,16 +8,30 @@
 
 import UIKit
 import CoreData
+import CoreLocation
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
 
     var window: UIWindow?
+    var locationManager = CLLocationManager()
 
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    public func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
         
         _ = EventManager.sharedInstance
+        
+        
+        locationManager.delegate = self
+        
+        if CLLocationManager.authorizationStatus() == .authorizedAlways || CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
+            
+            locationManager.startUpdatingLocation()
+            
+        }else if CLLocationManager.authorizationStatus() == .notDetermined{
+            locationManager.requestWhenInUseAuthorization()
+            
+        }
+
         
         return true
     }
@@ -43,3 +57,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
    
 }
 
+//MARK: - Core Location Delegate Methods
+
+extension AppDelegate {
+    
+    @objc(locationManager:didChangeAuthorizationStatus:) func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        
+        if status == .authorizedAlways || status == .authorizedWhenInUse {
+            manager.startUpdatingLocation()
+        }else if CLLocationManager.authorizationStatus() == .denied{
+            manager.stopUpdatingLocation()
+        }
+
+        
+        
+    }
+    
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        let latitude = locations[0].coordinate.latitude
+        let longitude = locations[0].coordinate.longitude
+        
+        Preferences.latitude = latitude
+        Preferences.longitude = longitude
+        
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error)
+    }
+    
+}

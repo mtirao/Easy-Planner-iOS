@@ -34,7 +34,7 @@ extension HeaderCalendar {
         
         for i in 0...6 {
             
-            let dayName : NSString = dayOfWeek[i]
+            let dayName : NSString = dayOfWeek[i] as NSString
             
             let size = dayName.size(attributes: attrs)
             

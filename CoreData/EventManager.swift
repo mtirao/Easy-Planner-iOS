@@ -26,18 +26,24 @@ import CoreData
     }
   
     //MARK: - Event Management
-    func createEvent() -> Event {
+    func createEvent(forDate: Date) {
         
         let event : Event = NSEntityDescription.insertNewObject(forEntityName: "Event", into: self.managedObject) as! Event
         
         event.name = "NewEvent"
-        event.id = NSDate().timeIntervalSince1970
+        event.id =  NSNumber(value: NSDate().timeIntervalSince1970)
+        event.date = forDate as NSDate?
         
         self.currentEvent = event
         
         self.saveContext()
-        
-        return event
+    }
+    
+    func deleteCurrentEvent() {
+        if let event = self.currentEvent {
+            deleteEvent(event: event)
+            self.currentEvent = nil
+        }
     }
     
     func deleteEvent(event: Event) {
@@ -80,7 +86,7 @@ import CoreData
             let events = try self.managedObject.fetch(fetchRequest)
             self.nextEvents = events
             
-            NotificationCenter.default.post(name: "updatenextevent" as NSNotification.Name, object: nil, userInfo: nil)
+            NotificationCenter.default.post(name: NSNotification.Name("updatenextevent"), object: nil, userInfo: nil)
             
             return events
         }catch {

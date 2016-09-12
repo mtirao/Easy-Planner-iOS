@@ -11,17 +11,17 @@ import UIKit
 class CalendarController: UIViewController {
 
     private let headerHeight : CGFloat = 25
-    private let firstDay = 100
-    private var currentDate = Date()
+    let firstDay = 100
+    var currentDate = Date()
     
-    private let nameOfMonth = ["JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE", "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER"]
+    let nameOfMonth = ["JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE", "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER"]
     
-    private let currentCalendar = NSCalendar.current
+    let currentCalendar = NSCalendar.current
     
-    private var selectedDay : Day?
+    var selectedDay : Day?
     
-    private var currentMonth : Int = 0
-    private var currentYear : Int = 0
+    var currentMonth : Int = 0
+    var currentYear : Int = 0
     
     var delegate: CalendarControllerDelegate?
     
@@ -50,10 +50,9 @@ class CalendarController: UIViewController {
         }
         
     }
-    
+   
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
         
         if alreadyLoaded {
             return
@@ -84,10 +83,13 @@ class CalendarController: UIViewController {
         calendarForCurrentDate()
         
         alreadyLoaded = true
+
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
     }
 
@@ -136,6 +138,7 @@ extension CalendarController {
     
     func firstDateOfCurrentMonth() -> Date {
         
+        let currentCalendar = Calendar.current
         let unitFlags = Set<Calendar.Component>([.weekday, .year, .month, .day ])
         
         var comp = currentCalendar.dateComponents(unitFlags, from: self.currentDate)
@@ -143,16 +146,30 @@ extension CalendarController {
         
         return currentCalendar.date(from: comp)!
     }
-
+    
+    func lastDateOfCurrentMonth() -> Date {
+        
+        let currentCalendar = Calendar.current
+        let unitFlags = Set<Calendar.Component>([.year, .month, .day ])
+        var comp = currentCalendar.dateComponents(unitFlags, from: Date())
+        
+        let dayRange = currentCalendar.range(of: .day, in: .month, for: Date())
+        
+        comp.setValue(dayRange?.upperBound, for: .day)
+        
+        return currentCalendar.date(from: comp)!
+        
+    }
+    
     func isNewMonth(date: Date, day: Int) -> Bool {
         
         let unitFlags = Set<Calendar.Component>([.weekday, .year, .month, .day ])
-        var comp = currentCalendar.dateComponents(unitFlags, from: date)
+        var comp = self.currentCalendar.dateComponents(unitFlags, from: date)
         
         let month = comp.month!
         
         comp.day = day
-        let newDate = currentCalendar.date(from: comp)
+        let newDate = self.currentCalendar.date(from: comp)
         
         var comp1 = currentCalendar.dateComponents(unitFlags, from: newDate!)
         let month1 = comp1.month!
@@ -244,5 +261,9 @@ extension CalendarController {
         self.delegate?.daySelectionChange(selected: false)
         
     }
+    
+    
+    
+
     
 }
