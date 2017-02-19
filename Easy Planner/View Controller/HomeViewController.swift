@@ -130,14 +130,12 @@ extension HomeViewController: UITableViewDataSource {
     
     func firstDateOfCurrentMonth(forDate: Date) -> Date {
         
-        var currentCalendar = Calendar.current
+        let currentCalendar = Calendar.current
         let unitFlags = Set<Calendar.Component>([.year, .month, .day, .hour, .minute, .second])
         var comp = currentCalendar.dateComponents(unitFlags, from: forDate)
         comp.setValue(0, for: .hour)
         comp.setValue(0, for: .minute)
         comp.setValue(0, for: .second)
-        
-        currentCalendar.timeZone = TimeZone(secondsFromGMT: 0)!
         
         return currentCalendar.date(from: comp)!
         
@@ -145,17 +143,36 @@ extension HomeViewController: UITableViewDataSource {
    
     func lastDateOfCurrentMonth(forDate: Date) -> Date {
         
-        var currentCalendar = Calendar.current
+        let currentCalendar = Calendar.current
         let unitFlags = Set<Calendar.Component>([.year, .month, .day, .hour, .minute, .second])
         var comp = currentCalendar.dateComponents(unitFlags, from: forDate)
         comp.setValue(23, for: .hour)
         comp.setValue(59, for: .minute)
         comp.setValue(59, for: .second)
         
-        currentCalendar.timeZone = TimeZone(secondsFromGMT: 0)!
         
         return currentCalendar.date(from: comp)!
 
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        
+        switch editingStyle {
+        case .delete:
+            if let event = self.events?[indexPath.row] {
+                EventManager.sharedInstance.deleteEvent(event: event)
+                self.events?.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            }
+            break
+        default: break
+            
+        }
+        
     }
     
     func tableView(_ tableView: UITableView,
@@ -173,14 +190,11 @@ extension HomeViewController: UITableViewDataSource {
             
             cell?.eventName.text = event.name ?? ""
             
-            let formatter = DateFormatter()
-            formatter.dateFormat = "HH:mm"
-            
-            cell?.eventTime.text = formatter.string(from: event.date as! Date)
+            cell?.eventTime.text = DateHelper.string(from: event.date! as Date , timeOnly: true)
             
             if let place = event.place {
                 
-                cell?.eventLoc.text = "\(place.Country ?? ""), \(place.City ?? ""), \(place.Address ?? "")"
+                cell?.eventLoc.text = "\(place.City ?? ""), \(place.Address ?? "")"
                 
             }
         }

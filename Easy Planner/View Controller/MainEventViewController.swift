@@ -22,12 +22,12 @@ class MainEventViewController: UIViewController {
     
     var contactViewController: ContactsViewController?
 
-    var eventDate : FieldViewController?
     var eventName : FieldViewController?
     
     @IBOutlet weak var mapView : MKMapView!
     @IBOutlet weak var timePicker : UIDatePicker!
     @IBOutlet weak var locationButton : UIButton!
+    @IBOutlet weak var directionsButton : UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +36,15 @@ class MainEventViewController: UIViewController {
         
         locationButton?.backgroundColor = UIColor.white
         locationButton?.layer.cornerRadius = 5
-        locationButton?.tintColor = UIColor.blue
+        locationButton?.tintColor = self.view.tintColor
+        locationButton?.layer.shadowOffset = CGSize(width: 5, height: 5)
+        locationButton?.layer.shadowColor = UIColor.gray.cgColor
+        
+        directionsButton?.backgroundColor = UIColor.white
+        directionsButton?.layer.cornerRadius = 5
+        directionsButton?.tintColor = self.view.tintColor
+        directionsButton?.layer.shadowOffset = CGSize(width: 5, height: 5)
+        directionsButton?.layer.shadowColor = UIColor.gray.cgColor
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -56,23 +64,30 @@ class MainEventViewController: UIViewController {
         }
         
         if let date = EventManager.sharedInstance.currentEvent?.date {
-            
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateStyle = .short
-            
-            eventDate?.staticText.text = dateFormatter.string(from: date as Date)
             timePicker.date = date as Date
             
         }
         
         
+        if let place = EventManager.sharedInstance.currentEvent?.place {
+            
+            if let latitude = place.latitude?.doubleValue, let longitude = place.longitude?.doubleValue {
+                if latitude != 0 && longitude != 0 {
+                    self.addAnnotation(for: CLLocationCoordinate2D(latitude: latitude, longitude: longitude))
+                    let initialLocation = CLLocation(latitude: latitude, longitude: longitude)
+                    self.centerMapOnLocation(location: initialLocation)
+                }
+            }
+        }else {
         
-        let latitude = Preferences.latitude ?? 0
-        let longitude = Preferences.longitude ?? 0
+            let latitude = Preferences.latitude ?? 0
+            let longitude = Preferences.longitude ?? 0
         
-        if latitude != 0 && longitude != 0 {
-            let initialLocation = CLLocation(latitude: latitude, longitude: longitude)
-            self.centerMapOnLocation(location: initialLocation)
+            if latitude != 0 && longitude != 0 {
+                let initialLocation = CLLocation(latitude: latitude, longitude: longitude)
+                self.centerMapOnLocation(location: initialLocation)
+            }
+            
         }
     }
     
@@ -97,9 +112,7 @@ class MainEventViewController: UIViewController {
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == eventDateSegue {
-            self.eventDate = segue.destination as? FieldViewController
-        }else if segue.identifier == eventNameSegue {
+       if segue.identifier == eventNameSegue {
             self.eventName = segue.destination as? FieldViewController
         }
     }
@@ -108,6 +121,7 @@ class MainEventViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     
 
 }
@@ -156,6 +170,9 @@ extension MainEventViewController : MKMapViewDelegate {
                 
                     place?.City = locality
                     place?.Country = country
+                    
+                    place?.latitude = NSNumber(value: location.latitude)
+                    place?.longitude = NSNumber(value: location.longitude)
                 
                     if let locatedAt = placemark.addressDictionary {
                         if let street = locatedAt["Street"] as? String {
@@ -244,7 +261,7 @@ extension MainEventViewController : MKMapViewDelegate {
         }
     }
     
-    @IBAction func useCurrentLocation(sender: Any?) {
+    @IBAction func useCurrentLocation(_ sender: AnyObject) {
         
         if let map = self.mapView {
             if map.isUserLocationVisible {

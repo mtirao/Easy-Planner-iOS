@@ -18,8 +18,16 @@
 		DA11C27B1D7B6F1700ADB348 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA11C27A1D7B6F1700ADB348 /* MenuViewController.swift */; };
 		DA11C27E1D7DE80900ADB348 /* Contact.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA11C27C1D7DE80800ADB348 /* Contact.storyboard */; };
 		DA11C2801D7DE84B00ADB348 /* NewContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA11C27F1D7DE84B00ADB348 /* NewContactViewController.swift */; };
+		DA8AF7801D89D52F006DDCF3 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8AF77F1D89D52F006DDCF3 /* DateHelper.swift */; };
 		DAC4CF621D7F65E600577376 /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAC4CF601D7F65E600577376 /* Menu.storyboard */; };
 		DAC4CF641D7F671D00577376 /* NewMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC4CF631D7F671D00577376 /* NewMenuViewController.swift */; };
+		DAD3621D1D9DBD5E00B692F9 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD362181D9DBD5E00B692F9 /* Network.swift */; };
+		DAD3621E1D9DBD5E00B692F9 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD362191D9DBD5E00B692F9 /* NetworkClient.swift */; };
+		DAD3621F1D9DBD5E00B692F9 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD3621A1D9DBD5E00B692F9 /* Parser.swift */; };
+		DAD362201D9DBD5E00B692F9 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD3621B1D9DBD5E00B692F9 /* Request.swift */; };
+		DAD362211D9DBD5E00B692F9 /* TrackEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD3621C1D9DBD5E00B692F9 /* TrackEvent.swift */; };
+		DAD362231D9E9E0200B692F9 /* SocialClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD362221D9E9E0200B692F9 /* SocialClient.swift */; };
+		DAD362261D9EB14700B692F9 /* Cloud.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAD362241D9EB14700B692F9 /* Cloud.storyboard */; };
 		DAE291CA1D6E432B005799CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE291C91D6E432B005799CB /* AppDelegate.swift */; };
 		DAE291CF1D6E432B005799CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAE291CD1D6E432B005799CB /* Main.storyboard */; };
 		DAE291D41D6E432B005799CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAE291D31D6E432B005799CB /* Assets.xcassets */; };
@@ -92,8 +100,17 @@
 		DA11C27A1D7B6F1700ADB348 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuViewController.swift; path = "View Controller/MenuViewController.swift"; sourceTree = "<group>"; };
 		DA11C27D1D7DE80800ADB348 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Contact.storyboard; sourceTree = "<group>"; };
 		DA11C27F1D7DE84B00ADB348 /* NewContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewContactViewController.swift; path = "View Controller/NewContactViewController.swift"; sourceTree = "<group>"; };
+		DA8AF77F1D89D52F006DDCF3 /* DateHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateHelper.swift; path = Misc/DateHelper.swift; sourceTree = "<group>"; };
 		DAC4CF611D7F65E600577376 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Menu.storyboard; sourceTree = "<group>"; };
 		DAC4CF631D7F671D00577376 /* NewMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewMenuViewController.swift; path = "View Controller/NewMenuViewController.swift"; sourceTree = "<group>"; };
+		DAD362161D9DA9BE00B692F9 /* Easy Planner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Easy Planner.entitlements"; sourceTree = "<group>"; };
+		DAD362181D9DBD5E00B692F9 /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Network.swift; path = Network/Network.swift; sourceTree = "<group>"; };
+		DAD362191D9DBD5E00B692F9 /* NetworkClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkClient.swift; path = Network/NetworkClient.swift; sourceTree = "<group>"; };
+		DAD3621A1D9DBD5E00B692F9 /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Parser.swift; path = Network/Parser.swift; sourceTree = "<group>"; };
+		DAD3621B1D9DBD5E00B692F9 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Network/Request.swift; sourceTree = "<group>"; };
+		DAD3621C1D9DBD5E00B692F9 /* TrackEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrackEvent.swift; path = Network/TrackEvent.swift; sourceTree = "<group>"; };
+		DAD362221D9E9E0200B692F9 /* SocialClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SocialClient.swift; path = Network/SocialClient.swift; sourceTree = "<group>"; };
+		DAD362251D9EB14700B692F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Cloud.storyboard; sourceTree = "<group>"; };
 		DAE291C61D6E432B005799CB /* Easy Planner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Easy Planner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAE291C91D6E432B005799CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DAE291CE1D6E432B005799CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -205,6 +222,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DAD362171D9DBD1200B692F9 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				DAD362181D9DBD5E00B692F9 /* Network.swift */,
+				DAD362191D9DBD5E00B692F9 /* NetworkClient.swift */,
+				DAD3621A1D9DBD5E00B692F9 /* Parser.swift */,
+				DAD3621B1D9DBD5E00B692F9 /* Request.swift */,
+				DAD3621C1D9DBD5E00B692F9 /* TrackEvent.swift */,
+				DAD362221D9E9E0200B692F9 /* SocialClient.swift */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
 		DAE291BD1D6E432A005799CB = {
 			isa = PBXGroup;
 			children = (
@@ -229,6 +259,8 @@
 		DAE291C81D6E432B005799CB /* Easy Planner */ = {
 			isa = PBXGroup;
 			children = (
+				DAD362161D9DA9BE00B692F9 /* Easy Planner.entitlements */,
+				DAD362171D9DBD1200B692F9 /* Network */,
 				DA11C26E1D75180A00ADB348 /* Protocol */,
 				DAE2924A1D71EB4F005799CB /* Misc */,
 				DAE2920C1D70E14F005799CB /* Cells */,
@@ -305,6 +337,7 @@
 				DAE2920F1D71E2DC005799CB /* Event.storyboard */,
 				DA11C27C1D7DE80800ADB348 /* Contact.storyboard */,
 				DAC4CF601D7F65E600577376 /* Menu.storyboard */,
+				DAD362241D9EB14700B692F9 /* Cloud.storyboard */,
 			);
 			name = "Storyboard & xib";
 			sourceTree = "<group>";
@@ -337,6 +370,7 @@
 				DA11C2711D761EA500ADB348 /* Theme.swift */,
 				DAE2924B1D71EB7E005799CB /* NotificationController.swift */,
 				DAE732CD1D833DC700B58160 /* Preferences.swift */,
+				DA8AF77F1D89D52F006DDCF3 /* DateHelper.swift */,
 			);
 			name = Misc;
 			sourceTree = "<group>";
@@ -404,7 +438,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Marcos Tirao";
 				TargetAttributes = {
 					DAE291C51D6E432A005799CB = {
@@ -413,6 +447,9 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+							com.apple.Push = {
 								enabled = 1;
 							};
 						};
@@ -459,6 +496,7 @@
 				DAE291D71D6E432B005799CB /* LaunchScreen.storyboard in Resources */,
 				DAE292111D71E2DC005799CB /* Event.storyboard in Resources */,
 				DAE291D41D6E432B005799CB /* Assets.xcassets in Resources */,
+				DAD362261D9EB14700B692F9 /* Cloud.storyboard in Resources */,
 				DAC4CF621D7F65E600577376 /* Menu.storyboard in Resources */,
 				DAE291CF1D6E432B005799CB /* Main.storyboard in Resources */,
 				DA11C27E1D7DE80900ADB348 /* Contact.storyboard in Resources */,
@@ -500,6 +538,7 @@
 				DAE292441D71E3A9005799CB /* Contact.swift in Sources */,
 				DAE2923C1D71E39E005799CB /* Text.swift in Sources */,
 				DAE2922F1D71E39E005799CB /* Invitation+CoreDataProperties.swift in Sources */,
+				DAD3621D1D9DBD5E00B692F9 /* Network.swift in Sources */,
 				DAE292371D71E39E005799CB /* Option+CoreDataProperties.swift in Sources */,
 				DA11C27B1D7B6F1700ADB348 /* MenuViewController.swift in Sources */,
 				DA11C2721D761EA500ADB348 /* Theme.swift in Sources */,
@@ -507,9 +546,13 @@
 				DAE292491D71E5B0005799CB /* DataController.swift in Sources */,
 				DAE732CE1D833DC700B58160 /* Preferences.swift in Sources */,
 				DAE292361D71E39E005799CB /* Option.swift in Sources */,
+				DA8AF7801D89D52F006DDCF3 /* DateHelper.swift in Sources */,
+				DAD3621E1D9DBD5E00B692F9 /* NetworkClient.swift in Sources */,
 				DAE2922C1D71E39E005799CB /* Image.swift in Sources */,
 				DAE292291D71E39E005799CB /* Event+CoreDataProperties.swift in Sources */,
 				DAE292071D70D6EF005799CB /* EasyPlanner.xcdatamodeld in Sources */,
+				DAD362231D9E9E0200B692F9 /* SocialClient.swift in Sources */,
+				DAD3621F1D9DBD5E00B692F9 /* Parser.swift in Sources */,
 				DAE291CA1D6E432B005799CB /* AppDelegate.swift in Sources */,
 				DAE292451D71E3A9005799CB /* Contact+CoreDataProperties.swift in Sources */,
 				DAE292381D71E39E005799CB /* Place.swift in Sources */,
@@ -519,12 +562,14 @@
 				DA11C26D1D73AC4D00ADB348 /* CalendarController.swift in Sources */,
 				DAE2920B1D70DF8B005799CB /* HomeViewController.swift in Sources */,
 				DAE292471D71E578005799CB /* EventManager.swift in Sources */,
+				DAD362201D9DBD5E00B692F9 /* Request.swift in Sources */,
 				DA11C2791D7B65CF00ADB348 /* ContactsViewController.swift in Sources */,
 				DA11C2701D75183B00ADB348 /* CalendarDelegate.swift in Sources */,
 				DAE292301D71E39E005799CB /* Menu.swift in Sources */,
 				DA11C2741D77B5A400ADB348 /* MainEventViewController.swift in Sources */,
 				DA11C26B1D73A91C00ADB348 /* Day.swift in Sources */,
 				DAE2922E1D71E39E005799CB /* Invitation.swift in Sources */,
+				DAD362211D9DBD5E00B692F9 /* TrackEvent.swift in Sources */,
 				DAE2922B1D71E39E005799CB /* EventMisc+CoreDataProperties.swift in Sources */,
 				DAE292281D71E39E005799CB /* Event.swift in Sources */,
 				DA11C2691D7398E400ADB348 /* HeaderCalendar.swift in Sources */,
@@ -582,6 +627,14 @@
 			name = Menu.storyboard;
 			sourceTree = "<group>";
 		};
+		DAD362241D9EB14700B692F9 /* Cloud.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DAD362251D9EB14700B692F9 /* Base */,
+			);
+			name = Cloud.storyboard;
+			sourceTree = "<group>";
+		};
 		DAE291CD1D6E432B005799CB /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -627,6 +680,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -676,6 +730,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -704,6 +759,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Easy Planner/Easy Planner.entitlements";
 				DEVELOPMENT_TEAM = E5YV4NK229;
 				INFOPLIST_FILE = "Easy Planner/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
@@ -718,6 +774,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Easy Planner/Easy Planner.entitlements";
 				DEVELOPMENT_TEAM = E5YV4NK229;
 				INFOPLIST_FILE = "Easy Planner/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
