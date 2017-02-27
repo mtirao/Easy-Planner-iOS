@@ -15,7 +15,7 @@ import CoreData
 extension Option {
 
     @NSManaged var text: String?
-    @NSManaged var type: NSNumber?
+    @NSManaged var name: String?
     @NSManaged var menu: Menu?
 
 }

@@ -8,37 +8,48 @@
 
 import UIKit
 
-
+fileprivate let nameSegue = "nameSegue"
+fileprivate let phoneSegue = "phoneSegue"
+fileprivate let emailSegue = "emailSegue"
 
 class NewContactViewController: UIViewController {
 
     var currentContact : Contact?
+    var editting = false;
     
     @IBOutlet weak var firstName: UITextField!
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var phone: UITextField!
-    @IBOutlet weak var titleLabel: UILabel!
     
-    var editting = false;
+    
+    var nameField : FieldViewController?
+    var phoneField : FieldViewController?
+    var emailField: FieldViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.navigationController?.navigationBar.topItem?.title = "";
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         if(editting) {
-            titleLabel?.text = "Edit Contact";
+            self.navigationItem.title = "Edit Contact";
         }else {
-            titleLabel?.text = "New Contact";
+            self.navigationItem.title = "New Contact";
         }
         
-        self.firstName?.text = currentContact?.name
-        self.email?.text = currentContact?.email
-        self.phone?.text = currentContact?.phone
+        
+        self.nameField?.editText.text = currentContact?.name
+        self.emailField?.editText.text = currentContact?.email
+        self.phoneField?.editText.text = currentContact?.phone
+        
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain
+            , target: nil, action: nil)
+        
+        //self.navigationController?.navigationItems.backBarButtonItem?.title = "";
         
     }
     
@@ -46,9 +57,9 @@ class NewContactViewController: UIViewController {
         super.viewWillDisappear(animated);
         
         
-        currentContact?.name = self.firstName?.text;
-        currentContact?.email = self.email?.text;
-        currentContact?.phone = self.phone?.text;
+        currentContact?.name = self.nameField?.editText.text;
+        currentContact?.email = self.emailField?.editText.text;
+        currentContact?.phone = self.phoneField?.editText.text;
     }
     
     override func didReceiveMemoryWarning() {
@@ -56,6 +67,18 @@ class NewContactViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == nameSegue {
+            self.nameField = segue.destination as? FieldViewController
+        }else if segue.identifier == phoneSegue {
+            self.phoneField = segue.destination as? FieldViewController
+        }else if segue.identifier == emailSegue {
+            self.emailField = segue.destination as? FieldViewController
+        }
+        
+    }
     
 }
 

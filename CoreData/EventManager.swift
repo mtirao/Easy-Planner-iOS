@@ -247,7 +247,7 @@ import CoreData
     func optionForMenu(menu: Menu) -> [Option] {
         let fetchRequest = NSFetchRequest<Option>(entityName: "Option")
         fetchRequest.predicate = NSPredicate(format: "menu == %@", menu)
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "type", ascending: true)]
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
         
         do {
             let options = try self.managedObject.fetch(fetchRequest)

@@ -19,6 +19,7 @@
 		DA11C27E1D7DE80900ADB348 /* Contact.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA11C27C1D7DE80800ADB348 /* Contact.storyboard */; };
 		DA11C2801D7DE84B00ADB348 /* NewContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA11C27F1D7DE84B00ADB348 /* NewContactViewController.swift */; };
 		DA8AF7801D89D52F006DDCF3 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8AF77F1D89D52F006DDCF3 /* DateHelper.swift */; };
+		DA99C78F1E64656800A6EB0E /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA99C78E1E64656800A6EB0E /* CustomButton.swift */; };
 		DAC4CF621D7F65E600577376 /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAC4CF601D7F65E600577376 /* Menu.storyboard */; };
 		DAC4CF641D7F671D00577376 /* NewMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC4CF631D7F671D00577376 /* NewMenuViewController.swift */; };
 		DAD3621D1D9DBD5E00B692F9 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD362181D9DBD5E00B692F9 /* Network.swift */; };
@@ -101,6 +102,7 @@
 		DA11C27D1D7DE80800ADB348 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Contact.storyboard; sourceTree = "<group>"; };
 		DA11C27F1D7DE84B00ADB348 /* NewContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewContactViewController.swift; path = "View Controller/NewContactViewController.swift"; sourceTree = "<group>"; };
 		DA8AF77F1D89D52F006DDCF3 /* DateHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateHelper.swift; path = Misc/DateHelper.swift; sourceTree = "<group>"; };
+		DA99C78E1E64656800A6EB0E /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomButton.swift; path = Misc/CustomButton.swift; sourceTree = "<group>"; };
 		DAC4CF611D7F65E600577376 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Menu.storyboard; sourceTree = "<group>"; };
 		DAC4CF631D7F671D00577376 /* NewMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewMenuViewController.swift; path = "View Controller/NewMenuViewController.swift"; sourceTree = "<group>"; };
 		DAD362161D9DA9BE00B692F9 /* Easy Planner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Easy Planner.entitlements"; sourceTree = "<group>"; };
@@ -371,6 +373,7 @@
 				DAE2924B1D71EB7E005799CB /* NotificationController.swift */,
 				DAE732CD1D833DC700B58160 /* Preferences.swift */,
 				DA8AF77F1D89D52F006DDCF3 /* DateHelper.swift */,
+				DA99C78E1E64656800A6EB0E /* CustomButton.swift */,
 			);
 			name = Misc;
 			sourceTree = "<group>";
@@ -559,6 +562,7 @@
 				DAE292341D71E39E005799CB /* Music.swift in Sources */,
 				DAE2920E1D70E1AF005799CB /* HomeTableViewCell.swift in Sources */,
 				DAE2923B1D71E39E005799CB /* Tables+CoreDataProperties.swift in Sources */,
+				DA99C78F1E64656800A6EB0E /* CustomButton.swift in Sources */,
 				DA11C26D1D73AC4D00ADB348 /* CalendarController.swift in Sources */,
 				DAE2920B1D70DF8B005799CB /* HomeViewController.swift in Sources */,
 				DAE292471D71E578005799CB /* EventManager.swift in Sources */,

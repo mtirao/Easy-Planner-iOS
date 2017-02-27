@@ -32,8 +32,7 @@ class MainEventViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Contacts", style: .plain, target: self, action: #selector(MainEventViewController.contactAction))
-        
+       
         locationButton?.backgroundColor = UIColor.white
         locationButton?.layer.cornerRadius = 5
         locationButton?.tintColor = self.view.tintColor
@@ -126,21 +125,6 @@ class MainEventViewController: UIViewController {
 
 }
 
-//MARK: - Action Methods
-extension MainEventViewController {
-    
-    func contactAction() {
-        
-        if contactViewController == nil {
-            self.contactViewController = self.storyboard?.instantiateViewController(withIdentifier: contactViewControllerIdentifier) as? ContactsViewController
-        }
-        
-        if let contact = self.contactViewController {
-            self.navigationController?.pushViewController(contact, animated: true)
-        }
-    }
-    
-}
 
 extension MainEventViewController : MKMapViewDelegate {
     

@@ -16,8 +16,6 @@ extension Menu {
 
     @NSManaged var menuname: String?
     @NSManaged var price: NSDecimalNumber?
-    @NSManaged var priceGroup: NSNumber?
-    @NSManaged var selected: NSNumber?
     @NSManaged var event: Event?
     @NSManaged var option: NSSet?
 

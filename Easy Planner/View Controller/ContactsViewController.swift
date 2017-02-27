@@ -10,47 +10,30 @@ import UIKit
 import Contacts
 import ContactsUI
 
-let menuViewControllerIdentifier = "menuViewControllerIdentifier"
-let contactCell = "contactCell"
+fileprivate let contactCell = "contactCell"
 
-let contactDetailSegue = "contactDetailSegue"
+fileprivate let contactDetailSegue = "contactDetailSegue"
+fileprivate let addContactSegue = "addContactSegue"
 
 class ContactsViewController: UITableViewController, CNContactPickerDelegate {
 
-    var menuViewController: MenuViewController?
-    
-    var addressBook : UIBarButtonItem
-    var add : UIBarButtonItem
-    var flexible : UIBarButtonItem
-    
     var contacts :[Contact]?
     
-    required init?(coder aDecoder: NSCoder) {
-        
-        addressBook = UIBarButtonItem(title: "Contact", style: .plain, target: nil, action: #selector(ContactsViewController.addressBookAction))
-        add = UIBarButtonItem(barButtonSystemItem: .add, target: nil, action: #selector(ContactsViewController.addNewContactAction))
-        flexible = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        
-        super.init(coder: aDecoder)
-        
-        addressBook.target = self
-        add.target = self
-    }
+    @IBOutlet weak var toolbar: UIToolbar!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Menu", style: .plain, target: self, action: #selector(ContactsViewController.menuAction))
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.navigationController?.navigationBar.topItem?.title = "Event's contact"
-
         
         
         self.navigationController?.setToolbarHidden(false, animated: true)
-        self.navigationController?.toolbar.setItems([addressBook, flexible, add], animated: true)
+        self.navigationController?.toolbar.setItems(toolbar.items, animated: true)
+        
         
         if let event = EventManager.sharedInstance.currentEvent {
             self.contacts = EventManager.sharedInstance.contactsForEvent(event: event)
@@ -82,6 +65,18 @@ class ContactsViewController: UITableViewController, CNContactPickerDelegate {
                 
             }
             
+        }else if segue.identifier == addContactSegue {
+            
+            if let contactDetail = segue.destination as? NewContactViewController {
+                contactDetail.editting = false;
+                
+                if let event = EventManager.sharedInstance.currentEvent {
+                    contactDetail.currentContact = EventManager.sharedInstance.addContactToEvent(event: event);
+                }
+                
+            }
+
+        
         }
         
         
@@ -94,7 +89,7 @@ class ContactsViewController: UITableViewController, CNContactPickerDelegate {
 //MARK: - Contacts view controller action methods
 extension ContactsViewController {
     
-    func addressBookAction() {
+    @IBAction func addressBookAction(sender: Any) {
         
         let addressBookController = CNContactPickerViewController()
         addressBookController.delegate = self
@@ -102,31 +97,6 @@ extension ContactsViewController {
         
         self.present(addressBookController, animated: true, completion: nil)
         
-    }
-    
-    func addNewContactAction() {
-        
-        let storyboard = UIStoryboard(name: "Contact", bundle: nil)
-        if let viewController = storyboard.instantiateInitialViewController() as? NewContactViewController {
-            viewController.editting = false;
-            if let event = EventManager.sharedInstance.currentEvent {
-                viewController.currentContact = EventManager.sharedInstance.addContactToEvent(event: event);
-            }
-            
-            self.present(viewController, animated: true, completion: nil)
-        }
-        
-    }
-    
-    func menuAction() {
-        
-        if menuViewController == nil {
-            self.menuViewController = self.storyboard?.instantiateViewController(withIdentifier: menuViewControllerIdentifier) as? MenuViewController
-        }
-        
-        if let contact = self.menuViewController {
-            self.navigationController?.pushViewController(contact, animated: true)
-        }
     }
     
 }
