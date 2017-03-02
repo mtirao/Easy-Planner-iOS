@@ -30,12 +30,43 @@ class NewMenuViewController: UIViewController, UITableViewDataSource, UITableVie
     var menuDetailDescription : FieldViewController?
     
     @IBOutlet weak var detailTable: UITableView!
-        
+    @IBOutlet weak var nextButtonConstraint: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(NewMenuViewController.keyboardWillShow(notification:)), name:NSNotification.Name.UIKeyboardWillShow, object: nil);
+        NotificationCenter.default.addObserver(self, selector: #selector(NewMenuViewController.keyboardWillHide(notification:)), name:NSNotification.Name.UIKeyboardWillHide, object: nil);
        
     }
-
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            
+            if self.view.tag == 1 {
+                UIView.animate(withDuration: 1.0, animations: {
+                    self.nextButtonConstraint.constant = keyboardSize.height
+                })
+            }
+            
+        }
+        
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        
+        if self.view.tag == 1 {
+            UIView.animate(withDuration: 1.0, animations: {
+                self.nextButtonConstraint.constant = 0
+            })
+        }
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -46,7 +77,8 @@ class NewMenuViewController: UIViewController, UITableViewDataSource, UITableVie
         }
         
         menuName?.editText.text = currentMenu?.menuname
-        menuPrice?.editText.text = currentMenu?.price?.stringValue
+        
+        menuPrice?.data = currentMenu?.price?.stringValue as NSString?
         
         if self.view.tag == menuDetailTag {
             menuDetail = EventManager.sharedInstance.optionForMenu(menu: currentMenu!)
@@ -56,6 +88,7 @@ class NewMenuViewController: UIViewController, UITableViewDataSource, UITableVie
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
+        currentMenu?.menuname = menuName?.editText.text
         
     }
     
@@ -71,12 +104,16 @@ class NewMenuViewController: UIViewController, UITableViewDataSource, UITableVie
         
         if segue.identifier == menuDetailNameSegue {
             menuDetailName = segue.destination as? FieldViewController
+            menuDetailName?.fieldType = .Text
         }else if segue.identifier == menuPriceSegue {
             menuPrice = segue.destination as? FieldViewController
+            menuPrice?.fieldType = .Currency
         }else if segue.identifier == menuNameSegue {
             menuName = segue.destination as? FieldViewController
+            menuName?.fieldType = .Text
         }else if segue.identifier == menuDetailDescriptionSegue {
             menuDetailDescription = segue.destination as? FieldViewController
+            menuDetailDescription?.fieldType = .Text
         }else if segue.identifier == showDetailSegue {
             if let destination = segue.destination as? NewMenuViewController {
                 destination.currentMenu = currentMenu

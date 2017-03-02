@@ -15,7 +15,7 @@
                         <viewControllerLayoutGuide type="top" id="APf-uh-0R3"/>
                         <viewControllerLayoutGuide type="bottom" id="eV9-YE-4N3"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="HYU-Th-Bvj">
+                    <view key="view" tag="1" contentMode="scaleToFill" id="HYU-Th-Bvj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -97,6 +97,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="5jH-Qg-exa"/>
+                    <connections>
+                        <outlet property="nextButtonConstraint" destination="SCI-ah-c4r" id="1yc-QU-OIC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kEQ-73-c0t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -201,7 +204,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hot-QW-cFW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1361" y="591"/>
+            <point key="canvasLocation" x="1489" y="512"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="frQ-ht-mjR">
@@ -248,6 +251,10 @@
         <scene sceneID="6eF-cG-2IZ">
             <objects>
                 <viewController id="xkN-t6-5iU" customClass="FieldViewController" customModule="Easy_Planner" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="E1g-sq-rE5"/>
+                        <viewControllerLayoutGuide type="bottom" id="Mvq-aE-74Y"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="bgg-MU-tmb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -297,6 +304,10 @@
         <scene sceneID="KAh-AP-x9M">
             <objects>
                 <viewController id="fzS-PU-J6o" customClass="FieldViewController" customModule="Easy_Planner" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xp3-Jy-RnP"/>
+                        <viewControllerLayoutGuide type="bottom" id="5H0-V1-9FF"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="37J-nD-Qag">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -348,6 +359,10 @@
         <scene sceneID="oMv-u0-OOL">
             <objects>
                 <viewController id="puY-9Q-n3e" customClass="FieldViewController" customModule="Easy_Planner" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3w5-c3-PPZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="DEE-gX-cKP"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="g1s-jd-e06">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -361,7 +376,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Menu price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9YD-cl-72q">
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done"/>
                                 <connections>
                                     <outlet property="delegate" destination="puY-9Q-n3e" id="gQ9-JC-IlI"/>
                                 </connections>
@@ -399,6 +414,10 @@
         <scene sceneID="IsU-d2-idS">
             <objects>
                 <viewController id="d4U-wa-KSE" customClass="FieldViewController" customModule="Easy_Planner" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oMU-eZ-VoR"/>
+                        <viewControllerLayoutGuide type="bottom" id="O4C-oK-8tb"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kZb-XP-x1b">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
