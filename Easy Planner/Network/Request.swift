@@ -8,16 +8,12 @@
 
 import UIKit
 
-enum HTTPMethod : String {
-    case GET = "GET"
-    case POST = "POST"
-}
 
-func makeRequest(url: String, method:HTTPMethod = .GET, parameters: [String : String]? = nil,  completion:@escaping (NSData?) -> Void) {
+func makeRequest(url: String, parameters: [String : String]? = nil,  completion:@escaping (Data?) -> Void) {
     let network = Request.sharedInstance
     
-    if let httpUrl = NSURL(string: url, relativeTo: nil) {
-        network.makeRequest(url: httpUrl, method: method, paramaters: parameters, completion: completion)
+    if let httpUrl = NSURL(string: url, relativeTo: nil) as? URL {
+        network.makeRequest(httpUrl, paramaters: parameters, completion: completion)
     }else {
         completion(nil)
     }
@@ -36,69 +32,33 @@ class Request: NSObject {
     }
     
     
-    fileprivate func makeRequest(url: NSURL, method:HTTPMethod = .GET, paramaters: [String : String]? = nil,  completion:@escaping (NSData?) -> Void) {
+    fileprivate func makeRequest(_ url: URL, paramaters: [String : Any]? = nil,  completion:@escaping (Data?) -> Void) {
         
-        var urlEncoded = url
-        var request : NSMutableURLRequest?
+        let jsonData = try? JSONSerialization.data(withJSONObject: paramaters!)
         
-        if method == .GET {
-            if let param = paramaters {
-                urlEncoded = self.encodeGetParameters(url: url, parameters: param)
-                request = NSMutableURLRequest(url: urlEncoded as URL, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 60)
-            }
-        }else {
-            if let param = paramaters,  let encodeParam = encodePostParameters(parameters: param) {
-                request = NSMutableURLRequest(url: urlEncoded as URL, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 60)
-                request!.httpBody = encodeParam as Data
-            }
-        }
+        // create post request
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
         
-        //let request = NSMutableURLRequest(URL: urlEncoded, cachePolicy: .ReturnCacheDataElseLoad, timeoutInterval: 60)
-        request!.httpMethod = method.rawValue
+        // insert json data to the request
+        request.httpBody = jsonData
         
-        let dataTask = defaultSession.dataTask(with: request! as URLRequest) {
-            data, response, error in
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
             
-            if let error = error {
-                print(error)
+            if let err = error {
+                print(err)
                 completion(nil)
             } else if let httpResponse = response as? HTTPURLResponse {
                 if httpResponse.statusCode == 200 {
-                    completion(data as NSData?)
+                    completion(data)
                 }else {
                     completion(nil)
                 }
+                
             }
         }
         
-        dataTask.resume()
-    }
-    
-    private func encodeParameters(parameters: [String: String]) -> String {
-        
-        var param :String = ""
-        
-        for (key, value) in parameters {
-            param += "\(key)=\(value)&"
-        }
-        param = param.substring(to: param.index(before: param.endIndex))
-        
-        return param
-    }
-    
-    private func encodeGetParameters(url: NSURL, parameters: [String : String]) -> NSURL {
-        
-        if (url.absoluteString?.contains("?"))!  {
-            return NSURL(string:url.absoluteString! + encodeParameters(parameters: parameters))!
-        }else {
-            return NSURL(string:url.absoluteString! + "?" + encodeParameters(parameters: parameters))!
-        }
-    }
-    
-    private func encodePostParameters(parameters: [String : String]) -> NSData? {
-        let param = encodeParameters(parameters: parameters)
-        
-        return param.data(using: String.Encoding.utf8) as NSData?
+        task.resume()
         
     }
     

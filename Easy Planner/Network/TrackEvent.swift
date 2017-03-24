@@ -13,12 +13,15 @@ class TrackEvent: Parser {
     var status: Int?
     var message: String?
     
-    override init(json loginData: NSData) {
+    override init(json loginData: Data) {
         super.init(json: loginData)
         
-        if let jsonLogin = self.json as? NSDictionary {
-            self.status = (jsonLogin.object(forKey: "status") as! NSNumber).intValue
-            self.message = jsonLogin.object(forKey: "message") as? String
+        if let jsonLogin = self.json as? [String:Any] {
+            
+            let status = jsonLogin["status"] as! NSString
+            self.status = status.integerValue
+            
+            self.message = jsonLogin["message"] as? String
         }
     }
 

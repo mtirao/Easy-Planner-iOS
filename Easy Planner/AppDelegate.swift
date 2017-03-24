@@ -9,12 +9,19 @@
 import UIKit
 import CoreData
 import CoreLocation
+import UserNotifications
+import Foundation
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
 
+class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate, UNUserNotificationCenterDelegate {
+
+    let appId = "5beed710-0391-11e7-966c-7fb6a327fd8e"
+    
     var window: UIWindow?
     var locationManager = CLLocationManager()
+    
+    var tracking: Tracking?
 
     public func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
         
@@ -31,7 +38,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             locationManager.requestWhenInUseAuthorization()
             
         }
-
+        
+        if Preferences.appToken == nil {
+            
+            Preferences.appToken = UUID().uuidString
+        }
+        
+        tracking = Tracking(appId:self.appId, appToken:Preferences.appToken!)
+        
+        if #available(iOS 10.0, *) {
+            let center = UNUserNotificationCenter.current()
+            center.delegate = self
+            center.requestAuthorization(options:[.badge, .alert, .sound]) { (granted, error) in
+                // Enable or disable features based on authorization.
+            }
+        }
+        else {
+            
+            UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings(types: [.sound, .alert, .badge], categories: nil))
+        }
+        
+        UIApplication.shared.registerForRemoteNotifications()
         
         return true
     }
@@ -53,7 +80,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     func applicationWillTerminate(_ application: UIApplication) {
        
     }
-
+    
    
 }
 
@@ -82,6 +109,7 @@ extension AppDelegate {
         Preferences.latitude = latitude
         Preferences.longitude = longitude
         
+        tracking?.location = locations[0]
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
@@ -89,3 +117,92 @@ extension AppDelegate {
     }
     
 }
+
+//MARK: - Misc Method
+extension AppDelegate {
+    
+    fileprivate class func getDelegate() -> AppDelegate {
+        return UIApplication.shared.delegate as! AppDelegate
+    }
+    
+    class func trackInit(value: String) {
+        AppDelegate.getDelegate().tracking?.trackInitEvent(value: TrackEventValue.ViewAppear.rawValue + ":" + value)
+    }
+    
+    class func trackExit(value: String) {
+        AppDelegate.getDelegate().tracking?.trackExitEvent(value: TrackEventValue.ViewDisappear.rawValue + ":" + value)
+    }
+    
+}
+
+//MARK: - Push Notification
+extension AppDelegate {
+    
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        let deviceTokenString = deviceToken.reduce("", {$0 + String(format: "%02X", $1)})
+        
+        Preferences.deviceToken = deviceTokenString
+        
+        print("Device Token:", deviceTokenString)
+        
+        
+        let registration = DeviceRegistration(serverURL: NSURL(string: "https://push-argsoftsolutions.rhcloud.com/ag-push/")! as URL)
+        
+        registration.register(clientInfo: { (clientInfo: ClientDeviceInformation!)  in
+            
+            // apply the token, to identify this device
+            clientInfo.deviceToken = deviceToken
+            
+            clientInfo.variantID = "7c580461-50ab-4ad2-8f1e-148be7f8456b"
+            clientInfo.variantSecret = "6582f0a3-a0cc-43fe-a435-836ce2a663de"
+            clientInfo.alias = Preferences.appToken
+            
+            // --optional config--
+            // set some 'useful' hardware information params
+            let currentDevice = UIDevice()
+            clientInfo.operatingSystem = currentDevice.systemName
+            clientInfo.osVersion = currentDevice.systemVersion
+            clientInfo.deviceType = currentDevice.model
+            
+            }, success: {
+                print("UPS registration worked");
+                
+            }, failure: { (error:NSError!) -> () in
+                print("UPS registration Error: \(error.localizedDescription)")
+        })
+        
+    }
+    
+    
+    func application(application: UIApplication, didRegisterUserNotificationSettings notificationSettings: UIUserNotificationSettings) {
+        if notificationSettings.types != .none {
+            application.registerForRemoteNotifications()
+        }
+
+    }
+    
+    
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        
+        print("Notification received")
+        
+    }
+    
+    @objc func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+        print("Failed to register:", error)
+    }
+    
+    @objc(userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:) @available(iOS 10.0, *)
+    public func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        print(response.notification.request.content.userInfo)
+    }
+    
+    @objc(userNotificationCenter:willPresentNotification:withCompletionHandler:) @available(iOS 10.0, *)
+    public func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        print(notification.request.content.userInfo)
+    }
+}
+
+
+    

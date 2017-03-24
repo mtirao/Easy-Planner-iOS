@@ -15,7 +15,7 @@ class Parser: NSObject {
     init(data: NSDictionary) {}
 
     
-    init(json: NSData) {
+    init(json: Data) {
         do {
             self.json = try JSONSerialization.jsonObject(with: json as Data, options: JSONSerialization.ReadingOptions())
         }catch {

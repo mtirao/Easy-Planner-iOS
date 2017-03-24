@@ -32,7 +32,7 @@ class SocialClient: NSObject {
         format.dateFormat = "yyyy-MM-dd HH:mm:ss"
         
         
-        makeRequest(url: resource, method: .POST, parameters: ["name": event.name ?? "",
+        /*makeRequest(url: resource,parameters: ["name": event.name ?? "",
                                                                "date": format.string(from: (event.date ?? NSDate()) as Date ) ],
                                                                completion:{ (data) in
                 
@@ -49,7 +49,7 @@ class SocialClient: NSObject {
                     self.error = NSError(domain: "social.newEvent", code: 400, userInfo: nil)
                 }
                 
-        })
+        })*/
         
     }
     

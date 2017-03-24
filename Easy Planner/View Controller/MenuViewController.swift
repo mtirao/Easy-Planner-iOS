@@ -29,11 +29,15 @@ class MenuViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationItem.title = "Event's Menu";
+        
+        AppDelegate.trackInit(value: "MenuViewController")
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.navigationController?.setToolbarHidden(true, animated: true)
+        
+        AppDelegate.trackExit(value: "MenuVIewController")
     }
     
     

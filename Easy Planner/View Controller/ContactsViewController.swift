@@ -25,7 +25,13 @@ class ContactsViewController: UITableViewController, CNContactPickerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        AppDelegate.trackInit(value: "ContactsViewController")
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.navigationController?.navigationBar.topItem?.title = "Event's contact"
@@ -39,11 +45,15 @@ class ContactsViewController: UITableViewController, CNContactPickerDelegate {
             self.contacts = EventManager.sharedInstance.contactsForEvent(event: event)
             self.tableView?.reloadData()
         }
+        
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.navigationController?.setToolbarHidden(true, animated: true)
+        
+        AppDelegate.trackExit(value: "ContactsVIewController")
     }
 
     

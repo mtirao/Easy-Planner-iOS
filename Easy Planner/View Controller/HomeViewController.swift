@@ -14,6 +14,7 @@ let homeEventCell = "homeEventCell"
 let embededCalendarSegue = "embededCalendarSegue"
 let addEventSegue = "addEventSegue"
 let eventDetailSegue = "eventDetailSegue"
+let cloudEventSegue = "cloudEventSegue"
 
 class HomeViewController: UIViewController, CalendarControllerDelegate {
     
@@ -38,6 +39,15 @@ class HomeViewController: UIViewController, CalendarControllerDelegate {
         }else {
             loadEvents(forDate: Date())
         }
+        
+        AppDelegate.trackInit(value: "HomeViewController")
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        AppDelegate.trackExit(value: "HomeVIewController")
     }
 
     override func didReceiveMemoryWarning() {
@@ -64,6 +74,10 @@ class HomeViewController: UIViewController, CalendarControllerDelegate {
                 
             }
             
+        }else if segue.identifier == cloudEventSegue {
+            if let cloudEvent = segue.destination as? CloudEventViewController {
+                cloudEvent.selectedDate = self.calendarController?.selectedDate ?? self.calendarController?.currentDate
+            }
         }
         
     }
@@ -81,8 +95,8 @@ class HomeViewController: UIViewController, CalendarControllerDelegate {
     func loadEvents(forDate: Date) {
         DispatchQueue.main.async(execute: {
             
-            let firstDate = self.firstDateOfCurrentMonth(forDate: forDate)
-            let lastDate = self.lastDateOfCurrentMonth(forDate: forDate)
+            let firstDate = CalendarUtil.firstHourOfCurrentDate(forDate: forDate)
+            let lastDate = CalendarUtil.lastHourOfCurrentDate(forDate: forDate)
             
             self.events = EventManager.sharedInstance.eventsForDate(firstDate: firstDate as NSDate, lastDate: lastDate as NSDate)
             self.eventTableView?.reloadData()
@@ -128,33 +142,6 @@ extension HomeViewController {
 extension HomeViewController: UITableViewDataSource {
     
     
-    func firstDateOfCurrentMonth(forDate: Date) -> Date {
-        
-        let currentCalendar = Calendar.current
-        let unitFlags = Set<Calendar.Component>([.year, .month, .day, .hour, .minute, .second])
-        var comp = currentCalendar.dateComponents(unitFlags, from: forDate)
-        comp.setValue(0, for: .hour)
-        comp.setValue(0, for: .minute)
-        comp.setValue(0, for: .second)
-        
-        return currentCalendar.date(from: comp)!
-        
-    }
-   
-    func lastDateOfCurrentMonth(forDate: Date) -> Date {
-        
-        let currentCalendar = Calendar.current
-        let unitFlags = Set<Calendar.Component>([.year, .month, .day, .hour, .minute, .second])
-        var comp = currentCalendar.dateComponents(unitFlags, from: forDate)
-        comp.setValue(23, for: .hour)
-        comp.setValue(59, for: .minute)
-        comp.setValue(59, for: .second)
-        
-        
-        return currentCalendar.date(from: comp)!
-
-    }
-    
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
@@ -194,7 +181,7 @@ extension HomeViewController: UITableViewDataSource {
             
             if let place = event.place {
                 
-                cell?.eventLoc.text = "\(place.City ?? ""), \(place.Address ?? "")"
+                cell?.eventLoc.text = "\(place.City ?? "Some City"), \(place.Address ?? "Some Address")"
                 
             }
         }

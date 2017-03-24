@@ -48,6 +48,10 @@ class MainEventViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        AppDelegate.trackInit(value: "MainEventViewController")
+        
+        UIApplication.shared.applicationIconBadgeNumber = 0
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -90,6 +94,7 @@ class MainEventViewController: UIViewController {
         }
     }
     
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
@@ -106,6 +111,8 @@ class MainEventViewController: UIViewController {
                 event.date = date as NSDate?
             }
         }
+        
+        AppDelegate.trackExit(value: "MainVIewController")
         
     }
     

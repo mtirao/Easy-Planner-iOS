@@ -49,7 +49,7 @@ class NewContactViewController: UIViewController {
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain
             , target: nil, action: nil)
         
-        //self.navigationController?.navigationItems.backBarButtonItem?.title = "";
+        AppDelegate.trackInit(value: "NewContactViewController")
         
     }
     
@@ -60,6 +60,8 @@ class NewContactViewController: UIViewController {
         currentContact?.name = self.nameField?.editText.text;
         currentContact?.email = self.emailField?.editText.text;
         currentContact?.phone = self.phoneField?.editText.text;
+        
+        AppDelegate.trackExit(value: "NewContactViewController")
     }
     
     override func didReceiveMemoryWarning() {

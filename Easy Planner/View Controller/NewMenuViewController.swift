@@ -83,12 +83,16 @@ class NewMenuViewController: UIViewController, UITableViewDataSource, UITableVie
         if self.view.tag == menuDetailTag {
             menuDetail = EventManager.sharedInstance.optionForMenu(menu: currentMenu!)
         }
+        
+        AppDelegate.trackInit(value: "NewMenuViewController")
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
         currentMenu?.menuname = menuName?.editText.text
+        
+        AppDelegate.trackExit(value: "NewMenuViewController")
         
     }
     

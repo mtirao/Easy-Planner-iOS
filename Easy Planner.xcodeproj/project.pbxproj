@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA0324A31E8302810095313E /* CloudEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0324A21E8302810095313E /* CloudEventViewController.swift */; };
+		DA0324A51E8303AD0095313E /* CalendarUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0324A41E8303AD0095313E /* CalendarUtilities.swift */; };
+		DA0324A81E830AD10095313E /* CloudViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0324A71E830AD10095313E /* CloudViewModel.swift */; };
 		DA11C2691D7398E400ADB348 /* HeaderCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA11C2681D7398E400ADB348 /* HeaderCalendar.swift */; };
 		DA11C26B1D73A91C00ADB348 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA11C26A1D73A91C00ADB348 /* Day.swift */; };
 		DA11C26D1D73AC4D00ADB348 /* CalendarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA11C26C1D73AC4D00ADB348 /* CalendarController.swift */; };
@@ -18,12 +21,17 @@
 		DA11C27B1D7B6F1700ADB348 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA11C27A1D7B6F1700ADB348 /* MenuViewController.swift */; };
 		DA11C27E1D7DE80900ADB348 /* Contact.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA11C27C1D7DE80800ADB348 /* Contact.storyboard */; };
 		DA11C2801D7DE84B00ADB348 /* NewContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA11C27F1D7DE84B00ADB348 /* NewContactViewController.swift */; };
+		DA3941631E70A23800E14D01 /* Tracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3941621E70A23800E14D01 /* Tracking.swift */; };
+		DA3941651E70B0D700E14D01 /* TrackValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3941641E70B0D700E14D01 /* TrackValue.swift */; };
 		DA8AF7801D89D52F006DDCF3 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8AF77F1D89D52F006DDCF3 /* DateHelper.swift */; };
-		DA99C78F1E64656800A6EB0E /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA99C78E1E64656800A6EB0E /* CustomButton.swift */; };
+		DAB2CA461E79F7DA004AB652 /* ClientDeviceInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB2CA401E79F7DA004AB652 /* ClientDeviceInformation.swift */; };
+		DAB2CA471E79F7DA004AB652 /* ClientDeviceInformationImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB2CA411E79F7DA004AB652 /* ClientDeviceInformationImpl.swift */; };
+		DAB2CA481E79F7DA004AB652 /* DeviceRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB2CA421E79F7DA004AB652 /* DeviceRegistration.swift */; };
+		DAB2CA491E79F7DA004AB652 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DAB2CA431E79F7DA004AB652 /* Info.plist */; };
+		DAB2CA4A1E79F7DA004AB652 /* PushAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB2CA451E79F7DA004AB652 /* PushAnalytics.swift */; };
 		DAC4CF621D7F65E600577376 /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAC4CF601D7F65E600577376 /* Menu.storyboard */; };
 		DAC4CF641D7F671D00577376 /* NewMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC4CF631D7F671D00577376 /* NewMenuViewController.swift */; };
 		DAD3621D1D9DBD5E00B692F9 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD362181D9DBD5E00B692F9 /* Network.swift */; };
-		DAD3621E1D9DBD5E00B692F9 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD362191D9DBD5E00B692F9 /* NetworkClient.swift */; };
 		DAD3621F1D9DBD5E00B692F9 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD3621A1D9DBD5E00B692F9 /* Parser.swift */; };
 		DAD362201D9DBD5E00B692F9 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD3621B1D9DBD5E00B692F9 /* Request.swift */; };
 		DAD362211D9DBD5E00B692F9 /* TrackEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD3621C1D9DBD5E00B692F9 /* TrackEvent.swift */; };
@@ -90,6 +98,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DA0324A21E8302810095313E /* CloudEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CloudEventViewController.swift; path = "View Controller/CloudEventViewController.swift"; sourceTree = "<group>"; };
+		DA0324A41E8303AD0095313E /* CalendarUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarUtilities.swift; path = Views/CalendarUtilities.swift; sourceTree = "<group>"; };
+		DA0324A71E830AD10095313E /* CloudViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CloudViewModel.swift; path = "View Model/CloudViewModel.swift"; sourceTree = "<group>"; };
 		DA11C2681D7398E400ADB348 /* HeaderCalendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HeaderCalendar.swift; path = Views/HeaderCalendar.swift; sourceTree = "<group>"; };
 		DA11C26A1D73A91C00ADB348 /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Day.swift; path = Views/Day.swift; sourceTree = "<group>"; };
 		DA11C26C1D73AC4D00ADB348 /* CalendarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarController.swift; path = "View Controller/CalendarController.swift"; sourceTree = "<group>"; };
@@ -101,13 +112,20 @@
 		DA11C27A1D7B6F1700ADB348 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuViewController.swift; path = "View Controller/MenuViewController.swift"; sourceTree = "<group>"; };
 		DA11C27D1D7DE80800ADB348 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Contact.storyboard; sourceTree = "<group>"; };
 		DA11C27F1D7DE84B00ADB348 /* NewContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewContactViewController.swift; path = "View Controller/NewContactViewController.swift"; sourceTree = "<group>"; };
+		DA3941621E70A23800E14D01 /* Tracking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tracking.swift; path = Network/Tracking.swift; sourceTree = "<group>"; };
+		DA3941641E70B0D700E14D01 /* TrackValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrackValue.swift; path = Misc/TrackValue.swift; sourceTree = "<group>"; };
 		DA8AF77F1D89D52F006DDCF3 /* DateHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateHelper.swift; path = Misc/DateHelper.swift; sourceTree = "<group>"; };
-		DA99C78E1E64656800A6EB0E /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomButton.swift; path = Misc/CustomButton.swift; sourceTree = "<group>"; };
+		DAB2CA3B1E79F5B2004AB652 /* Easy Planner-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Easy Planner-Bridging-Header.h"; sourceTree = "<group>"; };
+		DAB2CA401E79F7DA004AB652 /* ClientDeviceInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClientDeviceInformation.swift; path = AeroGear/ClientDeviceInformation.swift; sourceTree = "<group>"; };
+		DAB2CA411E79F7DA004AB652 /* ClientDeviceInformationImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClientDeviceInformationImpl.swift; path = AeroGear/ClientDeviceInformationImpl.swift; sourceTree = "<group>"; };
+		DAB2CA421E79F7DA004AB652 /* DeviceRegistration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeviceRegistration.swift; path = AeroGear/DeviceRegistration.swift; sourceTree = "<group>"; };
+		DAB2CA431E79F7DA004AB652 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = AeroGear/Info.plist; sourceTree = "<group>"; };
+		DAB2CA441E79F7DA004AB652 /* push-sdk-swift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "push-sdk-swift.h"; path = "AeroGear/push-sdk-swift.h"; sourceTree = "<group>"; };
+		DAB2CA451E79F7DA004AB652 /* PushAnalytics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PushAnalytics.swift; path = AeroGear/PushAnalytics.swift; sourceTree = "<group>"; };
 		DAC4CF611D7F65E600577376 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Menu.storyboard; sourceTree = "<group>"; };
 		DAC4CF631D7F671D00577376 /* NewMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewMenuViewController.swift; path = "View Controller/NewMenuViewController.swift"; sourceTree = "<group>"; };
 		DAD362161D9DA9BE00B692F9 /* Easy Planner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Easy Planner.entitlements"; sourceTree = "<group>"; };
 		DAD362181D9DBD5E00B692F9 /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Network.swift; path = Network/Network.swift; sourceTree = "<group>"; };
-		DAD362191D9DBD5E00B692F9 /* NetworkClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkClient.swift; path = Network/NetworkClient.swift; sourceTree = "<group>"; };
 		DAD3621A1D9DBD5E00B692F9 /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Parser.swift; path = Network/Parser.swift; sourceTree = "<group>"; };
 		DAD3621B1D9DBD5E00B692F9 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Network/Request.swift; sourceTree = "<group>"; };
 		DAD3621C1D9DBD5E00B692F9 /* TrackEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrackEvent.swift; path = Network/TrackEvent.swift; sourceTree = "<group>"; };
@@ -198,12 +216,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DA0324A61E830A900095313E /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				DA0324A71E830AD10095313E /* CloudViewModel.swift */,
+			);
+			name = "View Model";
+			sourceTree = "<group>";
+		};
 		DA11C2671D73987D00ADB348 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				DA11C2681D7398E400ADB348 /* HeaderCalendar.swift */,
 				DA11C26A1D73A91C00ADB348 /* Day.swift */,
 				DA11C26C1D73AC4D00ADB348 /* CalendarController.swift */,
+				DA0324A41E8303AD0095313E /* CalendarUtilities.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -224,15 +251,29 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DAB2CA3F1E79F7C8004AB652 /* AeroGear */ = {
+			isa = PBXGroup;
+			children = (
+				DAB2CA401E79F7DA004AB652 /* ClientDeviceInformation.swift */,
+				DAB2CA411E79F7DA004AB652 /* ClientDeviceInformationImpl.swift */,
+				DAB2CA421E79F7DA004AB652 /* DeviceRegistration.swift */,
+				DAB2CA431E79F7DA004AB652 /* Info.plist */,
+				DAB2CA441E79F7DA004AB652 /* push-sdk-swift.h */,
+				DAB2CA451E79F7DA004AB652 /* PushAnalytics.swift */,
+			);
+			name = AeroGear;
+			sourceTree = "<group>";
+		};
 		DAD362171D9DBD1200B692F9 /* Network */ = {
 			isa = PBXGroup;
 			children = (
 				DAD362181D9DBD5E00B692F9 /* Network.swift */,
-				DAD362191D9DBD5E00B692F9 /* NetworkClient.swift */,
 				DAD3621A1D9DBD5E00B692F9 /* Parser.swift */,
 				DAD3621B1D9DBD5E00B692F9 /* Request.swift */,
 				DAD3621C1D9DBD5E00B692F9 /* TrackEvent.swift */,
 				DAD362221D9E9E0200B692F9 /* SocialClient.swift */,
+				DA3941621E70A23800E14D01 /* Tracking.swift */,
+				DAB2CA3B1E79F5B2004AB652 /* Easy Planner-Bridging-Header.h */,
 			);
 			name = Network;
 			sourceTree = "<group>";
@@ -261,12 +302,14 @@
 		DAE291C81D6E432B005799CB /* Easy Planner */ = {
 			isa = PBXGroup;
 			children = (
+				DAB2CA3F1E79F7C8004AB652 /* AeroGear */,
 				DAD362161D9DA9BE00B692F9 /* Easy Planner.entitlements */,
 				DAD362171D9DBD1200B692F9 /* Network */,
 				DA11C26E1D75180A00ADB348 /* Protocol */,
 				DAE2924A1D71EB4F005799CB /* Misc */,
 				DAE2920C1D70E14F005799CB /* Cells */,
 				DA11C2671D73987D00ADB348 /* Views */,
+				DA0324A61E830A900095313E /* View Model */,
 				DAE292091D70DD80005799CB /* View Controller */,
 				DAE292081D70DD4A005799CB /* Storyboard & xib */,
 				DAE291FA1D70D6D2005799CB /* CoreData */,
@@ -354,6 +397,7 @@
 				DA11C27F1D7DE84B00ADB348 /* NewContactViewController.swift */,
 				DAC4CF631D7F671D00577376 /* NewMenuViewController.swift */,
 				DAE732CF1D83596200B58160 /* FieldViewController.swift */,
+				DA0324A21E8302810095313E /* CloudEventViewController.swift */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -373,7 +417,7 @@
 				DAE2924B1D71EB7E005799CB /* NotificationController.swift */,
 				DAE732CD1D833DC700B58160 /* Preferences.swift */,
 				DA8AF77F1D89D52F006DDCF3 /* DateHelper.swift */,
-				DA99C78E1E64656800A6EB0E /* CustomButton.swift */,
+				DA3941641E70B0D700E14D01 /* TrackValue.swift */,
 			);
 			name = Misc;
 			sourceTree = "<group>";
@@ -447,6 +491,7 @@
 					DAE291C51D6E432A005799CB = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = E5YV4NK229;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
@@ -496,6 +541,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAB2CA491E79F7DA004AB652 /* Info.plist in Resources */,
 				DAE291D71D6E432B005799CB /* LaunchScreen.storyboard in Resources */,
 				DAE292111D71E2DC005799CB /* Event.storyboard in Resources */,
 				DAE291D41D6E432B005799CB /* Assets.xcassets in Resources */,
@@ -533,14 +579,22 @@
 				DAE292311D71E39E005799CB /* Menu+CoreDataProperties.swift in Sources */,
 				DAE292351D71E39E005799CB /* Music+CoreDataProperties.swift in Sources */,
 				DAE2922A1D71E39E005799CB /* EventMisc.swift in Sources */,
+				DAB2CA4A1E79F7DA004AB652 /* PushAnalytics.swift in Sources */,
+				DAB2CA481E79F7DA004AB652 /* DeviceRegistration.swift in Sources */,
+				DA3941631E70A23800E14D01 /* Tracking.swift in Sources */,
 				DAE2922D1D71E39E005799CB /* Image+CoreDataProperties.swift in Sources */,
 				DAE292321D71E39E005799CB /* Misc.swift in Sources */,
 				DAE292391D71E39E005799CB /* Place+CoreDataProperties.swift in Sources */,
 				DAE2923D1D71E39E005799CB /* Text+CoreDataProperties.swift in Sources */,
+				DA3941651E70B0D700E14D01 /* TrackValue.swift in Sources */,
+				DA0324A81E830AD10095313E /* CloudViewModel.swift in Sources */,
 				DAE2924C1D71EB7E005799CB /* NotificationController.swift in Sources */,
 				DAE292441D71E3A9005799CB /* Contact.swift in Sources */,
 				DAE2923C1D71E39E005799CB /* Text.swift in Sources */,
+				DA0324A51E8303AD0095313E /* CalendarUtilities.swift in Sources */,
+				DAB2CA461E79F7DA004AB652 /* ClientDeviceInformation.swift in Sources */,
 				DAE2922F1D71E39E005799CB /* Invitation+CoreDataProperties.swift in Sources */,
+				DAB2CA471E79F7DA004AB652 /* ClientDeviceInformationImpl.swift in Sources */,
 				DAD3621D1D9DBD5E00B692F9 /* Network.swift in Sources */,
 				DAE292371D71E39E005799CB /* Option+CoreDataProperties.swift in Sources */,
 				DA11C27B1D7B6F1700ADB348 /* MenuViewController.swift in Sources */,
@@ -550,7 +604,6 @@
 				DAE732CE1D833DC700B58160 /* Preferences.swift in Sources */,
 				DAE292361D71E39E005799CB /* Option.swift in Sources */,
 				DA8AF7801D89D52F006DDCF3 /* DateHelper.swift in Sources */,
-				DAD3621E1D9DBD5E00B692F9 /* NetworkClient.swift in Sources */,
 				DAE2922C1D71E39E005799CB /* Image.swift in Sources */,
 				DAE292291D71E39E005799CB /* Event+CoreDataProperties.swift in Sources */,
 				DAE292071D70D6EF005799CB /* EasyPlanner.xcdatamodeld in Sources */,
@@ -562,7 +615,6 @@
 				DAE292341D71E39E005799CB /* Music.swift in Sources */,
 				DAE2920E1D70E1AF005799CB /* HomeTableViewCell.swift in Sources */,
 				DAE2923B1D71E39E005799CB /* Tables+CoreDataProperties.swift in Sources */,
-				DA99C78F1E64656800A6EB0E /* CustomButton.swift in Sources */,
 				DA11C26D1D73AC4D00ADB348 /* CalendarController.swift in Sources */,
 				DAE2920B1D70DF8B005799CB /* HomeViewController.swift in Sources */,
 				DAE292471D71E578005799CB /* EventManager.swift in Sources */,
@@ -574,6 +626,7 @@
 				DA11C26B1D73A91C00ADB348 /* Day.swift in Sources */,
 				DAE2922E1D71E39E005799CB /* Invitation.swift in Sources */,
 				DAD362211D9DBD5E00B692F9 /* TrackEvent.swift in Sources */,
+				DA0324A31E8302810095313E /* CloudEventViewController.swift in Sources */,
 				DAE2922B1D71E39E005799CB /* EventMisc+CoreDataProperties.swift in Sources */,
 				DAE292281D71E39E005799CB /* Event.swift in Sources */,
 				DA11C2691D7398E400ADB348 /* HeaderCalendar.swift in Sources */,
@@ -763,13 +816,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Easy Planner/Easy Planner.entitlements";
 				DEVELOPMENT_TEAM = E5YV4NK229;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Easy\\ Planner",
+				);
 				INFOPLIST_FILE = "Easy Planner/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ar.com.argsoftsolutions.Easy-Planner";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Easy Planner/Easy Planner-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -778,13 +838,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Easy Planner/Easy Planner.entitlements";
 				DEVELOPMENT_TEAM = E5YV4NK229;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Easy\\ Planner",
+				);
 				INFOPLIST_FILE = "Easy Planner/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ar.com.argsoftsolutions.Easy-Planner";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Easy Planner/Easy Planner-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
