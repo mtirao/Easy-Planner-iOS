@@ -6,11 +6,14 @@
 //  Copyright © 2016 Marcos Tirao. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-class Parser: NSObject {
+class Parser {
     
     var json: Any?
+    var status: Int?
+    var message: String?
+    
     
     init(data: NSDictionary) {}
 
@@ -18,6 +21,15 @@ class Parser: NSObject {
     init(json: Data) {
         do {
             self.json = try JSONSerialization.jsonObject(with: json as Data, options: JSONSerialization.ReadingOptions())
+            
+            if let jsonLogin = self.json as? [String:Any] {
+                
+                let status = jsonLogin["status"] as! NSString
+                self.status = status.integerValue
+                
+                self.message = jsonLogin["message"] as? String
+            }
+            
         }catch {
             print(error);
             self.json = nil

@@ -6,50 +6,68 @@
 //  Copyright © 2016 Marcos Tirao. All rights reserved.
 //
 
-import UIKit
-import CoreLocation
+import Foundation
 
-let kSocialServerUrl = "http://127.0.0.1:3000"
 
-class SocialClient: NSObject {
+class SocialClient {
     
     static let defaultClient = SocialClient()
     
     var error : NSError?
-    var currentLocation : CLLocation?
-    var deviceToken : String = "no-push"
-
     
-    private override init() {
+    private let appId = "1ac1df94-bb2b-45aa-b55b-d96cdb080945"
+    private let secret = "70f68c46-c96b-4ba8-8d4d-8554f6ac481c"
+    
+    let kSocialServerUrl = "https://social-argsoftsolutions.rhcloud.com"
+    
+    private init() {
         
     }
 
-    func addEvent(event: Event) {
+    func login(completion:@escaping (LoginModel?) -> Void) {
         
-        let resource = kSocialServerUrl + "/addEvent"
+        let resource = kSocialServerUrl + "/login"
         
-        let format = DateFormatter()
-        format.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let parameters : [String : String] = ["appId" : appId,
+                                              "appToken" : Preferences.appToken!,
+                                              "email" : "",
+                                              "password" : Preferences.password,
+                                              "phone" : "",
+                                              "secretId" : secret]
         
-        
-        /*makeRequest(url: resource,parameters: ["name": event.name ?? "",
-                                                               "date": format.string(from: (event.date ?? NSDate()) as Date ) ],
-                                                               completion:{ (data) in
+        makeRequest(url: resource, parameters: parameters) {data in
+            
+            if let response = data {
                 
-                if let result = data {
-                    
-                    let newEventResult = TrackEvent(json: result)
-                    
-                    if let token = newEventResult.status, token == 200 {
-                        self.error = nil
-                    }else {
-                        self.error = NSError(domain: "social.newEvent", code: 401, userInfo: nil)
-                    }
-                }else {
-                    self.error = NSError(domain: "social.newEvent", code: 400, userInfo: nil)
-                }
+                let login = LoginModel(json: response)
+                completion(login)
+            }else {
+                completion(nil)
+            }
+            
+        }
+        
+    }
+    
+    func addEvent(date: Date, name: String, completion:@escaping (EventModel?) -> Void) {
+        
+        let resource = kSocialServerUrl + "/createEvent"
+        
+        let parameters : [String : String] = ["name" : name,
+                                              "date" : DateHelper.mysqlString(from: date)]
+        
+        makeRequest(url: resource, parameters: parameters) {data in
+            
+            if let response = data {
                 
-        })*/
+                let login = EventModel(json: response)
+                completion(login)
+            }else {
+                completion(nil)
+            }
+            
+        }
+
         
     }
     

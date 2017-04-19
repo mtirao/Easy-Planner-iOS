@@ -27,6 +27,9 @@ class CalendarController: UIViewController {
     
     var alreadyLoaded = false
     
+    var VStep = 0
+    var HStep = 0
+    
     var selectedDate : Date? {
         
         get {
@@ -54,6 +57,7 @@ class CalendarController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        
         if alreadyLoaded {
             return
         }
@@ -63,15 +67,15 @@ class CalendarController: UIViewController {
         header.tag = 0
         self.view.addSubview(header)
         
-        let HStep = self.view.frame.size.width / 7
-        let VStep = self.view.frame.size.height / 6
+        HStep = Int(self.view.frame.size.width) / 7
+        VStep = Int(self.view.frame.size.height - headerHeight) / 6
         
         var tag = firstDay
         for i in 1...6 {
             for j in 1...7 {
                 
                 tag += 1
-                let day = Day(frame: CGRect(x: CGFloat(j-1) * HStep, y: headerHeight + CGFloat(i-1)*VStep, width: HStep, height: VStep) )
+                let day = Day(frame: CGRect(x: CGFloat((j-1) * HStep), y: headerHeight + CGFloat((i-1)*VStep), width: CGFloat(HStep), height: CGFloat(VStep)) )
                 day.backgroundColor = UIColor.white
                 day.tag = tag
                 day.delegate = self
@@ -79,11 +83,11 @@ class CalendarController: UIViewController {
                 
             }
         }
+
         
         calendarForCurrentDate()
         
         alreadyLoaded = true
-
         
     }
     
@@ -198,6 +202,7 @@ extension CalendarController {
         var dayValue = 1
         
         comp = currentCalendar.dateComponents(unitFlags, from: Date())
+        
         
         for view in self.view.subviews {
             if !isNewMonth(date: firstDateOfCurrentMonth, day: dayValue) {

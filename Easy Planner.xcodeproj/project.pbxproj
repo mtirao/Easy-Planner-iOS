@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		DA0324A31E8302810095313E /* CloudEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0324A21E8302810095313E /* CloudEventViewController.swift */; };
 		DA0324A51E8303AD0095313E /* CalendarUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0324A41E8303AD0095313E /* CalendarUtilities.swift */; };
-		DA0324A81E830AD10095313E /* CloudViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0324A71E830AD10095313E /* CloudViewModel.swift */; };
 		DA11C2691D7398E400ADB348 /* HeaderCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA11C2681D7398E400ADB348 /* HeaderCalendar.swift */; };
 		DA11C26B1D73A91C00ADB348 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA11C26A1D73A91C00ADB348 /* Day.swift */; };
 		DA11C26D1D73AC4D00ADB348 /* CalendarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA11C26C1D73AC4D00ADB348 /* CalendarController.swift */; };
@@ -21,8 +20,14 @@
 		DA11C27B1D7B6F1700ADB348 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA11C27A1D7B6F1700ADB348 /* MenuViewController.swift */; };
 		DA11C27E1D7DE80900ADB348 /* Contact.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA11C27C1D7DE80800ADB348 /* Contact.storyboard */; };
 		DA11C2801D7DE84B00ADB348 /* NewContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA11C27F1D7DE84B00ADB348 /* NewContactViewController.swift */; };
-		DA3941631E70A23800E14D01 /* Tracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3941621E70A23800E14D01 /* Tracking.swift */; };
+		DA3941631E70A23800E14D01 /* TrackingClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3941621E70A23800E14D01 /* TrackingClient.swift */; };
 		DA3941651E70B0D700E14D01 /* TrackValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3941641E70B0D700E14D01 /* TrackValue.swift */; };
+		DA5D57E61E8ADF8100F50CE1 /* CloudEventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5D57E51E8ADF8100F50CE1 /* CloudEventViewModel.swift */; };
+		DA71725A1E9290DE007F414A /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DA7172591E9290DE007F414A /* Settings.bundle */; };
+		DA71725C1E92CC0A007F414A /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA71725B1E92CC0A007F414A /* ActivityIndicator.swift */; };
+		DA71725E1E93E639007F414A /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA71725D1E93E639007F414A /* LoginModel.swift */; };
+		DA75FEA01EA5619200B2FD2D /* EventOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA75FE9F1EA5619200B2FD2D /* EventOperation.swift */; };
+		DA75FEA21EA564B200B2FD2D /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA75FEA11EA564B200B2FD2D /* EventModel.swift */; };
 		DA8AF7801D89D52F006DDCF3 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8AF77F1D89D52F006DDCF3 /* DateHelper.swift */; };
 		DAB2CA461E79F7DA004AB652 /* ClientDeviceInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB2CA401E79F7DA004AB652 /* ClientDeviceInformation.swift */; };
 		DAB2CA471E79F7DA004AB652 /* ClientDeviceInformationImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB2CA411E79F7DA004AB652 /* ClientDeviceInformationImpl.swift */; };
@@ -31,10 +36,8 @@
 		DAB2CA4A1E79F7DA004AB652 /* PushAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB2CA451E79F7DA004AB652 /* PushAnalytics.swift */; };
 		DAC4CF621D7F65E600577376 /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAC4CF601D7F65E600577376 /* Menu.storyboard */; };
 		DAC4CF641D7F671D00577376 /* NewMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC4CF631D7F671D00577376 /* NewMenuViewController.swift */; };
-		DAD3621D1D9DBD5E00B692F9 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD362181D9DBD5E00B692F9 /* Network.swift */; };
 		DAD3621F1D9DBD5E00B692F9 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD3621A1D9DBD5E00B692F9 /* Parser.swift */; };
 		DAD362201D9DBD5E00B692F9 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD3621B1D9DBD5E00B692F9 /* Request.swift */; };
-		DAD362211D9DBD5E00B692F9 /* TrackEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD3621C1D9DBD5E00B692F9 /* TrackEvent.swift */; };
 		DAD362231D9E9E0200B692F9 /* SocialClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD362221D9E9E0200B692F9 /* SocialClient.swift */; };
 		DAD362261D9EB14700B692F9 /* Cloud.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAD362241D9EB14700B692F9 /* Cloud.storyboard */; };
 		DAE291CA1D6E432B005799CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE291C91D6E432B005799CB /* AppDelegate.swift */; };
@@ -78,6 +81,8 @@
 		DAE2924C1D71EB7E005799CB /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE2924B1D71EB7E005799CB /* NotificationController.swift */; };
 		DAE732CE1D833DC700B58160 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE732CD1D833DC700B58160 /* Preferences.swift */; };
 		DAE732D01D83596200B58160 /* FieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE732CF1D83596200B58160 /* FieldViewController.swift */; };
+		DAE8AA091E9C2832005E9ACE /* LoginOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE8AA081E9C2832005E9ACE /* LoginOperation.swift */; };
+		DAEDBE661E8EC25C0097D3AD /* CloudEventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEDBE651E8EC25C0097D3AD /* CloudEventDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,7 +105,6 @@
 /* Begin PBXFileReference section */
 		DA0324A21E8302810095313E /* CloudEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CloudEventViewController.swift; path = "View Controller/CloudEventViewController.swift"; sourceTree = "<group>"; };
 		DA0324A41E8303AD0095313E /* CalendarUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarUtilities.swift; path = Views/CalendarUtilities.swift; sourceTree = "<group>"; };
-		DA0324A71E830AD10095313E /* CloudViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CloudViewModel.swift; path = "View Model/CloudViewModel.swift"; sourceTree = "<group>"; };
 		DA11C2681D7398E400ADB348 /* HeaderCalendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HeaderCalendar.swift; path = Views/HeaderCalendar.swift; sourceTree = "<group>"; };
 		DA11C26A1D73A91C00ADB348 /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Day.swift; path = Views/Day.swift; sourceTree = "<group>"; };
 		DA11C26C1D73AC4D00ADB348 /* CalendarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarController.swift; path = "View Controller/CalendarController.swift"; sourceTree = "<group>"; };
@@ -112,8 +116,14 @@
 		DA11C27A1D7B6F1700ADB348 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuViewController.swift; path = "View Controller/MenuViewController.swift"; sourceTree = "<group>"; };
 		DA11C27D1D7DE80800ADB348 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Contact.storyboard; sourceTree = "<group>"; };
 		DA11C27F1D7DE84B00ADB348 /* NewContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewContactViewController.swift; path = "View Controller/NewContactViewController.swift"; sourceTree = "<group>"; };
-		DA3941621E70A23800E14D01 /* Tracking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tracking.swift; path = Network/Tracking.swift; sourceTree = "<group>"; };
+		DA3941621E70A23800E14D01 /* TrackingClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrackingClient.swift; path = Network/TrackingClient.swift; sourceTree = "<group>"; };
 		DA3941641E70B0D700E14D01 /* TrackValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrackValue.swift; path = Misc/TrackValue.swift; sourceTree = "<group>"; };
+		DA5D57E51E8ADF8100F50CE1 /* CloudEventViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CloudEventViewModel.swift; path = "View Model/CloudEventViewModel.swift"; sourceTree = "<group>"; };
+		DA7172591E9290DE007F414A /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		DA71725B1E92CC0A007F414A /* ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicator.swift; path = Views/ActivityIndicator.swift; sourceTree = "<group>"; };
+		DA71725D1E93E639007F414A /* LoginModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginModel.swift; path = Network/LoginModel.swift; sourceTree = "<group>"; };
+		DA75FE9F1EA5619200B2FD2D /* EventOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventOperation.swift; path = Network/EventOperation.swift; sourceTree = "<group>"; };
+		DA75FEA11EA564B200B2FD2D /* EventModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventModel.swift; path = Network/EventModel.swift; sourceTree = "<group>"; };
 		DA8AF77F1D89D52F006DDCF3 /* DateHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateHelper.swift; path = Misc/DateHelper.swift; sourceTree = "<group>"; };
 		DAB2CA3B1E79F5B2004AB652 /* Easy Planner-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Easy Planner-Bridging-Header.h"; sourceTree = "<group>"; };
 		DAB2CA401E79F7DA004AB652 /* ClientDeviceInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClientDeviceInformation.swift; path = AeroGear/ClientDeviceInformation.swift; sourceTree = "<group>"; };
@@ -125,10 +135,8 @@
 		DAC4CF611D7F65E600577376 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Menu.storyboard; sourceTree = "<group>"; };
 		DAC4CF631D7F671D00577376 /* NewMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewMenuViewController.swift; path = "View Controller/NewMenuViewController.swift"; sourceTree = "<group>"; };
 		DAD362161D9DA9BE00B692F9 /* Easy Planner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Easy Planner.entitlements"; sourceTree = "<group>"; };
-		DAD362181D9DBD5E00B692F9 /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Network.swift; path = Network/Network.swift; sourceTree = "<group>"; };
 		DAD3621A1D9DBD5E00B692F9 /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Parser.swift; path = Network/Parser.swift; sourceTree = "<group>"; };
 		DAD3621B1D9DBD5E00B692F9 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Network/Request.swift; sourceTree = "<group>"; };
-		DAD3621C1D9DBD5E00B692F9 /* TrackEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrackEvent.swift; path = Network/TrackEvent.swift; sourceTree = "<group>"; };
 		DAD362221D9E9E0200B692F9 /* SocialClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SocialClient.swift; path = Network/SocialClient.swift; sourceTree = "<group>"; };
 		DAD362251D9EB14700B692F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Cloud.storyboard; sourceTree = "<group>"; };
 		DAE291C61D6E432B005799CB /* Easy Planner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Easy Planner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -188,6 +196,8 @@
 		DAE2924B1D71EB7E005799CB /* NotificationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationController.swift; path = Misc/NotificationController.swift; sourceTree = "<group>"; };
 		DAE732CD1D833DC700B58160 /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Preferences.swift; path = Misc/Preferences.swift; sourceTree = "<group>"; };
 		DAE732CF1D83596200B58160 /* FieldViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FieldViewController.swift; path = "View Controller/FieldViewController.swift"; sourceTree = "<group>"; };
+		DAE8AA081E9C2832005E9ACE /* LoginOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginOperation.swift; path = Network/LoginOperation.swift; sourceTree = "<group>"; };
+		DAEDBE651E8EC25C0097D3AD /* CloudEventDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CloudEventDetailViewController.swift; path = "View Controller/CloudEventDetailViewController.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,14 +226,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		DA0324A61E830A900095313E /* View Model */ = {
-			isa = PBXGroup;
-			children = (
-				DA0324A71E830AD10095313E /* CloudViewModel.swift */,
-			);
-			name = "View Model";
-			sourceTree = "<group>";
-		};
 		DA11C2671D73987D00ADB348 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -231,6 +233,7 @@
 				DA11C26A1D73A91C00ADB348 /* Day.swift */,
 				DA11C26C1D73AC4D00ADB348 /* CalendarController.swift */,
 				DA0324A41E8303AD0095313E /* CalendarUtilities.swift */,
+				DA71725B1E92CC0A007F414A /* ActivityIndicator.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -251,6 +254,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DA5D57E41E8ADF4700F50CE1 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				DA5D57E51E8ADF8100F50CE1 /* CloudEventViewModel.swift */,
+			);
+			name = "View Model";
+			sourceTree = "<group>";
+		};
 		DAB2CA3F1E79F7C8004AB652 /* AeroGear */ = {
 			isa = PBXGroup;
 			children = (
@@ -267,13 +278,15 @@
 		DAD362171D9DBD1200B692F9 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				DAD362181D9DBD5E00B692F9 /* Network.swift */,
 				DAD3621A1D9DBD5E00B692F9 /* Parser.swift */,
 				DAD3621B1D9DBD5E00B692F9 /* Request.swift */,
-				DAD3621C1D9DBD5E00B692F9 /* TrackEvent.swift */,
 				DAD362221D9E9E0200B692F9 /* SocialClient.swift */,
-				DA3941621E70A23800E14D01 /* Tracking.swift */,
+				DA3941621E70A23800E14D01 /* TrackingClient.swift */,
 				DAB2CA3B1E79F5B2004AB652 /* Easy Planner-Bridging-Header.h */,
+				DAE8AA081E9C2832005E9ACE /* LoginOperation.swift */,
+				DA75FE9F1EA5619200B2FD2D /* EventOperation.swift */,
+				DA75FEA11EA564B200B2FD2D /* EventModel.swift */,
+				DA71725D1E93E639007F414A /* LoginModel.swift */,
 			);
 			name = Network;
 			sourceTree = "<group>";
@@ -281,6 +294,7 @@
 		DAE291BD1D6E432A005799CB = {
 			isa = PBXGroup;
 			children = (
+				DA7172591E9290DE007F414A /* Settings.bundle */,
 				DAE291C81D6E432B005799CB /* Easy Planner */,
 				DAE291E01D6E432B005799CB /* Easy PlannerTests */,
 				DAE291EB1D6E432B005799CB /* Easy PlannerUITests */,
@@ -309,7 +323,7 @@
 				DAE2924A1D71EB4F005799CB /* Misc */,
 				DAE2920C1D70E14F005799CB /* Cells */,
 				DA11C2671D73987D00ADB348 /* Views */,
-				DA0324A61E830A900095313E /* View Model */,
+				DA5D57E41E8ADF4700F50CE1 /* View Model */,
 				DAE292091D70DD80005799CB /* View Controller */,
 				DAE292081D70DD4A005799CB /* Storyboard & xib */,
 				DAE291FA1D70D6D2005799CB /* CoreData */,
@@ -398,6 +412,7 @@
 				DAC4CF631D7F671D00577376 /* NewMenuViewController.swift */,
 				DAE732CF1D83596200B58160 /* FieldViewController.swift */,
 				DA0324A21E8302810095313E /* CloudEventViewController.swift */,
+				DAEDBE651E8EC25C0097D3AD /* CloudEventDetailViewController.swift */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -548,6 +563,7 @@
 				DAD362261D9EB14700B692F9 /* Cloud.storyboard in Resources */,
 				DAC4CF621D7F65E600577376 /* Menu.storyboard in Resources */,
 				DAE291CF1D6E432B005799CB /* Main.storyboard in Resources */,
+				DA71725A1E9290DE007F414A /* Settings.bundle in Resources */,
 				DA11C27E1D7DE80900ADB348 /* Contact.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -581,13 +597,13 @@
 				DAE2922A1D71E39E005799CB /* EventMisc.swift in Sources */,
 				DAB2CA4A1E79F7DA004AB652 /* PushAnalytics.swift in Sources */,
 				DAB2CA481E79F7DA004AB652 /* DeviceRegistration.swift in Sources */,
-				DA3941631E70A23800E14D01 /* Tracking.swift in Sources */,
+				DA3941631E70A23800E14D01 /* TrackingClient.swift in Sources */,
 				DAE2922D1D71E39E005799CB /* Image+CoreDataProperties.swift in Sources */,
 				DAE292321D71E39E005799CB /* Misc.swift in Sources */,
 				DAE292391D71E39E005799CB /* Place+CoreDataProperties.swift in Sources */,
 				DAE2923D1D71E39E005799CB /* Text+CoreDataProperties.swift in Sources */,
 				DA3941651E70B0D700E14D01 /* TrackValue.swift in Sources */,
-				DA0324A81E830AD10095313E /* CloudViewModel.swift in Sources */,
+				DA5D57E61E8ADF8100F50CE1 /* CloudEventViewModel.swift in Sources */,
 				DAE2924C1D71EB7E005799CB /* NotificationController.swift in Sources */,
 				DAE292441D71E3A9005799CB /* Contact.swift in Sources */,
 				DAE2923C1D71E39E005799CB /* Text.swift in Sources */,
@@ -595,13 +611,15 @@
 				DAB2CA461E79F7DA004AB652 /* ClientDeviceInformation.swift in Sources */,
 				DAE2922F1D71E39E005799CB /* Invitation+CoreDataProperties.swift in Sources */,
 				DAB2CA471E79F7DA004AB652 /* ClientDeviceInformationImpl.swift in Sources */,
-				DAD3621D1D9DBD5E00B692F9 /* Network.swift in Sources */,
 				DAE292371D71E39E005799CB /* Option+CoreDataProperties.swift in Sources */,
+				DA71725C1E92CC0A007F414A /* ActivityIndicator.swift in Sources */,
+				DAE8AA091E9C2832005E9ACE /* LoginOperation.swift in Sources */,
 				DA11C27B1D7B6F1700ADB348 /* MenuViewController.swift in Sources */,
 				DA11C2721D761EA500ADB348 /* Theme.swift in Sources */,
 				DAE292431D71E3A9005799CB /* Chair+CoreDataProperties.swift in Sources */,
 				DAE292491D71E5B0005799CB /* DataController.swift in Sources */,
 				DAE732CE1D833DC700B58160 /* Preferences.swift in Sources */,
+				DA75FEA21EA564B200B2FD2D /* EventModel.swift in Sources */,
 				DAE292361D71E39E005799CB /* Option.swift in Sources */,
 				DA8AF7801D89D52F006DDCF3 /* DateHelper.swift in Sources */,
 				DAE2922C1D71E39E005799CB /* Image.swift in Sources */,
@@ -614,6 +632,7 @@
 				DAE292381D71E39E005799CB /* Place.swift in Sources */,
 				DAE292341D71E39E005799CB /* Music.swift in Sources */,
 				DAE2920E1D70E1AF005799CB /* HomeTableViewCell.swift in Sources */,
+				DA71725E1E93E639007F414A /* LoginModel.swift in Sources */,
 				DAE2923B1D71E39E005799CB /* Tables+CoreDataProperties.swift in Sources */,
 				DA11C26D1D73AC4D00ADB348 /* CalendarController.swift in Sources */,
 				DAE2920B1D70DF8B005799CB /* HomeViewController.swift in Sources */,
@@ -625,9 +644,10 @@
 				DA11C2741D77B5A400ADB348 /* MainEventViewController.swift in Sources */,
 				DA11C26B1D73A91C00ADB348 /* Day.swift in Sources */,
 				DAE2922E1D71E39E005799CB /* Invitation.swift in Sources */,
-				DAD362211D9DBD5E00B692F9 /* TrackEvent.swift in Sources */,
 				DA0324A31E8302810095313E /* CloudEventViewController.swift in Sources */,
 				DAE2922B1D71E39E005799CB /* EventMisc+CoreDataProperties.swift in Sources */,
+				DAEDBE661E8EC25C0097D3AD /* CloudEventDetailViewController.swift in Sources */,
+				DA75FEA01EA5619200B2FD2D /* EventOperation.swift in Sources */,
 				DAE292281D71E39E005799CB /* Event.swift in Sources */,
 				DA11C2691D7398E400ADB348 /* HeaderCalendar.swift in Sources */,
 				DAE2923A1D71E39E005799CB /* Tables.swift in Sources */,

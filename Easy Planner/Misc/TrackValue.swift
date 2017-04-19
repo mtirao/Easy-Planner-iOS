@@ -6,14 +6,9 @@
 //  Copyright © 2017 Marcos Tirao. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 enum TrackEventValue: String {
     case ViewAppear = "ViewAppear"
     case ViewDisappear = "ViewDisappear"
-}
-
-
-class TrackValue: NSObject {
-
 }

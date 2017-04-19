@@ -17,5 +17,6 @@ protocol CalendarDelegate{
 protocol CalendarControllerDelegate {
     
     func daySelectionChange(selected: Bool)
+    func adjustHeight(height: Int)
     
 }

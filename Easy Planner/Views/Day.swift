@@ -74,7 +74,7 @@ class Day: UIView {
     
     func didSelectDay(sender: AnyObject) {
         
-        if let del = delegate {
+        if let del = delegate, self.number != 0 {
             del.didSelectDay(day: self)
         }
         

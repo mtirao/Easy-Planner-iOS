@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     var window: UIWindow?
     var locationManager = CLLocationManager()
     
-    var tracking: Tracking?
+    var tracking: TrackingClient?
 
     public func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
         
@@ -44,7 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             Preferences.appToken = UUID().uuidString
         }
         
-        tracking = Tracking(appId:self.appId, appToken:Preferences.appToken!)
+        tracking = TrackingClient(appId:self.appId, appToken:Preferences.appToken!)
         
         if #available(iOS 10.0, *) {
             let center = UNUserNotificationCenter.current()
@@ -59,6 +59,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         }
         
         UIApplication.shared.registerForRemoteNotifications()
+        
+        if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String,  let build = Bundle.main.infoDictionary?["CFBundleVersion"] as? String  {
+            Preferences.version = "\(version) (\(build))"
+        }
+
         
         return true
     }

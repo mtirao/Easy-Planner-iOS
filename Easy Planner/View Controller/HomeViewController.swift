@@ -20,6 +20,7 @@ class HomeViewController: UIViewController, CalendarControllerDelegate {
     
     @IBOutlet weak var eventTableView: UITableView!
     @IBOutlet weak var addButton: UIBarButtonItem!
+    @IBOutlet weak var calendarViewHeight: NSLayoutConstraint!
     
     var calendarController : CalendarController?
     
@@ -119,6 +120,11 @@ class HomeViewController: UIViewController, CalendarControllerDelegate {
         }
         
     }
+    
+    func adjustHeight(height: Int) {
+       
+    }
+
     
     
 }

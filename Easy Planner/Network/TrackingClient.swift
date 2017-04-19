@@ -16,7 +16,9 @@ enum TrackEventType: String {
     
 }
 
-class Tracking: NSObject {
+
+
+class TrackingClient: NSObject {
     
     var location: CLLocation?
     let appId: String
@@ -27,8 +29,8 @@ class Tracking: NSObject {
     
     private let url = "https://tracking-argsoftsolutions.rhcloud.com/addEvent"
     
-    private let userName = "1ac1df94-bb2b-45aa-b55b-d96cdb080945"
-    private let password = "70f68c46-c96b-4ba8-8d4d-8554f6ac481c"
+   // private let userName = "1ac1df94-bb2b-45aa-b55b-d96cdb080945"
+   // private let password = "70f68c46-c96b-4ba8-8d4d-8554f6ac481c"
     
     init(appId: String, appToken:String) {
        

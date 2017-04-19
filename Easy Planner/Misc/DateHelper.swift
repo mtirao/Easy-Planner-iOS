@@ -19,4 +19,13 @@ class DateHelper: NSObject {
         
     }
     
+    class func mysqlString(from date: Date) -> String {
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = " YYYY-MM-DD HH:mm:SS"
+        
+        return formatter.string(from: date)
+        
+    }
+    
 }

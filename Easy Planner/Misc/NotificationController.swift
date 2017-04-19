@@ -8,19 +8,32 @@
 
 import UIKit
 
-let codeDataDidInitilize = "CodeDataDidInitialize"
-
-class NotificationController: NSObject {
+enum Notes: String {
     
-    class func postNotification(name:String, userInfo:[NSObject: AnyObject]?) {
+    case codeDataDidInitilizeNotification = "CodeDataDidInitialize"
+    case activityIndicatorNotification = "ActivityIndicator"
+    
+    var notification : Notification.Name  {
+        return Notification.Name(rawValue: self.rawValue )
+    }
+}
+
+class NotificationController{
+    
+    class func postNotification(name:Notification.Name, userInfo:[NSObject: AnyObject]?) {
         
-        NotificationCenter.default.post(name: NSNotification.Name(name), object: nil, userInfo: userInfo)
+        NotificationCenter.default.post(name: name, object: nil, userInfo: userInfo)
         
     }
     
-    class func notificationObserver(observer:AnyObject, selector:Selector, name: NSNotification.Name) {
+    class func notificationObserver(observer:AnyObject, selector:Selector, name:Notification.Name) {
         
         NotificationCenter.default.addObserver(observer, selector: selector, name: name, object: nil)
     }
-    
+
+    class func removeObserver(observer:AnyObject) {
+        
+        NotificationCenter.default.removeObserver(observer)
+    }
 }
+
