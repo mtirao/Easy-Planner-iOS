@@ -11,7 +11,6 @@
 		DA0324A51E8303AD0095313E /* CalendarUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0324A41E8303AD0095313E /* CalendarUtilities.swift */; };
 		DA11C2691D7398E400ADB348 /* HeaderCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA11C2681D7398E400ADB348 /* HeaderCalendar.swift */; };
 		DA11C26B1D73A91C00ADB348 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA11C26A1D73A91C00ADB348 /* Day.swift */; };
-		DA11C26D1D73AC4D00ADB348 /* CalendarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA11C26C1D73AC4D00ADB348 /* CalendarController.swift */; };
 		DA11C2701D75183B00ADB348 /* CalendarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA11C26F1D75183B00ADB348 /* CalendarDelegate.swift */; };
 		DA11C2721D761EA500ADB348 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA11C2711D761EA500ADB348 /* Theme.swift */; };
 		DA11C2741D77B5A400ADB348 /* MainEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA11C2731D77B5A400ADB348 /* MainEventViewController.swift */; };
@@ -26,6 +25,10 @@
 		DA71725A1E9290DE007F414A /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DA7172591E9290DE007F414A /* Settings.bundle */; };
 		DA71725C1E92CC0A007F414A /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA71725B1E92CC0A007F414A /* ActivityIndicator.swift */; };
 		DA71725E1E93E639007F414A /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA71725D1E93E639007F414A /* LoginModel.swift */; };
+		DA73E4061ECBD1F50046B56A /* CalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA73E4051ECBD1F50046B56A /* CalendarTableViewCell.swift */; };
+		DA73E4081ECE38B40046B56A /* CalendarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA73E4071ECE38B40046B56A /* CalendarTableViewController.swift */; };
+		DA73E40A1ECE3ABA0046B56A /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA73E4091ECE3ABA0046B56A /* CalendarView.swift */; };
+		DA73E40D1ECE458F0046B56A /* CalendarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA73E40C1ECE458F0046B56A /* CalendarModel.swift */; };
 		DA75FEA01EA5619200B2FD2D /* EventOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA75FE9F1EA5619200B2FD2D /* EventOperation.swift */; };
 		DA75FEA21EA564B200B2FD2D /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA75FEA11EA564B200B2FD2D /* EventModel.swift */; };
 		DA8AF7801D89D52F006DDCF3 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8AF77F1D89D52F006DDCF3 /* DateHelper.swift */; };
@@ -107,7 +110,6 @@
 		DA0324A41E8303AD0095313E /* CalendarUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarUtilities.swift; path = Views/CalendarUtilities.swift; sourceTree = "<group>"; };
 		DA11C2681D7398E400ADB348 /* HeaderCalendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HeaderCalendar.swift; path = Views/HeaderCalendar.swift; sourceTree = "<group>"; };
 		DA11C26A1D73A91C00ADB348 /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Day.swift; path = Views/Day.swift; sourceTree = "<group>"; };
-		DA11C26C1D73AC4D00ADB348 /* CalendarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarController.swift; path = "View Controller/CalendarController.swift"; sourceTree = "<group>"; };
 		DA11C26F1D75183B00ADB348 /* CalendarDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarDelegate.swift; path = Protocol/CalendarDelegate.swift; sourceTree = "<group>"; };
 		DA11C2711D761EA500ADB348 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Theme.swift; path = Misc/Theme.swift; sourceTree = "<group>"; };
 		DA11C2731D77B5A400ADB348 /* MainEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainEventViewController.swift; path = "View Controller/MainEventViewController.swift"; sourceTree = "<group>"; };
@@ -122,6 +124,10 @@
 		DA7172591E9290DE007F414A /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		DA71725B1E92CC0A007F414A /* ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicator.swift; path = Views/ActivityIndicator.swift; sourceTree = "<group>"; };
 		DA71725D1E93E639007F414A /* LoginModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginModel.swift; path = Network/LoginModel.swift; sourceTree = "<group>"; };
+		DA73E4051ECBD1F50046B56A /* CalendarTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarTableViewCell.swift; path = Cells/CalendarTableViewCell.swift; sourceTree = "<group>"; };
+		DA73E4071ECE38B40046B56A /* CalendarTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarTableViewController.swift; path = "View Controller/CalendarTableViewController.swift"; sourceTree = "<group>"; };
+		DA73E4091ECE3ABA0046B56A /* CalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarView.swift; path = Views/CalendarView.swift; sourceTree = "<group>"; };
+		DA73E40C1ECE458F0046B56A /* CalendarModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarModel.swift; path = "View Controller/CalendarModel.swift"; sourceTree = "<group>"; };
 		DA75FE9F1EA5619200B2FD2D /* EventOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventOperation.swift; path = Network/EventOperation.swift; sourceTree = "<group>"; };
 		DA75FEA11EA564B200B2FD2D /* EventModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventModel.swift; path = Network/EventModel.swift; sourceTree = "<group>"; };
 		DA8AF77F1D89D52F006DDCF3 /* DateHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateHelper.swift; path = Misc/DateHelper.swift; sourceTree = "<group>"; };
@@ -230,9 +236,6 @@
 			isa = PBXGroup;
 			children = (
 				DA11C2681D7398E400ADB348 /* HeaderCalendar.swift */,
-				DA11C26A1D73A91C00ADB348 /* Day.swift */,
-				DA11C26C1D73AC4D00ADB348 /* CalendarController.swift */,
-				DA0324A41E8303AD0095313E /* CalendarUtilities.swift */,
 				DA71725B1E92CC0A007F414A /* ActivityIndicator.swift */,
 			);
 			name = Views;
@@ -260,6 +263,19 @@
 				DA5D57E51E8ADF8100F50CE1 /* CloudEventViewModel.swift */,
 			);
 			name = "View Model";
+			sourceTree = "<group>";
+		};
+		DA73E40B1ECE3E3C0046B56A /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				DA73E40C1ECE458F0046B56A /* CalendarModel.swift */,
+				DA73E4051ECBD1F50046B56A /* CalendarTableViewCell.swift */,
+				DA73E4071ECE38B40046B56A /* CalendarTableViewController.swift */,
+				DA73E4091ECE3ABA0046B56A /* CalendarView.swift */,
+				DA0324A41E8303AD0095313E /* CalendarUtilities.swift */,
+				DA11C26A1D73A91C00ADB348 /* Day.swift */,
+			);
+			name = Calendar;
 			sourceTree = "<group>";
 		};
 		DAB2CA3F1E79F7C8004AB652 /* AeroGear */ = {
@@ -316,6 +332,7 @@
 		DAE291C81D6E432B005799CB /* Easy Planner */ = {
 			isa = PBXGroup;
 			children = (
+				DA73E40B1ECE3E3C0046B56A /* Calendar */,
 				DAB2CA3F1E79F7C8004AB652 /* AeroGear */,
 				DAD362161D9DA9BE00B692F9 /* Easy Planner.entitlements */,
 				DAD362171D9DBD1200B692F9 /* Network */,
@@ -605,12 +622,15 @@
 				DA3941651E70B0D700E14D01 /* TrackValue.swift in Sources */,
 				DA5D57E61E8ADF8100F50CE1 /* CloudEventViewModel.swift in Sources */,
 				DAE2924C1D71EB7E005799CB /* NotificationController.swift in Sources */,
+				DA73E40D1ECE458F0046B56A /* CalendarModel.swift in Sources */,
 				DAE292441D71E3A9005799CB /* Contact.swift in Sources */,
 				DAE2923C1D71E39E005799CB /* Text.swift in Sources */,
+				DA73E4061ECBD1F50046B56A /* CalendarTableViewCell.swift in Sources */,
 				DA0324A51E8303AD0095313E /* CalendarUtilities.swift in Sources */,
 				DAB2CA461E79F7DA004AB652 /* ClientDeviceInformation.swift in Sources */,
 				DAE2922F1D71E39E005799CB /* Invitation+CoreDataProperties.swift in Sources */,
 				DAB2CA471E79F7DA004AB652 /* ClientDeviceInformationImpl.swift in Sources */,
+				DA73E40A1ECE3ABA0046B56A /* CalendarView.swift in Sources */,
 				DAE292371D71E39E005799CB /* Option+CoreDataProperties.swift in Sources */,
 				DA71725C1E92CC0A007F414A /* ActivityIndicator.swift in Sources */,
 				DAE8AA091E9C2832005E9ACE /* LoginOperation.swift in Sources */,
@@ -634,7 +654,6 @@
 				DAE2920E1D70E1AF005799CB /* HomeTableViewCell.swift in Sources */,
 				DA71725E1E93E639007F414A /* LoginModel.swift in Sources */,
 				DAE2923B1D71E39E005799CB /* Tables+CoreDataProperties.swift in Sources */,
-				DA11C26D1D73AC4D00ADB348 /* CalendarController.swift in Sources */,
 				DAE2920B1D70DF8B005799CB /* HomeViewController.swift in Sources */,
 				DAE292471D71E578005799CB /* EventManager.swift in Sources */,
 				DAD362201D9DBD5E00B692F9 /* Request.swift in Sources */,
@@ -653,6 +672,7 @@
 				DAE2923A1D71E39E005799CB /* Tables.swift in Sources */,
 				DA11C2801D7DE84B00ADB348 /* NewContactViewController.swift in Sources */,
 				DAE292331D71E39E005799CB /* Misc+CoreDataProperties.swift in Sources */,
+				DA73E4081ECE38B40046B56A /* CalendarTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

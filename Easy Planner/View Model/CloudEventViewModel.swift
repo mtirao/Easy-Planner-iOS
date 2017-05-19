@@ -55,7 +55,7 @@ class CloudEventViewModel: NSObject {
         let loginOperation = LoginOperation(userName: Preferences.userName, password: Preferences.password)
         
         loginOperation.completionBlock = {
-            print(loginOperation.userToken)
+            print(loginOperation.userName)
         }
         
         queue.addOperation(loginOperation)

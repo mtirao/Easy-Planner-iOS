@@ -6,9 +6,85 @@
 //  Copyright © 2016 Marcos Tirao. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-class CalendarController: UIViewController {
+class CalendarModel {
+    
+    let nameOfMonth = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"]
+    let year : Int
+    
+    let numColums = 7
+    let numRows = 6
+    
+    init(year: Int) {
+        self.year = year
+    }
+    
+    func isNewMonth(date: Date, day: Int) -> Bool {
+        
+        let currentCalendar = NSCalendar.current
+        let unitFlags = Set<Calendar.Component>([.weekday, .year, .month, .day ])
+        var comp = currentCalendar.dateComponents(unitFlags, from: date)
+        
+        let month = comp.month!
+        
+        comp.day = day
+        let newDate = currentCalendar.date(from: comp)
+        
+        var comp1 = currentCalendar.dateComponents(unitFlags, from: newDate!)
+        let month1 = comp1.month!
+        
+        return month != month1
+    }
+
+    
+    func calendarForMonth(month: Int) -> [[Int]] {
+        
+        let currentCalendar = NSCalendar.current
+        
+        var dateComponents = DateComponents()
+        dateComponents.day = 1
+        dateComponents.month = month
+        dateComponents.year = year
+        let date = currentCalendar.date(from:dateComponents)
+        
+        var weekday = currentCalendar.component(.weekday, from: date!)
+        
+        var calendar : [[Int]] = Array(repeating:Array(repeating:0, count:numColums), count:numRows)
+        
+        print("Hola:" + String(weekday))
+        
+        var day = 1
+        
+        for i in 0..<numRows {
+            for j in 0..<numColums {
+                
+                if j >= (weekday - 1) && !isNewMonth(date: date!, day: day) {
+                   calendar[i][j] = day
+                   day += 1
+                }
+            }
+            weekday = 0
+        }
+        
+        return calendar
+    }
+    
+    func monthName(month: Int) -> String {
+        if month >= 0 && month < 12 {
+            return nameOfMonth[month];
+        }
+        
+        return "";
+    }
+    
+    func monthCount() -> Int {
+        return nameOfMonth.count
+    }
+
+}
+
+/*class CalendarModel: UIView {
 
     private let headerHeight : CGFloat = 25
     let firstDay = 100
@@ -53,22 +129,25 @@ class CalendarController: UIViewController {
         }
         
     }
-   
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
+    
+    override init(frame: CGRect) {
+        super.init(frame:frame)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
         
         if alreadyLoaded {
             return
         }
         
-        let header = HeaderCalendar(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: headerHeight))
+        let header = HeaderCalendar(frame: CGRect(x: 0, y: 0, width: self.frame.size.width, height: headerHeight))
         header.backgroundColor = UIColor.white
         header.tag = 0
-        self.view.addSubview(header)
+        self.addSubview(header)
         
-        HStep = Int(self.view.frame.size.width) / 7
-        VStep = Int(self.view.frame.size.height - headerHeight) / 6
+        HStep = Int(self.frame.size.width) / 7
+        VStep = Int(self.frame.size.height - headerHeight) / 6
         
         var tag = firstDay
         for i in 1...6 {
@@ -79,42 +158,28 @@ class CalendarController: UIViewController {
                 day.backgroundColor = UIColor.white
                 day.tag = tag
                 day.delegate = self
-                self.view.addSubview(day)
+                self.addSubview(day)
                 
             }
         }
-
+        
         
         calendarForCurrentDate()
         
         alreadyLoaded = true
-        
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    
+    func viewDidAppear(_ animated: Bool) {
         
         
+        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    @IBAction func upSwipe(_ sender: AnyObject) {
-        upOneMonth()
-    }
-
-    @IBAction func downSwipe(_ sender: AnyObject) {
-        downOneMonth()
-    }
-    
     
 }
 
 //MARK: - Calendar delegate protocol
-extension CalendarController : CalendarDelegate {
+extension CalendarView : CalendarDelegate {
     
     func didSelectDay(day: Day) {
         
@@ -133,7 +198,7 @@ extension CalendarController : CalendarDelegate {
 }
 
 //MARK: - Calendar Methods
-extension CalendarController {
+extension CalendarView {
     
     func setToday() {
         self.currentDate = Date()
@@ -196,7 +261,7 @@ extension CalendarController {
         self.currentYear = year
         self.currentMonth = month
         
-        self.navigationController?.navigationBar.topItem?.title = "\(self.nameOfMonth[month-1]) \(year)"
+        //self.navigationController?.navigationBar.topItem?.title = "\(self.nameOfMonth[month-1]) \(year)"
         
         var tag = firstDay
         var dayValue = 1
@@ -204,7 +269,7 @@ extension CalendarController {
         comp = currentCalendar.dateComponents(unitFlags, from: Date())
         
         
-        for view in self.view.subviews {
+        for view in self.subviews {
             if !isNewMonth(date: firstDateOfCurrentMonth, day: dayValue) {
                 if let day = view as? Day {
                     if day.tag >= firstDay + weekday {
@@ -228,7 +293,7 @@ extension CalendarController {
     
     func clearDay() {
         
-        for view in self.view.subviews {
+        for view in self.subviews {
             if view.tag >= firstDay && view.tag <= firstDay + 42 {
                 if let day = view as? Day {
                     day.number = 0
@@ -266,9 +331,6 @@ extension CalendarController {
         self.delegate?.daySelectionChange(selected: false)
         
     }
-    
-    
-    
 
     
-}
+}*/

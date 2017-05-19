@@ -11,18 +11,20 @@ import UIKit
 let homeEventCell = "homeEventCell"
 
 //MARK: - Segue indentifiers
-let embededCalendarSegue = "embededCalendarSegue"
 let addEventSegue = "addEventSegue"
 let eventDetailSegue = "eventDetailSegue"
 let cloudEventSegue = "cloudEventSegue"
+
+enum TableViewTag : Int {
+    case event = 1
+    case calendar = 0
+}
 
 class HomeViewController: UIViewController, CalendarControllerDelegate {
     
     @IBOutlet weak var eventTableView: UITableView!
     @IBOutlet weak var addButton: UIBarButtonItem!
     @IBOutlet weak var calendarViewHeight: NSLayoutConstraint!
-    
-    var calendarController : CalendarController?
     
     var events :[Event]?
     
@@ -35,11 +37,11 @@ class HomeViewController: UIViewController, CalendarControllerDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if let selectedDate = calendarController?.selectedDate {
+        /*if let selectedDate = calendarController?.selectedDate {
             loadEvents(forDate: selectedDate)
         }else {
             loadEvents(forDate: Date())
-        }
+        }*/
         
         AppDelegate.trackInit(value: "HomeViewController")
         
@@ -57,15 +59,12 @@ class HomeViewController: UIViewController, CalendarControllerDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == embededCalendarSegue {
+        
+        if segue.identifier == addEventSegue {
             
-            self.calendarController = segue.destination as? CalendarController
-            self.calendarController?.delegate = self
-        }else if segue.identifier == addEventSegue {
-            
-            if let date = self.calendarController?.selectedDate {
+            /*if let date = self.calendarController?.selectedDate {
                 EventManager.sharedInstance.createEvent(forDate: date)
-            }
+            }*/
             
         }else if segue.identifier == eventDetailSegue {
             
@@ -76,9 +75,9 @@ class HomeViewController: UIViewController, CalendarControllerDelegate {
             }
             
         }else if segue.identifier == cloudEventSegue {
-            if let cloudEvent = segue.destination as? CloudEventViewController {
+            /*if let cloudEvent = segue.destination as? CloudEventViewController {
                 cloudEvent.selectedDate = self.calendarController?.selectedDate ?? self.calendarController?.currentDate
-            }
+            }*/
         }
         
     }
@@ -86,7 +85,7 @@ class HomeViewController: UIViewController, CalendarControllerDelegate {
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         
         if identifier == addEventSegue {
-            return calendarController?.selectedDate != nil
+            //return calendarController?.selectedDate != nil
         }
         
         return true
@@ -112,9 +111,9 @@ class HomeViewController: UIViewController, CalendarControllerDelegate {
         self.events?.removeAll()
         
         if selected {
-            if let selectedDate = self.calendarController?.selectedDate {
+           /* if let selectedDate = self.calendarController?.selectedDate {
                 self.loadEvents(forDate: selectedDate)
-            }
+            } */
         }else {
             self.eventTableView?.reloadData()
         }
@@ -136,7 +135,7 @@ extension HomeViewController {
     
     @IBAction func todayAction(_ sender: AnyObject) {
         
-        self.calendarController?.setToday()
+        //self.calendarController?.setToday()
         
     }
     
@@ -149,20 +148,28 @@ extension HomeViewController: UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        
+        if tableView.tag == TableViewTag.calendar.rawValue {
+            return false;
+        }
+        
         return true
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         
-        switch editingStyle {
-        case .delete:
-            if let event = self.events?[indexPath.row] {
-                EventManager.sharedInstance.deleteEvent(event: event)
-                self.events?.remove(at: indexPath.row)
-                tableView.deleteRows(at: [indexPath], with: .fade)
+        if tableView.tag == TableViewTag.event.rawValue {
+            switch editingStyle {
+            case .delete:
+                if let event = self.events?[indexPath.row] {
+                    EventManager.sharedInstance.deleteEvent(event: event)
+                    self.events?.remove(at: indexPath.row)
+                    tableView.deleteRows(at: [indexPath], with: .fade)
+                }
+                break
+            default: break
+            
             }
-            break
-        default: break
             
         }
         
@@ -171,28 +178,43 @@ extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView,
                    numberOfRowsInSection section: Int) -> Int {
         
-        return self.events?.count ?? 0
+        if tableView.tag == TableViewTag.event.rawValue {
+            return self.events?.count ?? 0
+        }else {
+            return 1;
+        }
     }
     
     func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: homeEventCell) as? HomeTableViewCell
+        if tableView.tag == TableViewTag.event.rawValue {
         
-        if let event = self.events?[indexPath.row] {
+            let cell = tableView.dequeueReusableCell(withIdentifier: homeEventCell) as? HomeTableViewCell
+        
+            if let event = self.events?[indexPath.row] {
             
-            cell?.eventName.text = event.name ?? ""
+                cell?.eventName.text = event.name ?? ""
             
-            cell?.eventTime.text = DateHelper.string(from: event.date! as Date , timeOnly: true)
+                cell?.eventTime.text = DateHelper.string(from: event.date! as Date , timeOnly: true)
             
-            if let place = event.place {
+                if let place = event.place {
                 
-                cell?.eventLoc.text = "\(place.City ?? "Some City"), \(place.Address ?? "Some Address")"
+                    cell?.eventLoc.text = "\(place.City ?? "Some City"), \(place.Address ?? "Some Address")"
                 
+                }
             }
+        
+            return cell!
+        } else {
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "calendarCell")
+            
+            return cell!
+            
         }
         
-        return cell!
+        
         
     }
     
