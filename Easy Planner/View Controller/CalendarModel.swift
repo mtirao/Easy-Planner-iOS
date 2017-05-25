@@ -11,10 +11,21 @@ import Foundation
 class CalendarModel {
     
     let nameOfMonth = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"]
+    let nameOfMonthLong = ["JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE", "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER"]
     let year : Int
     
     let numColums = 7
     let numRows = 6
+    
+    var longMonthName = false
+    
+    init(addYear:Int) {
+        let currentCalendar = NSCalendar.current
+        let unitFlags = Set<Calendar.Component>([.weekday, .year, .month, .day ])
+        var comp = currentCalendar.dateComponents(unitFlags, from: Date())
+        
+        self.year = comp.year! + addYear
+    }
     
     init(year: Int) {
         self.year = year
@@ -52,8 +63,6 @@ class CalendarModel {
         
         var calendar : [[Int]] = Array(repeating:Array(repeating:0, count:numColums), count:numRows)
         
-        print("Hola:" + String(weekday))
-        
         var day = 1
         
         for i in 0..<numRows {
@@ -72,7 +81,11 @@ class CalendarModel {
     
     func monthName(month: Int) -> String {
         if month >= 0 && month < 12 {
-            return nameOfMonth[month];
+            if longMonthName {
+                return nameOfMonthLong[month];
+            } else {
+                return nameOfMonth[month];
+            }
         }
         
         return "";
@@ -81,256 +94,9 @@ class CalendarModel {
     func monthCount() -> Int {
         return nameOfMonth.count
     }
+    
+    func yearAsString() -> String {
+        return String(self.year)
+    }
 
 }
-
-/*class CalendarModel: UIView {
-
-    private let headerHeight : CGFloat = 25
-    let firstDay = 100
-    var currentDate = Date()
-    
-    let nameOfMonth = ["JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE", "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER"]
-    
-    let currentCalendar = NSCalendar.current
-    
-    var selectedDay : Day?
-    
-    var currentMonth : Int = 0
-    var currentYear : Int = 0
-    
-    var delegate: CalendarControllerDelegate?
-    
-    var alreadyLoaded = false
-    
-    var VStep = 0
-    var HStep = 0
-    
-    var selectedDate : Date? {
-        
-        get {
-            
-            let unitFlags = Set<Calendar.Component>([.year, .month, .day ])
-            var comp = currentCalendar.dateComponents(unitFlags, from: Date())
-            
-            if let day = selectedDay?.number {
-                comp.setValue(day, for: .day)
-                comp.setValue(currentYear, for: .year)
-                comp.setValue(currentMonth, for: .month)
-                return currentCalendar.date(from: comp)
-            }else {
-                return nil
-            }
-
-        }
-        
-        set {
-            
-        }
-        
-    }
-    
-    override init(frame: CGRect) {
-        super.init(frame:frame)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        
-        if alreadyLoaded {
-            return
-        }
-        
-        let header = HeaderCalendar(frame: CGRect(x: 0, y: 0, width: self.frame.size.width, height: headerHeight))
-        header.backgroundColor = UIColor.white
-        header.tag = 0
-        self.addSubview(header)
-        
-        HStep = Int(self.frame.size.width) / 7
-        VStep = Int(self.frame.size.height - headerHeight) / 6
-        
-        var tag = firstDay
-        for i in 1...6 {
-            for j in 1...7 {
-                
-                tag += 1
-                let day = Day(frame: CGRect(x: CGFloat((j-1) * HStep), y: headerHeight + CGFloat((i-1)*VStep), width: CGFloat(HStep), height: CGFloat(VStep)) )
-                day.backgroundColor = UIColor.white
-                day.tag = tag
-                day.delegate = self
-                self.addSubview(day)
-                
-            }
-        }
-        
-        
-        calendarForCurrentDate()
-        
-        alreadyLoaded = true
-    }
-    
-    
-    func viewDidAppear(_ animated: Bool) {
-        
-        
-        
-    }
-    
-}
-
-//MARK: - Calendar delegate protocol
-extension CalendarView : CalendarDelegate {
-    
-    func didSelectDay(day: Day) {
-        
-        self.selectedDay?.selected = false
-        self.selectedDay?.setNeedsDisplay()
-        
-        day.selected = true
-        day.setNeedsDisplay()
-        
-        self.selectedDay = day
-        
-        self.delegate?.daySelectionChange(selected: true)
-        
-    }
-    
-}
-
-//MARK: - Calendar Methods
-extension CalendarView {
-    
-    func setToday() {
-        self.currentDate = Date()
-        self.calendarForCurrentDate()
-    }
-    
-    func firstDateOfCurrentMonth() -> Date {
-        
-        let currentCalendar = Calendar.current
-        let unitFlags = Set<Calendar.Component>([.weekday, .year, .month, .day ])
-        
-        var comp = currentCalendar.dateComponents(unitFlags, from: self.currentDate)
-        comp.setValue(1, for: .day)
-        
-        return currentCalendar.date(from: comp)!
-    }
-    
-    func lastDateOfCurrentMonth() -> Date {
-        
-        let currentCalendar = Calendar.current
-        let unitFlags = Set<Calendar.Component>([.year, .month, .day ])
-        var comp = currentCalendar.dateComponents(unitFlags, from: Date())
-        
-        let dayRange = currentCalendar.range(of: .day, in: .month, for: Date())
-        
-        comp.setValue(dayRange?.upperBound, for: .day)
-        
-        return currentCalendar.date(from: comp)!
-        
-    }
-    
-    func isNewMonth(date: Date, day: Int) -> Bool {
-        
-        let unitFlags = Set<Calendar.Component>([.weekday, .year, .month, .day ])
-        var comp = self.currentCalendar.dateComponents(unitFlags, from: date)
-        
-        let month = comp.month!
-        
-        comp.day = day
-        let newDate = self.currentCalendar.date(from: comp)
-        
-        var comp1 = currentCalendar.dateComponents(unitFlags, from: newDate!)
-        let month1 = comp1.month!
-        
-        return month != month1
-    }
-    
-    func calendarForCurrentDate() {
-        
-        let firstDateOfCurrentMonth = self.firstDateOfCurrentMonth()
-        
-        let unitFlags = Set<Calendar.Component>([.weekday, .year, .month, .day ])
-        var comp = currentCalendar.dateComponents(unitFlags, from: firstDateOfCurrentMonth)
-       
-        
-        let weekday = comp.weekday!
-        let month = comp.month!
-        let year = comp.year!
-        
-        self.currentYear = year
-        self.currentMonth = month
-        
-        //self.navigationController?.navigationBar.topItem?.title = "\(self.nameOfMonth[month-1]) \(year)"
-        
-        var tag = firstDay
-        var dayValue = 1
-        
-        comp = currentCalendar.dateComponents(unitFlags, from: Date())
-        
-        
-        for view in self.subviews {
-            if !isNewMonth(date: firstDateOfCurrentMonth, day: dayValue) {
-                if let day = view as? Day {
-                    if day.tag >= firstDay + weekday {
-                        day.number = dayValue
-                        if dayValue == comp.day! && month == comp.month! && year == comp.year! {
-                            day.today = true
-                        }
-                        day.setNeedsDisplay()
-                        dayValue += 1
-                    }
-                    tag += 1
-                
-                }
-            }else {
-                break
-            }
-            
-        }
-        
-    }
-    
-    func clearDay() {
-        
-        for view in self.subviews {
-            if view.tag >= firstDay && view.tag <= firstDay + 42 {
-                if let day = view as? Day {
-                    day.number = 0
-                    day.selected = false
-                    day.today = false
-                    day.setNeedsDisplay()
-                }
-                
-            }
-        }
-        
-    }
-    
-    func upOneMonth() {
-        
-        clearDay()
-        
-
-        self.currentDate = currentCalendar.date(byAdding: .month, value: 1, to: self.currentDate)!
-        
-        self.calendarForCurrentDate()
-        
-        self.delegate?.daySelectionChange(selected: false)
-        
-    }
-    
-    func downOneMonth() {
-        
-        clearDay()
-        
-        self.currentDate = currentCalendar.date(byAdding: .month, value: -1, to: self.currentDate)!
-        
-        self.calendarForCurrentDate()
-        
-        self.delegate?.daySelectionChange(selected: false)
-        
-    }
-
-    
-}*/

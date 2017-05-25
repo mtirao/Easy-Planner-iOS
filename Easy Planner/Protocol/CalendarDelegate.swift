@@ -8,15 +8,15 @@
 
 import UIKit
 
-protocol CalendarDelegate{
-
-    func didSelectDay(day: Day)
-    
-}
-
 protocol CalendarControllerDelegate {
     
     func daySelectionChange(selected: Bool)
     func adjustHeight(height: Int)
+    
+}
+
+protocol CalendarViewDelegate {
+    
+    func didSelectMonth(month: Int, year: Int)
     
 }

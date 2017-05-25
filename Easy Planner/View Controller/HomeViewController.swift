@@ -23,8 +23,13 @@ enum TableViewTag : Int {
 class HomeViewController: UIViewController, CalendarControllerDelegate {
     
     @IBOutlet weak var eventTableView: UITableView!
+    @IBOutlet weak var month: MonthView!
     @IBOutlet weak var addButton: UIBarButtonItem!
     @IBOutlet weak var calendarViewHeight: NSLayoutConstraint!
+    
+    
+    var calendarModel : CalendarModel?
+    var selectedMonth :  Int?
     
     var events :[Event]?
     
@@ -37,11 +42,7 @@ class HomeViewController: UIViewController, CalendarControllerDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        /*if let selectedDate = calendarController?.selectedDate {
-            loadEvents(forDate: selectedDate)
-        }else {
-            loadEvents(forDate: Date())
-        }*/
+        self.month.dataMonth(calendarModel: calendarModel!, forMonth: selectedMonth!)
         
         AppDelegate.trackInit(value: "HomeViewController")
         

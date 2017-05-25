@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="GDx-Pd-wNB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="GDx-Pd-wNB">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,64 +10,86 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Calendar Table View Controller-->
-        <scene sceneID="RSY-KC-v08">
+        <!--Easy Planner-->
+        <scene sceneID="g9H-DD-PIf">
             <objects>
-                <tableViewController id="Fof-Kk-rTY" customClass="CalendarTableViewController" customModule="Easy_Planner" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="489" sectionHeaderHeight="28" sectionFooterHeight="28" id="RyR-iv-Ong">
+                <collectionViewController id="qQU-YC-8yB" customClass="CalendarCollectionViewControll" customModule="Easy_Planner" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="25k-9v-XWJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="calendarCell" rowHeight="489" id="5fs-7M-zLx" customClass="CalendarTableViewCell" customModule="Easy_Planner" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="489"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5fs-7M-zLx" id="rZv-R1-Dge">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="489"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="Wun-pf-V6D">
+                            <size key="itemSize" width="107" height="105"/>
+                            <size key="headerReferenceSize" width="50" height="50"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="calendarCell" id="rUl-EY-74h" customClass="CalendarCell" customModule="Easy_Planner" customModuleProvider="target">
+                                <rect key="frame" x="10" y="50" width="107" height="105"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="107" height="105"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PLa-lI-rtR">
-                                            <rect key="frame" x="16" y="8" width="90" height="21"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="21" id="ohd-S6-MUr"/>
-                                                <constraint firstAttribute="width" constant="90" id="qUu-jX-3QK"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k7I-py-mLw" customClass="CalendarView" customModule="Easy_Planner" customModuleProvider="target">
-                                            <rect key="frame" x="8" y="33" width="359" height="448"/>
+                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KBl-HY-NWg" customClass="MonthView" customModule="Easy_Planner" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="107" height="105"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </view>
                                     </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="k7I-py-mLw" secondAttribute="trailing" constant="8" id="3UA-7b-KCl"/>
-                                        <constraint firstItem="PLa-lI-rtR" firstAttribute="top" secondItem="rZv-R1-Dge" secondAttribute="topMargin" id="5Tr-Sf-tK4"/>
-                                        <constraint firstItem="k7I-py-mLw" firstAttribute="leading" secondItem="rZv-R1-Dge" secondAttribute="leading" constant="8" id="NRb-AT-Y96"/>
-                                        <constraint firstItem="k7I-py-mLw" firstAttribute="top" secondItem="PLa-lI-rtR" secondAttribute="bottom" constant="4" id="YLm-2N-Kaf"/>
-                                        <constraint firstItem="PLa-lI-rtR" firstAttribute="leading" secondItem="rZv-R1-Dge" secondAttribute="leadingMargin" constant="8" id="cRb-g2-7p6"/>
-                                        <constraint firstAttribute="bottom" secondItem="k7I-py-mLw" secondAttribute="bottom" constant="8" id="rOk-VH-2Uz"/>
-                                    </constraints>
-                                </tableViewCellContentView>
+                                </view>
                                 <connections>
-                                    <outlet property="calendar" destination="k7I-py-mLw" id="Qfm-Tr-hvb"/>
-                                    <outlet property="yearLabel" destination="PLa-lI-rtR" id="Tzb-Vk-K4E"/>
+                                    <outlet property="calendar" destination="KBl-HY-NWg" id="Shs-Uh-bfX"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="eventSegue" id="HHR-9m-NaN"/>
                                 </connections>
-                            </tableViewCell>
-                        </prototypes>
+                            </collectionViewCell>
+                        </cells>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="headerSection" id="gJ4-Ae-QyK" customClass="CalendarHeader" customModule="Easy_Planner" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2017" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bAp-Mt-xkS">
+                                    <rect key="frame" x="9" y="0.0" width="82" height="36"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="82" id="PxM-Uv-l4d"/>
+                                        <constraint firstAttribute="height" constant="36" id="zuA-uo-Ofv"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zA9-7N-cvH">
+                                    <rect key="frame" x="8" y="40" width="359" height="1"/>
+                                    <color key="backgroundColor" red="0.86830068005181349" green="0.86830068005181349" blue="0.86830068005181349" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="1" id="vEw-He-sOO"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="zA9-7N-cvH" firstAttribute="leading" secondItem="gJ4-Ae-QyK" secondAttribute="leadingMargin" id="696-xm-QGA"/>
+                                <constraint firstItem="bAp-Mt-xkS" firstAttribute="top" secondItem="gJ4-Ae-QyK" secondAttribute="topMargin" constant="-8" id="9MQ-gN-cvG"/>
+                                <constraint firstItem="zA9-7N-cvH" firstAttribute="trailing" secondItem="gJ4-Ae-QyK" secondAttribute="trailingMargin" id="MaX-5A-DD3"/>
+                                <constraint firstItem="zA9-7N-cvH" firstAttribute="top" secondItem="bAp-Mt-xkS" secondAttribute="bottom" constant="4" id="VSV-sD-Zg2"/>
+                                <constraint firstItem="bAp-Mt-xkS" firstAttribute="leading" secondItem="gJ4-Ae-QyK" secondAttribute="leadingMargin" constant="1" id="ezp-it-F1b"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="yearLabel" destination="bAp-Mt-xkS" id="mW6-nK-K5j"/>
+                            </connections>
+                        </collectionReusableView>
                         <connections>
-                            <outlet property="dataSource" destination="Fof-Kk-rTY" id="dRg-m1-oGd"/>
-                            <outlet property="delegate" destination="Fof-Kk-rTY" id="xuv-jI-WxD"/>
+                            <outlet property="dataSource" destination="qQU-YC-8yB" id="8OS-fX-k8f"/>
+                            <outlet property="delegate" destination="qQU-YC-8yB" id="Uu9-0b-Rfh"/>
                         </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="gmd-5W-0Qz"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cfj-Gf-DYc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="Easy Planner" id="0Nt-nu-Ott"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uhV-4y-Nh6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1108" y="-848"/>
+            <point key="canvasLocation" x="1204" y="-822.63868065967017"/>
         </scene>
-        <!--Easy Planner-->
+        <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="Easy_Planner" customModuleProvider="target" sceneMemberID="viewController">
@@ -79,25 +101,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6ow-UA-aWg">
-                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
-                                <items>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="wZj-Gd-Mcp"/>
-                                    <barButtonItem systemItem="action" id="Z4x-cr-ZYA">
-                                        <connections>
-                                            <action selector="cloudAction:" destination="BYZ-38-t0r" id="WI6-nn-ApP"/>
-                                            <segue destination="l66-YA-4xG" kind="show" identifier="cloudEventSegue" id="o7T-bv-Zzd"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                                <color key="tintColor" red="0.1450980392" green="0.66274509800000003" blue="0.51372549020000002" alpha="1" colorSpace="calibratedRGB"/>
-                            </toolbar>
-                            <tableView clipsSubviews="YES" tag="1" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1qf-LC-S9z">
-                                <rect key="frame" x="0.0" y="266" width="375" height="357"/>
+                            <tableView clipsSubviews="YES" tag="1" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="1qf-LC-S9z">
+                                <rect key="frame" x="0.0" y="278" width="375" height="345"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="homeEventCell" id="ux8-VC-wtT" customClass="HomeTableViewCell" customModule="Easy_Planner" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="1" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ux8-VC-wtT" id="rC5-1Z-gQz">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -157,83 +166,57 @@
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="9AK-VF-Oxm"/>
                                 </connections>
                             </tableView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="210" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dA0-Ol-4HY">
-                                <rect key="frame" x="0.0" y="64" width="375" height="202"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="202" id="FF0-UQ-uHd"/>
-                                </constraints>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="calendarCell" rowHeight="210" id="vCo-J0-mH9" customClass="CalendarTableViewCell" customModule="Easy_Planner" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="210"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vCo-J0-mH9" id="1h8-uO-Tzt">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="210"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4x0-3n-U7t" customClass="CalendarView" customModule="Easy_Planner" customModuleProvider="target">
-                                                    <rect key="frame" x="8" y="8" width="359" height="202"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </view>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="4x0-3n-U7t" secondAttribute="bottom" id="CLy-tY-lzg"/>
-                                                <constraint firstItem="4x0-3n-U7t" firstAttribute="top" secondItem="1h8-uO-Tzt" secondAttribute="top" constant="8" id="FCk-6W-vbY"/>
-                                                <constraint firstAttribute="trailing" secondItem="4x0-3n-U7t" secondAttribute="trailing" constant="8" id="YBM-4d-f5c"/>
-                                                <constraint firstItem="4x0-3n-U7t" firstAttribute="leading" secondItem="1h8-uO-Tzt" secondAttribute="leading" constant="8" id="vDO-gq-Jac"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="bV4-jC-zcl"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="wns-fH-uTx"/>
-                                </connections>
-                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HI1-kC-Hhx" customClass="MonthView" customModule="Easy_Planner" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="375" height="242"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                        <integer key="value" value="17"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="headerTopSpacing">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="headerLeftSpacing">
+                                        <real key="value" value="24"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="longMonthName" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="monthTopSpacing">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="dayName" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6ow-UA-aWg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="8by-vR-Zcf"/>
-                            <constraint firstItem="6ow-UA-aWg" firstAttribute="top" secondItem="1qf-LC-S9z" secondAttribute="bottom" id="9be-Qy-0Wa"/>
-                            <constraint firstItem="dA0-Ol-4HY" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="OBc-fF-Mih"/>
-                            <constraint firstItem="1qf-LC-S9z" firstAttribute="top" secondItem="dA0-Ol-4HY" secondAttribute="bottom" id="PYv-xz-eZ7"/>
-                            <constraint firstAttribute="trailing" secondItem="6ow-UA-aWg" secondAttribute="trailing" id="atH-hc-JEy"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="6ow-UA-aWg" secondAttribute="bottom" id="bzZ-VF-sDk"/>
-                            <constraint firstAttribute="trailing" secondItem="dA0-Ol-4HY" secondAttribute="trailing" id="fVc-q9-Lk8"/>
+                            <constraint firstItem="1qf-LC-S9z" firstAttribute="trailing" secondItem="HI1-kC-Hhx" secondAttribute="trailing" id="7cw-Vj-yv1"/>
+                            <constraint firstItem="HI1-kC-Hhx" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Aak-Xi-JJi"/>
+                            <constraint firstItem="1qf-LC-S9z" firstAttribute="leading" secondItem="HI1-kC-Hhx" secondAttribute="leading" id="Hu8-pO-liQ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="HI1-kC-Hhx" secondAttribute="bottom" constant="317" id="M8D-HS-n9l"/>
+                            <constraint firstItem="1qf-LC-S9z" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="O6I-V2-CJ5"/>
+                            <constraint firstItem="1qf-LC-S9z" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="214" id="fk2-3k-6Hk"/>
                             <constraint firstItem="1qf-LC-S9z" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="nwK-uC-2X6"/>
-                            <constraint firstItem="dA0-Ol-4HY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="qsx-Ye-0vu"/>
                             <constraint firstAttribute="trailing" secondItem="1qf-LC-S9z" secondAttribute="trailing" id="zRs-ZQ-mnw"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Easy Planner" id="ICM-OA-Mtj">
-                        <barButtonItem key="leftBarButtonItem" title="Today" id="ePd-1i-BsJ">
+                    <toolbarItems>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="qgo-SU-d7w"/>
+                        <barButtonItem systemItem="action" id="Z4x-cr-ZYA">
                             <color key="tintColor" red="0.1450980392" green="0.66274509800000003" blue="0.51372549020000002" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <action selector="todayAction:" destination="BYZ-38-t0r" id="DlN-bj-Yg8"/>
+                                <action selector="cloudAction:" destination="BYZ-38-t0r" id="WI6-nn-ApP"/>
+                                <segue destination="l66-YA-4xG" kind="show" identifier="cloudEventSegue" id="o7T-bv-Zzd"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="add" id="3g5-Mo-UHT">
-                            <connections>
-                                <segue destination="gia-yq-EJi" kind="show" identifier="addEventSegue" id="IFe-Zd-jFU"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    </toolbarItems>
                     <connections>
-                        <outlet property="addButton" destination="3g5-Mo-UHT" id="Edp-KN-adg"/>
                         <outlet property="eventTableView" destination="1qf-LC-S9z" id="Ieg-8J-TgU"/>
+                        <outlet property="month" destination="HI1-kC-Hhx" id="mpa-59-vrC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1780" y="-902"/>
-        </scene>
-        <!--Event-->
-        <scene sceneID="edd-pi-eC6">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Event" id="gia-yq-EJi" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sII-nc-0Na" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2311" y="-961"/>
+            <point key="canvasLocation" x="2053.5999999999999" y="-822.63868065967017"/>
         </scene>
         <!--Event-->
         <scene sceneID="oaM-wA-0Oa">
@@ -241,7 +224,7 @@
                 <viewControllerPlaceholder storyboardName="Event" id="nPp-MM-6jZ" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b9W-Ln-yZT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2292" y="-705"/>
+            <point key="canvasLocation" x="2638" y="-920"/>
         </scene>
         <!--Cloud-->
         <scene sceneID="VBY-qk-ffD">
@@ -249,7 +232,7 @@
                 <viewControllerPlaceholder storyboardName="Cloud" id="l66-YA-4xG" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X6S-O9-41i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2314" y="-533"/>
+            <point key="canvasLocation" x="2637" y="-671"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="OVv-jp-ubE">
@@ -266,7 +249,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </toolbar>
                     <connections>
-                        <segue destination="Fof-Kk-rTY" kind="relationship" relationship="rootViewController" id="N5q-pD-lOa"/>
+                        <segue destination="qQU-YC-8yB" kind="relationship" relationship="rootViewController" id="yEc-Ku-foa"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bff-Md-dcx" userLabel="First Responder" sceneMemberID="firstResponder"/>
