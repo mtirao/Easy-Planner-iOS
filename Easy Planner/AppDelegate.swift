@@ -11,6 +11,9 @@ import CoreData
 import CoreLocation
 import UserNotifications
 import Foundation
+import Firebase
+import FBSDKCoreKit
+
 
 @UIApplicationMain
 
@@ -22,20 +25,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     var locationManager = CLLocationManager()
     
     var tracking: TrackingClient?
+    
+    public static var sharedInstance : AppDelegate {
+        
+        get {
+            return UIApplication.shared.delegate as! AppDelegate
+        }
+        
+    }
 
     public func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
         
         _ = EventManager.sharedInstance
         
         
+        if !Preferences.onboarded {
+            let onboardStoryboard = UIStoryboard(name: "OnBoard", bundle: nil)
+            
+            let viewController = onboardStoryboard.instantiateInitialViewController()
+            
+            self.window?.rootViewController = viewController
+            
+        } else {
+            
+            enablePushNotification()
+        }
+        
         locationManager.delegate = self
         
         if CLLocationManager.authorizationStatus() == .authorizedAlways || CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
             
             locationManager.startUpdatingLocation()
-            
-        }else if CLLocationManager.authorizationStatus() == .notDetermined{
-            locationManager.requestWhenInUseAuthorization()
             
         }
         
@@ -46,24 +66,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         
         tracking = TrackingClient(appId:self.appId, appToken:Preferences.appToken!)
         
-        if #available(iOS 10.0, *) {
-            let center = UNUserNotificationCenter.current()
-            center.delegate = self
-            center.requestAuthorization(options:[.badge, .alert, .sound]) { (granted, error) in
-                // Enable or disable features based on authorization.
-            }
-        }
-        else {
-            
-            UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings(types: [.sound, .alert, .badge], categories: nil))
-        }
         
-        UIApplication.shared.registerForRemoteNotifications()
         
         if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String,  let build = Bundle.main.infoDictionary?["CFBundleVersion"] as? String  {
             Preferences.version = "\(version) (\(build))"
         }
 
+        FirebaseApp.configure()
+        
+        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
         return true
     }
@@ -86,6 +97,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
        
     }
     
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        
+        let handled = FBSDKApplicationDelegate.sharedInstance().application(app, open: url, options: options)
+    
+        return handled;
+        
+    }
    
 }
 
@@ -121,21 +139,38 @@ extension AppDelegate {
         print(error)
     }
     
+    
+    
 }
 
 //MARK: - Misc Method
 extension AppDelegate {
-    
-    fileprivate class func getDelegate() -> AppDelegate {
-        return UIApplication.shared.delegate as! AppDelegate
+   
+    func enablePushNotification() {
+        
+        if #available(iOS 10.0, *) {
+            let center = UNUserNotificationCenter.current()
+            center.delegate = self
+            center.requestAuthorization(options:[.badge, .alert, .sound]) { (granted, error) in
+                // Enable or disable features based on authorization.
+            }
+        }
+        else {
+            
+            UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings(types: [.sound, .alert, .badge], categories: nil))
+        }
+        
+        UIApplication.shared.registerForRemoteNotifications()
+        
     }
     
+    
     class func trackInit(value: String) {
-        AppDelegate.getDelegate().tracking?.trackInitEvent(value: TrackEventValue.ViewAppear.rawValue + ":" + value)
+        AppDelegate.sharedInstance.tracking?.trackInitEvent(value: TrackEventValue.ViewAppear.rawValue + ":" + value)
     }
     
     class func trackExit(value: String) {
-        AppDelegate.getDelegate().tracking?.trackExitEvent(value: TrackEventValue.ViewDisappear.rawValue + ":" + value)
+        AppDelegate.sharedInstance.tracking?.trackExitEvent(value: TrackEventValue.ViewDisappear.rawValue + ":" + value)
     }
     
 }

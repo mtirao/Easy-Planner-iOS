@@ -18,7 +18,7 @@ class SocialClient {
     private let appId = "1ac1df94-bb2b-45aa-b55b-d96cdb080945"
     private let secret = "70f68c46-c96b-4ba8-8d4d-8554f6ac481c"
     
-    let kSocialServerUrl = "https://social-argsoftsolutions.rhcloud.com"
+    let kSocialServerUrl = "https://social-argsoftsolutions.rhcloud.com/api/v1"
     
     private init() {
         
@@ -54,7 +54,7 @@ class SocialClient {
         let resource = kSocialServerUrl + "/createEvent"
         
         let parameters : [String : String] = ["name" : name,
-                                              "date" : DateHelper.mysqlString(from: date)]
+                                              "date" : CalendarUtil.mysqlString(from: date)]
         
         makeRequest(url: resource, parameters: parameters) {data in
             

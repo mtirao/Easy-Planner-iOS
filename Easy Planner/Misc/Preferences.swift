@@ -21,6 +21,7 @@ private let versionKey = "versionKey"
 private let pushNotificationKey = "pushNotification"
 private let userNameKey = "userNameKey"
 private let passwordKey = "passwordKey"
+private let onboardedKey = "onboarded"
 
 class Preferences {
     
@@ -177,7 +178,17 @@ class Preferences {
         get {
             return UserDefaults.standard.string(forKey: userTokenKey) ?? ""
         }
+    }
+    
+    static var onboarded: Bool {
         
+        set {
+            UserDefaults.standard.set(newValue, forKey: onboardedKey)
+        }
+        
+        get {
+            return UserDefaults.standard.bool(forKey: onboardedKey)
+        }
         
     }
     

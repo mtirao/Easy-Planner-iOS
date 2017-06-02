@@ -51,7 +51,6 @@ class ContactsViewController: UITableViewController, CNContactPickerDelegate {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.navigationController?.setToolbarHidden(true, animated: true)
         
         AppDelegate.trackExit(value: "ContactsVIewController")
     }

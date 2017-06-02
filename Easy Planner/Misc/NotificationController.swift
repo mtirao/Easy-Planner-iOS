@@ -6,7 +6,7 @@
 //  Copyright © 2016 Marcos Tirao. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 enum Notes: String {
     

@@ -14,10 +14,18 @@ class CloudEventViewModel: NSObject {
     
     private var indexPath : IndexPath = IndexPath(row: 0, section: 0)
     
-    func fetchEventsForMonth(month: Date) {
+    func fetchEventsForMonth(month: Date, yearly: Bool) {
         
-        let firstDate = CalendarUtil.startOfMonth(forDate: month)
-        let lastDate = CalendarUtil.endOfMonth(forDate: month)
+        var firstDate : Date
+        var lastDate : Date
+        
+        if yearly {
+            firstDate = CalendarUtil.startOfYear(forDate: month)
+            lastDate = CalendarUtil.endOfYear(forDate: month)
+        }else {
+            firstDate = CalendarUtil.startOfMonth(forDate: month)
+            lastDate = CalendarUtil.endOfMonth(forDate: month)
+        }
         
         events = EventManager.sharedInstance.eventsForDate(firstDate: firstDate as NSDate, lastDate: lastDate as NSDate)
         

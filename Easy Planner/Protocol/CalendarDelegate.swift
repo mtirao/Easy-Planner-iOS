@@ -8,15 +8,9 @@
 
 import UIKit
 
-protocol CalendarControllerDelegate {
-    
-    func daySelectionChange(selected: Bool)
-    func adjustHeight(height: Int)
-    
-}
 
 protocol CalendarViewDelegate {
     
-    func didSelectMonth(month: Int, year: Int)
+    func didSelectDate(day: Int, month: Int, year: Int)
     
 }

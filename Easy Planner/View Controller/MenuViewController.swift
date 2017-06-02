@@ -35,7 +35,6 @@ class MenuViewController: UITableViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.navigationController?.setToolbarHidden(true, animated: true)
         
         AppDelegate.trackExit(value: "MenuVIewController")
     }
@@ -56,7 +55,7 @@ class MenuViewController: UITableViewController {
         
         if segue.identifier == menuDetailSegue {
             
-            if let navController = segue.destination as? UINavigationController, let menuDetail = navController.viewControllers[0] as? NewMenuViewController{
+            if let menuDetail = segue.destination as? NewMenuViewController{
                 
                 if let selectedCell = self.tableView.indexPathForSelectedRow{
                     menuDetail.editting = true
@@ -84,8 +83,8 @@ extension MenuViewController {
         if let event = EventManager.sharedInstance.currentEvent {
         
             currentMenu = EventManager.sharedInstance.addMenuToEvent(event: event)
-        
-            self.performSegue(withIdentifier: menuDetailSegue, sender: nil)
+            self.menus = EventManager.sharedInstance.menuForEvent(event: event)
+            self.tableView?.reloadData()
         }
     
     }

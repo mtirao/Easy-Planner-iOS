@@ -47,6 +47,26 @@ class CalendarModel {
         
         return month != month1
     }
+    
+    func today(day: Int, month: Int, year: Int) -> Bool {
+        
+        let currentCalendar = NSCalendar.current
+        
+        let currentDay = currentCalendar.component(.day, from: Date())
+        let currentMonth = currentCalendar.component(.month, from: Date())
+        let currentYear = currentCalendar.component(.year, from: Date())
+        
+        return (day == currentDay) && (month == currentMonth) && (year == currentYear)
+    }
+    
+    func today(month: Int) -> Bool {
+        
+        let currentCalendar = NSCalendar.current
+        
+        let currentMonth = currentCalendar.component(.month, from: Date())
+        
+        return (month == currentMonth)
+    }
 
     
     func calendarForMonth(month: Int) -> [[Int]] {

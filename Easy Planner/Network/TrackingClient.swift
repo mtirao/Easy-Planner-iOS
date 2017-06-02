@@ -27,10 +27,8 @@ class TrackingClient: NSObject {
     let region: String
     let appToken: String
     
-    private let url = "https://tracking-argsoftsolutions.rhcloud.com/addEvent"
-    
-   // private let userName = "1ac1df94-bb2b-45aa-b55b-d96cdb080945"
-   // private let password = "70f68c46-c96b-4ba8-8d4d-8554f6ac481c"
+    private let url = "https://tracking-argsoftsolutions.rhcloud.com/api/v1/addEvent"
+   
     
     init(appId: String, appToken:String) {
        

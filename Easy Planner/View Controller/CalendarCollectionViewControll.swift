@@ -11,6 +11,8 @@ import UIKit
 private let reuseIdentifier = "calendarCell"
 private let headerSection = "headerSection"
 private let eventSegue = "eventSegue"
+private let cloudEventSegue = "cloudSegue"
+private let newEventSegue = "newEventSegue"
 
 class CalendarCollectionViewControll: UICollectionViewController {
     
@@ -22,6 +24,8 @@ class CalendarCollectionViewControll: UICollectionViewController {
         for i in 0...11 {
                 calendars.append(CalendarModel(addYear: i))
         }
+        
+        self.navigationController?.navigationBar.tintColor = Theme.barTint
 
     }
 
@@ -53,6 +57,22 @@ class CalendarCollectionViewControll: UICollectionViewController {
                 model.longMonthName = false
                 
             }
+        } else if segue.identifier == cloudEventSegue {
+            if let cloudEvent = segue.destination as? CloudEventViewController {
+                cloudEvent.yearly = true
+                cloudEvent.selectedDate = Date()
+            }
+        } else if segue.identifier == newEventSegue {
+            let date = Date()
+            EventManager.sharedInstance.createEvent(forDate: date)
+            
+            
+            
+            let backItem = UIBarButtonItem()
+            backItem.title = CalendarUtil.string(from: date, timeOnly: false)
+            self.navigationItem.backBarButtonItem = backItem
+
+            
         }
         
     }
@@ -61,13 +81,11 @@ class CalendarCollectionViewControll: UICollectionViewController {
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 12
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
         return 12
     }
 

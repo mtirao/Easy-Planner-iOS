@@ -14,6 +14,7 @@ private let cloudDetail = "cloudDetail"
 class CloudEventViewController: UITableViewController {
 
     var selectedDate: Date?
+    var yearly: Bool = false;
     
     let cloudViewModel : CloudEventViewModel
     
@@ -33,7 +34,7 @@ class CloudEventViewController: UITableViewController {
         super.viewWillAppear(animated)
         
         if let date = selectedDate {
-            cloudViewModel.fetchEventsForMonth(month: date)
+            cloudViewModel.fetchEventsForMonth(month: date, yearly: yearly)
         }
     }
 

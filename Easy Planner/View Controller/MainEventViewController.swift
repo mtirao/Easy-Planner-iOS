@@ -9,18 +9,17 @@
 import UIKit
 import MapKit
 
-let contactViewControllerIdentifier = "contactsViewController"
 
-let eventNamePlaceHolder = "NewEvent"
-
-let eventDateSegue = "eventDateSegue"
-let eventNameSegue = "eventNameSegue"
+private let eventNamePlaceHolder = "NewEvent"
+private let eventDateSegue = "eventDateSegue"
+private let eventNameSegue = "eventNameSegue"
 
 let regionRadius: CLLocationDistance = 1000
 
 class MainEventViewController: UIViewController {
     
     var contactViewController: ContactsViewController?
+    var menuViewController: MenuViewController?
 
     var eventName : FieldViewController?
     
@@ -44,6 +43,30 @@ class MainEventViewController: UIViewController {
         directionsButton?.tintColor = self.view.tintColor
         directionsButton?.layer.shadowOffset = CGSize(width: 5, height: 5)
         directionsButton?.layer.shadowColor = UIColor.gray.cgColor
+    
+        var toolbar = [UIBarButtonItem]()
+        
+        let guestButton = UIBarButtonItem(title: "Guest", style: .plain , target: self, action: #selector(MainEventViewController.addGuest))
+        guestButton.tintColor = Theme.barTint
+        
+        let menuButton = UIBarButtonItem(title: "Menu", style: .plain , target: self, action: #selector(MainEventViewController.addMenu))
+        menuButton.tintColor = Theme.barTint
+
+        
+        toolbar.append(guestButton)
+        toolbar.append(UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil))
+        toolbar.append(menuButton)
+        
+        self.setToolbarItems(toolbar, animated: true)
+        
+        let contactStoryBoard = UIStoryboard(name: "Contact", bundle: nil)
+        contactViewController = contactStoryBoard.instantiateInitialViewController() as? ContactsViewController
+        
+        let menuStoryBoard = UIStoryboard(name: "Menu", bundle: nil)
+        menuViewController = menuStoryBoard.instantiateInitialViewController() as? MenuViewController
+        
+
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -104,12 +127,13 @@ class MainEventViewController: UIViewController {
             
             if let name = eventName?.editText.text , name.characters.count > 0 {
                 event.name = name
-                EventManager.sharedInstance.saveContext()
             }
             
             if let date = self.timePicker?.date {
                 event.date = date as NSDate?
             }
+            
+            EventManager.sharedInstance.saveContext()
         }
         
         AppDelegate.trackExit(value: "MainVIewController")
@@ -128,7 +152,13 @@ class MainEventViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func addGuest() {
+        self.navigationController?.pushViewController(self.contactViewController!, animated: true)
+    }
     
+    func addMenu() {
+        self.navigationController?.pushViewController(self.menuViewController!, animated: true)
+    }
 
 }
 
