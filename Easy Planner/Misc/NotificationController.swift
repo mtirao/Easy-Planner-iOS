@@ -12,6 +12,7 @@ enum Notes: String {
     
     case codeDataDidInitilizeNotification = "CodeDataDidInitialize"
     case activityIndicatorNotification = "ActivityIndicator"
+    case endOnboardNotification = "EndOnboard"
     
     var notification : Notification.Name  {
         return Notification.Name(rawValue: self.rawValue )

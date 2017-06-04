@@ -11,8 +11,7 @@ import UIKit
 class OnboardPageController: UIPageViewController {
     
     fileprivate lazy var orderedViewControllers: [UIViewController] = {
-        return [self.newViewController(viewController: "presentation"),
-                self.newViewController(viewController: "authorization"),
+        return [self.newViewController(viewController: "authorization"),
                 self.newViewController(viewController: "push"),
                 self.newViewController(viewController: "registration")]
     }()

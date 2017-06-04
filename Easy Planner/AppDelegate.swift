@@ -26,6 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     
     var tracking: TrackingClient?
     
+    var mainViewController : UIViewController?
+    
     public static var sharedInstance : AppDelegate {
         
         get {
@@ -38,13 +40,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         
         _ = EventManager.sharedInstance
         
-        
         if !Preferences.onboarded {
             let onboardStoryboard = UIStoryboard(name: "OnBoard", bundle: nil)
             
             let viewController = onboardStoryboard.instantiateInitialViewController()
             
+            self.mainViewController = self.window?.rootViewController
+            
             self.window?.rootViewController = viewController
+            
+            NotificationController.notificationObserver(observer: self, selector: #selector(AppDelegate.presentMain), name: Notes.endOnboardNotification.notification)
             
         } else {
             
@@ -103,6 +108,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     
         return handled;
         
+    }
+    
+    func presentMain() {
+        
+        guard let mainView = self.mainViewController else {
+            return
+        }
+        
+        mainView.modalTransitionStyle = .crossDissolve
+        self.window?.rootViewController?.present(mainView, animated: true, completion: nil)
+        
+        Preferences.onboarded = true
     }
    
 }

@@ -1,27 +1,117 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="7Hx-6v-0Jb">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="EHf-IW-A2E">
+        <scene sceneID="wwO-d0-ASq">
             <objects>
-                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="presentationViewController" id="7Hx-6v-0Jb" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
-                        <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
+                        <viewControllerLayoutGuide type="top" id="T3m-tB-0u8"/>
+                        <viewControllerLayoutGuide type="bottom" id="H7b-iy-Fip"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                    <view key="view" contentMode="scaleToFill" id="vQ0-Vz-d0I">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ballon" translatesAutoresizingMaskIntoConstraints="NO" id="BjX-wz-NQU">
+                                <rect key="frame" x="16" y="20" width="77" height="77"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="77" id="P73-z7-KLV"/>
+                                    <constraint firstAttribute="height" constant="77" id="v24-zF-l9U"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EasyPlanner" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nf1-lu-UyA">
+                                <rect key="frame" x="121" y="54" width="134" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="N5f-u2-W2O"/>
+                                    <constraint firstAttribute="width" constant="134" id="e4f-0L-QHB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The easiest way to plan a party" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YkV-JA-yzX">
+                                <rect key="frame" x="35" y="154" width="305" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EasyPlanner use Location services" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8bE-zN-4jL">
+                                <rect key="frame" x="26" y="188" width="323" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="address book and  calendar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hH8-0x-Vwi">
+                                <rect key="frame" x="35" y="222" width="305" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map" translatesAutoresizingMaskIntoConstraints="NO" id="vPm-By-edn">
+                                <rect key="frame" x="149" y="277" width="77" height="77"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="77" id="VyQ-pK-0W6"/>
+                                    <constraint firstAttribute="height" constant="77" id="za3-Cz-frN"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" translatesAutoresizingMaskIntoConstraints="NO" id="eDG-Yx-SSL">
+                                <rect key="frame" x="187" y="331" width="77" height="77"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="77" id="5zF-CW-vw9"/>
+                                    <constraint firstAttribute="height" constant="77" id="TLW-Ar-4TA"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="contacts" translatesAutoresizingMaskIntoConstraints="NO" id="62Y-Ko-ueN">
+                                <rect key="frame" x="149" y="381" width="77" height="77"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="77" id="05N-QZ-UnJ"/>
+                                    <constraint firstAttribute="width" constant="77" id="JA9-Pq-DBV"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1450980392" green="0.66274509800000003" blue="0.51372549020000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="eDG-Yx-SSL" firstAttribute="top" secondItem="hH8-0x-Vwi" secondAttribute="bottom" constant="85" id="3NZ-xf-qja"/>
+                            <constraint firstItem="Nf1-lu-UyA" firstAttribute="centerX" secondItem="vQ0-Vz-d0I" secondAttribute="centerX" id="3xk-Lz-D08"/>
+                            <constraint firstItem="62Y-Ko-ueN" firstAttribute="top" secondItem="vPm-By-edn" secondAttribute="bottom" constant="27" id="71Y-i1-da2"/>
+                            <constraint firstItem="eDG-Yx-SSL" firstAttribute="leading" secondItem="vQ0-Vz-d0I" secondAttribute="leadingMargin" constant="171" id="B4C-U0-ShP"/>
+                            <constraint firstItem="YkV-JA-yzX" firstAttribute="leading" secondItem="vQ0-Vz-d0I" secondAttribute="leadingMargin" constant="19" id="Bqq-8l-bPc"/>
+                            <constraint firstItem="vPm-By-edn" firstAttribute="centerX" secondItem="vQ0-Vz-d0I" secondAttribute="centerX" id="H17-0G-cQd"/>
+                            <constraint firstItem="BjX-wz-NQU" firstAttribute="top" secondItem="T3m-tB-0u8" secondAttribute="bottom" id="LAA-Dl-M8q"/>
+                            <constraint firstItem="8bE-zN-4jL" firstAttribute="leading" secondItem="vQ0-Vz-d0I" secondAttribute="leadingMargin" constant="10" id="PVN-Wx-p5k"/>
+                            <constraint firstItem="BjX-wz-NQU" firstAttribute="leading" secondItem="vQ0-Vz-d0I" secondAttribute="leadingMargin" id="YrJ-DQ-7XX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hH8-0x-Vwi" secondAttribute="trailing" constant="19" id="Z2X-Wb-xpW"/>
+                            <constraint firstItem="62Y-Ko-ueN" firstAttribute="centerX" secondItem="vQ0-Vz-d0I" secondAttribute="centerX" id="aj8-XW-FDs"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8bE-zN-4jL" secondAttribute="trailing" constant="10" id="fqc-Zz-i4i"/>
+                            <constraint firstItem="hH8-0x-Vwi" firstAttribute="leading" secondItem="vQ0-Vz-d0I" secondAttribute="leadingMargin" constant="19" id="i8w-3Z-Tzz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="YkV-JA-yzX" secondAttribute="trailing" constant="19" id="iOR-GQ-VeR"/>
+                            <constraint firstItem="YkV-JA-yzX" firstAttribute="top" secondItem="BjX-wz-NQU" secondAttribute="bottom" constant="57" id="l0m-fX-gjG"/>
+                            <constraint firstItem="vPm-By-edn" firstAttribute="top" secondItem="hH8-0x-Vwi" secondAttribute="bottom" constant="31" id="pfc-Hi-JBu"/>
+                            <constraint firstItem="Nf1-lu-UyA" firstAttribute="top" secondItem="T3m-tB-0u8" secondAttribute="bottom" constant="34" id="tJF-OX-DRw"/>
+                            <constraint firstItem="8bE-zN-4jL" firstAttribute="top" secondItem="YkV-JA-yzX" secondAttribute="bottom" constant="10" id="uF8-pI-eXe"/>
+                            <constraint firstItem="hH8-0x-Vwi" firstAttribute="top" secondItem="8bE-zN-4jL" secondAttribute="bottom" constant="10" id="zN1-8W-DpY"/>
+                        </constraints>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tD3-Y4-tJh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="679" y="122"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ballon" width="256" height="256"/>
+        <image name="calendar" width="128" height="128"/>
+        <image name="contacts" width="128" height="128"/>
+        <image name="map" width="128" height="128"/>
+    </resources>
 </document>

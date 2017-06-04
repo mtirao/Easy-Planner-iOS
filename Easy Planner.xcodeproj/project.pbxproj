@@ -48,6 +48,7 @@
 		DAD362201D9DBD5E00B692F9 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD3621B1D9DBD5E00B692F9 /* Request.swift */; };
 		DAD362231D9E9E0200B692F9 /* SocialClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD362221D9E9E0200B692F9 /* SocialClient.swift */; };
 		DAD362261D9EB14700B692F9 /* Cloud.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAD362241D9EB14700B692F9 /* Cloud.storyboard */; };
+		DAD8C6A11EE353CF00D13C98 /* RegistrationOnboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD8C6A01EE353CF00D13C98 /* RegistrationOnboardViewController.swift */; };
 		DAE291CA1D6E432B005799CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE291C91D6E432B005799CB /* AppDelegate.swift */; };
 		DAE291CF1D6E432B005799CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAE291CD1D6E432B005799CB /* Main.storyboard */; };
 		DAE291D41D6E432B005799CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAE291D31D6E432B005799CB /* Assets.xcassets */; };
@@ -159,6 +160,7 @@
 		DAD3621B1D9DBD5E00B692F9 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Network/Request.swift; sourceTree = "<group>"; };
 		DAD362221D9E9E0200B692F9 /* SocialClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SocialClient.swift; path = Network/SocialClient.swift; sourceTree = "<group>"; };
 		DAD362251D9EB14700B692F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Cloud.storyboard; sourceTree = "<group>"; };
+		DAD8C6A01EE353CF00D13C98 /* RegistrationOnboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegistrationOnboardViewController.swift; path = "View Controller/RegistrationOnboardViewController.swift"; sourceTree = "<group>"; };
 		DAE291C61D6E432B005799CB /* Easy Planner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Easy Planner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAE291C91D6E432B005799CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DAE291CE1D6E432B005799CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -296,6 +298,7 @@
 				DACB22821EE05CC8007D6C4A /* OnboardPageController.swift */,
 				DACB228E1EE0DC8C007D6C4A /* LocatioOnboardViewController.swift */,
 				DACB22901EE0E5E3007D6C4A /* PushOnboardViewController.swift */,
+				DAD8C6A01EE353CF00D13C98 /* RegistrationOnboardViewController.swift */,
 			);
 			name = OnBoard;
 			sourceTree = "<group>";
@@ -741,6 +744,7 @@
 				DA75FEA21EA564B200B2FD2D /* EventModel.swift in Sources */,
 				DAE292361D71E39E005799CB /* Option.swift in Sources */,
 				DAE2922C1D71E39E005799CB /* Image.swift in Sources */,
+				DAD8C6A11EE353CF00D13C98 /* RegistrationOnboardViewController.swift in Sources */,
 				DAE292291D71E39E005799CB /* Event+CoreDataProperties.swift in Sources */,
 				DACB22911EE0E5E3007D6C4A /* PushOnboardViewController.swift in Sources */,
 				DAE292071D70D6EF005799CB /* EasyPlanner.xcdatamodeld in Sources */,
