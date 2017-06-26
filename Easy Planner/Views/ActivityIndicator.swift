@@ -30,7 +30,7 @@ class ActivityIndicator: UIViewController{
         self.indicator.stopAnimating()
     }
     
-    func setLabel(notification: Notification) {
+    @objc func setLabel(notification: Notification) {
         
         if let labelText = notification.userInfo?["label"] as? String{
             DispatchQueue.main.async {

@@ -78,7 +78,7 @@ class MenuViewController: UITableViewController {
 //MARK: - Menu view controller action methods
 extension MenuViewController {
     
-    func addNewMenuAction() {
+    @objc func addNewMenuAction() {
         
         if let event = EventManager.sharedInstance.currentEvent {
         

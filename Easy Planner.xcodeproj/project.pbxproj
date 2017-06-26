@@ -35,9 +35,6 @@
 		DAC4CF621D7F65E600577376 /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAC4CF601D7F65E600577376 /* Menu.storyboard */; };
 		DAC4CF641D7F671D00577376 /* NewMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC4CF631D7F671D00577376 /* NewMenuViewController.swift */; };
 		DACB22831EE05CC8007D6C4A /* OnboardPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACB22821EE05CC8007D6C4A /* OnboardPageController.swift */; };
-		DACB22891EE06453007D6C4A /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DACB22861EE06453007D6C4A /* Bolts.framework */; };
-		DACB228A1EE06453007D6C4A /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DACB22871EE06453007D6C4A /* FBSDKCoreKit.framework */; };
-		DACB228B1EE06453007D6C4A /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DACB22881EE06453007D6C4A /* FBSDKLoginKit.framework */; };
 		DACB228D1EE0646F007D6C4A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DACB228C1EE0646F007D6C4A /* GoogleService-Info.plist */; };
 		DACB228F1EE0DC8C007D6C4A /* LocatioOnboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACB228E1EE0DC8C007D6C4A /* LocatioOnboardViewController.swift */; };
 		DACB22911EE0E5E3007D6C4A /* PushOnboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACB22901EE0E5E3007D6C4A /* PushOnboardViewController.swift */; };
@@ -146,9 +143,6 @@
 		DAC4CF611D7F65E600577376 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Menu.storyboard; sourceTree = "<group>"; };
 		DAC4CF631D7F671D00577376 /* NewMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewMenuViewController.swift; path = "View Controller/NewMenuViewController.swift"; sourceTree = "<group>"; };
 		DACB22821EE05CC8007D6C4A /* OnboardPageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnboardPageController.swift; path = Onboard/OnboardPageController.swift; sourceTree = "<group>"; };
-		DACB22861EE06453007D6C4A /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Frameworks/Bolts.framework; sourceTree = "<group>"; };
-		DACB22871EE06453007D6C4A /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = Frameworks/FBSDKCoreKit.framework; sourceTree = "<group>"; };
-		DACB22881EE06453007D6C4A /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = Frameworks/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		DACB228C1EE0646F007D6C4A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DACB228E1EE0DC8C007D6C4A /* LocatioOnboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocatioOnboardViewController.swift; path = Onboard/LocatioOnboardViewController.swift; sourceTree = "<group>"; };
 		DACB22901EE0E5E3007D6C4A /* PushOnboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PushOnboardViewController.swift; path = Onboard/PushOnboardViewController.swift; sourceTree = "<group>"; };
@@ -229,9 +223,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DACB22891EE06453007D6C4A /* Bolts.framework in Frameworks */,
-				DACB228A1EE06453007D6C4A /* FBSDKCoreKit.framework in Frameworks */,
-				DACB228B1EE06453007D6C4A /* FBSDKLoginKit.framework in Frameworks */,
 				DA11C2771D7B59E700ADB348 /* MapKit.framework in Frameworks */,
 				ECDBD19FA41246102376E56B /* Pods_Easy_Planner.framework in Frameworks */,
 			);
@@ -282,9 +273,6 @@
 		DA11C2751D7B59E700ADB348 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DACB22861EE06453007D6C4A /* Bolts.framework */,
-				DACB22871EE06453007D6C4A /* FBSDKCoreKit.framework */,
-				DACB22881EE06453007D6C4A /* FBSDKLoginKit.framework */,
 				DA11C2761D7B59E700ADB348 /* MapKit.framework */,
 				53EA6DF5B1C66C47F4A48B91 /* Pods_Easy_Planner.framework */,
 			);
@@ -568,13 +556,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Marcos Tirao";
 				TargetAttributes = {
 					DAE291C51D6E432A005799CB = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = E5YV4NK229;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
@@ -588,12 +576,14 @@
 					DAE291DC1D6E432B005799CB = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = E5YV4NK229;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						TestTargetID = DAE291C51D6E432A005799CB;
 					};
 					DAE291E71D6E432B005799CB = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = E5YV4NK229;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						TestTargetID = DAE291C51D6E432A005799CB;
 					};
@@ -879,7 +869,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -887,7 +879,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
@@ -929,7 +925,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -937,7 +935,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
@@ -984,7 +986,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Easy Planner/Easy Planner-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -1008,7 +1011,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "ar.com.argsoftsolutions.Easy-Planner";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Easy Planner/Easy Planner-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -1021,7 +1025,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ar.com.argsoftsolutions.Easy-PlannerTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Easy Planner.app/Easy Planner";
 			};
 			name = Debug;
@@ -1035,7 +1040,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ar.com.argsoftsolutions.Easy-PlannerTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Easy Planner.app/Easy Planner";
 			};
 			name = Release;
@@ -1048,7 +1054,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ar.com.argsoftsolutions.Easy-PlannerUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = "Easy Planner";
 			};
 			name = Debug;
@@ -1061,7 +1068,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ar.com.argsoftsolutions.Easy-PlannerUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = "Easy Planner";
 			};
 			name = Release;

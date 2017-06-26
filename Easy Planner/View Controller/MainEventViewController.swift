@@ -152,11 +152,11 @@ class MainEventViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func addGuest() {
+    @objc func addGuest() {
         self.navigationController?.pushViewController(self.contactViewController!, animated: true)
     }
     
-    func addMenu() {
+    @objc func addMenu() {
         self.navigationController?.pushViewController(self.menuViewController!, animated: true)
     }
 

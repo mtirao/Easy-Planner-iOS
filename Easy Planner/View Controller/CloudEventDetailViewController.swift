@@ -49,7 +49,7 @@ class CloudEventDetailViewController: UITableViewController, UINavigationBarDele
         // Dispose of any resources that can be recreated.
     }
    
-    func saveAction() {
+    @objc func saveAction() {
         
         
         if let indicator = activityIndicator {

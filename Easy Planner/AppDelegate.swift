@@ -110,7 +110,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         
     }
     
-    func presentMain() {
+    @objc func presentMain() {
         
         guard let mainView = self.mainViewController else {
             return

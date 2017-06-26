@@ -95,7 +95,7 @@ class MonthView: UIView {
                     
                     let text = String(calendar[row][col])
                     let myString: NSString = text as NSString
-                    let size: CGSize = myString.size(attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: fontSize)])
+                    let size: CGSize = myString.size(withAttributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: fontSize)])
                     
                     let width = sqrt(size.width * size.width + size.height * size.height)
                     
@@ -124,7 +124,7 @@ class MonthView: UIView {
     
     
     
-    func didSelectDay(sender:UITapGestureRecognizer?) {
+    @objc func didSelectDay(sender:UITapGestureRecognizer?) {
         if let label = sender?.view as? UILabel {
             
             if (calendarModel?.today(day: Int(label.text!)!, month: self.month! + 1, year: self.year!))! {

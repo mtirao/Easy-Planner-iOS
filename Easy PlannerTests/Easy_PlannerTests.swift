@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import Easy_Planner
+//@testable import Easy_Planner
 
 class Easy_PlannerTests: XCTestCase {
     
