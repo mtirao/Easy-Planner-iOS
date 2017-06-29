@@ -21,7 +21,7 @@ class MainEventViewController: UIViewController {
     var contactViewController: ContactsViewController?
     var menuViewController: MenuViewController?
 
-    var eventName : FieldViewController?
+    //var eventName : FieldViewController?
     
     @IBOutlet weak var mapView : MKMapView!
     @IBOutlet weak var timePicker : UIDatePicker!
@@ -62,10 +62,8 @@ class MainEventViewController: UIViewController {
         let contactStoryBoard = UIStoryboard(name: "Contact", bundle: nil)
         contactViewController = contactStoryBoard.instantiateInitialViewController() as? ContactsViewController
         
-        let menuStoryBoard = UIStoryboard(name: "Menu", bundle: nil)
-        menuViewController = menuStoryBoard.instantiateInitialViewController() as? MenuViewController
-        
-
+        //let menuStoryBoard = UIStoryboard(name: "Menu", bundle: nil)
+        menuViewController = MenuViewController(style: .plain) //menuStoryBoard.instantiateInitialViewController() as? MenuViewController
         
     }
     
@@ -84,7 +82,7 @@ class MainEventViewController: UIViewController {
         if let name = EventManager.sharedInstance.currentEvent?.name {
             
             if name != eventNamePlaceHolder {
-                self.eventName?.editText.text = name
+                //self.eventName?.editText.text = name
             }
             
         }
@@ -125,9 +123,9 @@ class MainEventViewController: UIViewController {
         
         if let event = EventManager.sharedInstance.currentEvent {
             
-            if let name = eventName?.editText.text , name.characters.count > 0 {
+            /*if let name = eventName?.editText.text , name.characters.count > 0 {
                 event.name = name
-            }
+            }*/
             
             if let date = self.timePicker?.date {
                 event.date = date as NSDate?
@@ -143,7 +141,7 @@ class MainEventViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
        if segue.identifier == eventNameSegue {
-            self.eventName = segue.destination as? FieldViewController
+            //self.eventName = segue.destination as? FieldViewController
         }
     }
     

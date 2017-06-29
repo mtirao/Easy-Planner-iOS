@@ -17,6 +17,26 @@ class MenuViewController: UITableViewController {
     
     var menus :[Menu]?
     
+    var newMenuViewController : NewMenuViewController?
+    
+    override init(style: UITableViewStyle) {
+        super.init(style: style)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(MenuViewController.addNewMenuAction))
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: menuCell)
+        
+        newMenuViewController = NewMenuViewController()
+        
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
@@ -39,13 +59,6 @@ class MenuViewController: UITableViewController {
         AppDelegate.trackExit(value: "MenuVIewController")
     }
     
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(MenuViewController.addNewMenuAction))
-    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -53,7 +66,7 @@ class MenuViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == menuDetailSegue {
+        /*if segue.identifier == menuDetailSegue {
             
             if let menuDetail = segue.destination as? NewMenuViewController{
                 
@@ -67,12 +80,12 @@ class MenuViewController: UITableViewController {
                 
             }
             
-        }
+        }*/
+        
+        
     }
     
-
 }
-
 
 
 //MARK: - Menu view controller action methods
@@ -94,6 +107,16 @@ extension MenuViewController {
 
 //MARK: - Table View Delegate and DataSource
 extension MenuViewController {
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let menuViewController = self.newMenuViewController else {
+            return
+        }
+        
+        self.currentMenu = self.menus?[indexPath.row]
+        menuViewController.currentMenu = self.currentMenu
+        self.navigationController?.pushViewController(menuViewController, animated: true)
+    }
     
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true

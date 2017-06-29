@@ -12,10 +12,18 @@ import FacebookLogin
 import FBSDKLoginKit
 
 class RegistrationOnboardViewController: UIViewController {
-
+    
+    let loginButtonWidth : Int = 200
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let loginButton = LoginButton(readPermissions: [ .publicProfile ])
+        
+        loginButton.frame = CGRect(x: Int(view.center.x) - loginButtonWidth / 2, y: Int(view.center.y), width: loginButtonWidth, height: 40)
+        //loginButton.center = view.center
+        
+        view.addSubview(loginButton)
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,26 +37,6 @@ class RegistrationOnboardViewController: UIViewController {
         
     }
     
-    @IBAction func facebookLoginBtnAction(_ sender: Any) {
-        let fbLoginManager : FBSDKLoginManager = FBSDKLoginManager()
-        fbLoginManager.logIn(withReadPermissions: ["email"], from: self) { (result, error) in
-            if (error == nil){
-                let fbloginresult : FBSDKLoginManagerLoginResult = result!
-                if fbloginresult.grantedPermissions != nil {
-                    if(fbloginresult.grantedPermissions.contains("email")) {
-                        if((FBSDKAccessToken.current()) != nil){
-                            FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, picture.type(large), email"]).start(completionHandler: { (connection, result, error) -> Void in
-                                if (error == nil){
-                                    //self.dict = result as! [String : AnyObject]
-                                    print(result!)
-                                    //print(self.dict)
-                                }
-                            })
-                        }
-                    }
-                }
-            }
-        }
-    }
+    
 
 }

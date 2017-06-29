@@ -50,7 +50,6 @@
 		DAE291CF1D6E432B005799CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAE291CD1D6E432B005799CB /* Main.storyboard */; };
 		DAE291D41D6E432B005799CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAE291D31D6E432B005799CB /* Assets.xcassets */; };
 		DAE291D71D6E432B005799CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAE291D51D6E432B005799CB /* LaunchScreen.storyboard */; };
-		DAE291E21D6E432B005799CB /* Easy_PlannerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE291E11D6E432B005799CB /* Easy_PlannerTests.swift */; };
 		DAE291ED1D6E432B005799CB /* Easy_PlannerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE291EC1D6E432B005799CB /* Easy_PlannerUITests.swift */; };
 		DAE292071D70D6EF005799CB /* EasyPlanner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DAE291FB1D70D6EF005799CB /* EasyPlanner.xcdatamodeld */; };
 		DAE2920B1D70DF8B005799CB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE2920A1D70DF8B005799CB /* HomeViewController.swift */; };
@@ -87,20 +86,13 @@
 		DAE2924C1D71EB7E005799CB /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE2924B1D71EB7E005799CB /* NotificationController.swift */; };
 		DAE2D1DC1EDE142800550EA2 /* FacebookSDKStrings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DAE2D1DB1EDE142800550EA2 /* FacebookSDKStrings.bundle */; };
 		DAE732CE1D833DC700B58160 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE732CD1D833DC700B58160 /* Preferences.swift */; };
-		DAE732D01D83596200B58160 /* FieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE732CF1D83596200B58160 /* FieldViewController.swift */; };
+		DAE732D01D83596200B58160 /* FieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE732CF1D83596200B58160 /* FieldView.swift */; };
 		DAE8AA091E9C2832005E9ACE /* LoginOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE8AA081E9C2832005E9ACE /* LoginOperation.swift */; };
 		DAEDBE661E8EC25C0097D3AD /* CloudEventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEDBE651E8EC25C0097D3AD /* CloudEventDetailViewController.swift */; };
 		ECDBD19FA41246102376E56B /* Pods_Easy_Planner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53EA6DF5B1C66C47F4A48B91 /* Pods_Easy_Planner.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		DAE291DE1D6E432B005799CB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DAE291BE1D6E432A005799CB /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DAE291C51D6E432A005799CB;
-			remoteInfo = "Easy Planner";
-		};
 		DAE291E91D6E432B005799CB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DAE291BE1D6E432A005799CB /* Project object */;
@@ -120,7 +112,7 @@
 		DA11C2731D77B5A400ADB348 /* MainEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainEventViewController.swift; path = "View Controller/MainEventViewController.swift"; sourceTree = "<group>"; };
 		DA11C2761D7B59E700ADB348 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		DA11C2781D7B65CF00ADB348 /* ContactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactsViewController.swift; path = "View Controller/ContactsViewController.swift"; sourceTree = "<group>"; };
-		DA11C27A1D7B6F1700ADB348 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuViewController.swift; path = "View Controller/MenuViewController.swift"; sourceTree = "<group>"; };
+		DA11C27A1D7B6F1700ADB348 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		DA11C27D1D7DE80800ADB348 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Contact.storyboard; sourceTree = "<group>"; };
 		DA11C27F1D7DE84B00ADB348 /* NewContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewContactViewController.swift; path = "View Controller/NewContactViewController.swift"; sourceTree = "<group>"; };
 		DA26950B1EDF9B4000EB73B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/OnBoard.storyboard; sourceTree = "<group>"; };
@@ -133,6 +125,7 @@
 		DA73E40C1ECE458F0046B56A /* CalendarModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarModel.swift; path = "View Controller/CalendarModel.swift"; sourceTree = "<group>"; };
 		DA75FE9F1EA5619200B2FD2D /* EventOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventOperation.swift; path = Network/EventOperation.swift; sourceTree = "<group>"; };
 		DA75FEA11EA564B200B2FD2D /* EventModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventModel.swift; path = Network/EventModel.swift; sourceTree = "<group>"; };
+		DA7C511C1F02E7DC00D5924C /* DetailMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMenuViewController.swift; sourceTree = "<group>"; };
 		DAB2CA3B1E79F5B2004AB652 /* Easy Planner-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Easy Planner-Bridging-Header.h"; sourceTree = "<group>"; };
 		DAB2CA401E79F7DA004AB652 /* ClientDeviceInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClientDeviceInformation.swift; path = AeroGear/ClientDeviceInformation.swift; sourceTree = "<group>"; };
 		DAB2CA411E79F7DA004AB652 /* ClientDeviceInformationImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClientDeviceInformationImpl.swift; path = AeroGear/ClientDeviceInformationImpl.swift; sourceTree = "<group>"; };
@@ -141,7 +134,7 @@
 		DAB2CA441E79F7DA004AB652 /* push-sdk-swift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "push-sdk-swift.h"; path = "AeroGear/push-sdk-swift.h"; sourceTree = "<group>"; };
 		DAB2CA451E79F7DA004AB652 /* PushAnalytics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PushAnalytics.swift; path = AeroGear/PushAnalytics.swift; sourceTree = "<group>"; };
 		DAC4CF611D7F65E600577376 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Menu.storyboard; sourceTree = "<group>"; };
-		DAC4CF631D7F671D00577376 /* NewMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewMenuViewController.swift; path = "View Controller/NewMenuViewController.swift"; sourceTree = "<group>"; };
+		DAC4CF631D7F671D00577376 /* NewMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMenuViewController.swift; sourceTree = "<group>"; };
 		DACB22821EE05CC8007D6C4A /* OnboardPageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnboardPageController.swift; path = Onboard/OnboardPageController.swift; sourceTree = "<group>"; };
 		DACB228C1EE0646F007D6C4A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DACB228E1EE0DC8C007D6C4A /* LocatioOnboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocatioOnboardViewController.swift; path = Onboard/LocatioOnboardViewController.swift; sourceTree = "<group>"; };
@@ -161,7 +154,6 @@
 		DAE291D31D6E432B005799CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DAE291D61D6E432B005799CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DAE291D81D6E432B005799CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DAE291DD1D6E432B005799CB /* Easy PlannerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Easy PlannerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAE291E11D6E432B005799CB /* Easy_PlannerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Easy_PlannerTests.swift; sourceTree = "<group>"; };
 		DAE291E31D6E432B005799CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DAE291E81D6E432B005799CB /* Easy PlannerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Easy PlannerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -212,7 +204,7 @@
 		DAE2924B1D71EB7E005799CB /* NotificationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationController.swift; path = Misc/NotificationController.swift; sourceTree = "<group>"; };
 		DAE2D1DB1EDE142800550EA2 /* FacebookSDKStrings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FacebookSDKStrings.bundle; sourceTree = "<group>"; };
 		DAE732CD1D833DC700B58160 /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Preferences.swift; path = Misc/Preferences.swift; sourceTree = "<group>"; };
-		DAE732CF1D83596200B58160 /* FieldViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FieldViewController.swift; path = "View Controller/FieldViewController.swift"; sourceTree = "<group>"; };
+		DAE732CF1D83596200B58160 /* FieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FieldView.swift; path = "View Controller/FieldView.swift"; sourceTree = "<group>"; };
 		DAE8AA081E9C2832005E9ACE /* LoginOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginOperation.swift; path = Network/LoginOperation.swift; sourceTree = "<group>"; };
 		DAEDBE651E8EC25C0097D3AD /* CloudEventDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CloudEventDetailViewController.swift; path = "View Controller/CloudEventDetailViewController.swift"; sourceTree = "<group>"; };
 		F512C3A6F3CFA8F8DC1851A3 /* Pods-Easy Planner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Easy Planner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Easy Planner/Pods-Easy Planner.debug.xcconfig"; sourceTree = "<group>"; };
@@ -225,13 +217,6 @@
 			files = (
 				DA11C2771D7B59E700ADB348 /* MapKit.framework in Frameworks */,
 				ECDBD19FA41246102376E56B /* Pods_Easy_Planner.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DAE291DA1D6E432B005799CB /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,6 +242,7 @@
 		DA11C2671D73987D00ADB348 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DAE732CF1D83596200B58160 /* FieldView.swift */,
 				DA71725B1E92CC0A007F414A /* ActivityIndicator.swift */,
 			);
 			name = Views;
@@ -307,8 +293,19 @@
 				DA68A2771ECF7E4500C2AC68 /* MonthView.swift */,
 				DACBC6D61ED63395001B3781 /* CalendarCell.swift */,
 				DACBC6D81ED63BAA001B3781 /* CalendarHeader.swift */,
+				DACBC6D41ED6326A001B3781 /* CalendarCollectionViewControll.swift */,
 			);
 			name = Calendar;
+			sourceTree = "<group>";
+		};
+		DA7C511B1F02E74D00D5924C /* Menu View */ = {
+			isa = PBXGroup;
+			children = (
+				DAC4CF631D7F671D00577376 /* NewMenuViewController.swift */,
+				DA11C27A1D7B6F1700ADB348 /* MenuViewController.swift */,
+				DA7C511C1F02E7DC00D5924C /* DetailMenuViewController.swift */,
+			);
+			path = "Menu View";
 			sourceTree = "<group>";
 		};
 		DAB2CA3F1E79F7C8004AB652 /* AeroGear */ = {
@@ -356,7 +353,6 @@
 			isa = PBXGroup;
 			children = (
 				DAE291C61D6E432B005799CB /* Easy Planner.app */,
-				DAE291DD1D6E432B005799CB /* Easy PlannerTests.xctest */,
 				DAE291E81D6E432B005799CB /* Easy PlannerUITests.xctest */,
 			);
 			name = Products;
@@ -365,6 +361,7 @@
 		DAE291C81D6E432B005799CB /* Easy Planner */ = {
 			isa = PBXGroup;
 			children = (
+				DA7C511B1F02E74D00D5924C /* Menu View */,
 				DA26950D1EDF9B5800EB73B7 /* OnBoard */,
 				DAE2D1DB1EDE142800550EA2 /* FacebookSDKStrings.bundle */,
 				DA73E40B1ECE3E3C0046B56A /* Calendar */,
@@ -457,14 +454,10 @@
 		DAE292091D70DD80005799CB /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
-				DACBC6D41ED6326A001B3781 /* CalendarCollectionViewControll.swift */,
 				DAE2920A1D70DF8B005799CB /* HomeViewController.swift */,
 				DA11C2731D77B5A400ADB348 /* MainEventViewController.swift */,
 				DA11C2781D7B65CF00ADB348 /* ContactsViewController.swift */,
-				DA11C27A1D7B6F1700ADB348 /* MenuViewController.swift */,
 				DA11C27F1D7DE84B00ADB348 /* NewContactViewController.swift */,
-				DAC4CF631D7F671D00577376 /* NewMenuViewController.swift */,
-				DAE732CF1D83596200B58160 /* FieldViewController.swift */,
 				DA0324A21E8302810095313E /* CloudEventViewController.swift */,
 				DAEDBE651E8EC25C0097D3AD /* CloudEventDetailViewController.swift */,
 			);
@@ -513,24 +506,6 @@
 			productReference = DAE291C61D6E432B005799CB /* Easy Planner.app */;
 			productType = "com.apple.product-type.application";
 		};
-		DAE291DC1D6E432B005799CB /* Easy PlannerTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DAE291F41D6E432B005799CB /* Build configuration list for PBXNativeTarget "Easy PlannerTests" */;
-			buildPhases = (
-				DAE291D91D6E432B005799CB /* Sources */,
-				DAE291DA1D6E432B005799CB /* Frameworks */,
-				DAE291DB1D6E432B005799CB /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DAE291DF1D6E432B005799CB /* PBXTargetDependency */,
-			);
-			name = "Easy PlannerTests";
-			productName = "Easy PlannerTests";
-			productReference = DAE291DD1D6E432B005799CB /* Easy PlannerTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		DAE291E71D6E432B005799CB /* Easy PlannerUITests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DAE291F71D6E432B005799CB /* Build configuration list for PBXNativeTarget "Easy PlannerUITests" */;
@@ -573,13 +548,6 @@
 							};
 						};
 					};
-					DAE291DC1D6E432B005799CB = {
-						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = E5YV4NK229;
-						LastSwiftMigration = 0900;
-						ProvisioningStyle = Automatic;
-						TestTargetID = DAE291C51D6E432A005799CB;
-					};
 					DAE291E71D6E432B005799CB = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = E5YV4NK229;
@@ -603,7 +571,6 @@
 			projectRoot = "";
 			targets = (
 				DAE291C51D6E432A005799CB /* Easy Planner */,
-				DAE291DC1D6E432B005799CB /* Easy PlannerTests */,
 				DAE291E71D6E432B005799CB /* Easy PlannerUITests */,
 			);
 		};
@@ -625,13 +592,6 @@
 				DACB228D1EE0646F007D6C4A /* GoogleService-Info.plist in Resources */,
 				DAE291CF1D6E432B005799CB /* Main.storyboard in Resources */,
 				DA11C27E1D7DE80900ADB348 /* Contact.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DAE291DB1D6E432B005799CB /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -699,7 +659,7 @@
 			files = (
 				DAC4CF641D7F671D00577376 /* NewMenuViewController.swift in Sources */,
 				DAE292421D71E3A9005799CB /* Chair.swift in Sources */,
-				DAE732D01D83596200B58160 /* FieldViewController.swift in Sources */,
+				DAE732D01D83596200B58160 /* FieldView.swift in Sources */,
 				DAE292311D71E39E005799CB /* Menu+CoreDataProperties.swift in Sources */,
 				DAE292351D71E39E005799CB /* Music+CoreDataProperties.swift in Sources */,
 				DAE2922A1D71E39E005799CB /* EventMisc.swift in Sources */,
@@ -769,14 +729,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DAE291D91D6E432B005799CB /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DAE291E21D6E432B005799CB /* Easy_PlannerTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		DAE291E41D6E432B005799CB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -788,11 +740,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		DAE291DF1D6E432B005799CB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DAE291C51D6E432A005799CB /* Easy Planner */;
-			targetProxy = DAE291DE1D6E432B005799CB /* PBXContainerItemProxy */;
-		};
 		DAE291EA1D6E432B005799CB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = DAE291C51D6E432A005799CB /* Easy Planner */;
@@ -1016,36 +963,6 @@
 			};
 			name = Release;
 		};
-		DAE291F51D6E432B005799CB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = E5YV4NK229;
-				INFOPLIST_FILE = "Easy PlannerTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "ar.com.argsoftsolutions.Easy-PlannerTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Easy Planner.app/Easy Planner";
-			};
-			name = Debug;
-		};
-		DAE291F61D6E432B005799CB /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = E5YV4NK229;
-				INFOPLIST_FILE = "Easy PlannerTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "ar.com.argsoftsolutions.Easy-PlannerTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Easy Planner.app/Easy Planner";
-			};
-			name = Release;
-		};
 		DAE291F81D6E432B005799CB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1091,15 +1008,6 @@
 			buildConfigurations = (
 				DAE291F21D6E432B005799CB /* Debug */,
 				DAE291F31D6E432B005799CB /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		DAE291F41D6E432B005799CB /* Build configuration list for PBXNativeTarget "Easy PlannerTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DAE291F51D6E432B005799CB /* Debug */,
-				DAE291F61D6E432B005799CB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -25,7 +25,7 @@ class MonthView: UIView {
     
     let header : Int = 12
     
-    let dayNames = ["SUN", "MON", "TUE", "WED", "THU", "SAT", "SAT"]
+    let dayNames = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"]
     
     @IBInspectable var fontSize: CGFloat = 9
     @IBInspectable var headerTopSpacing: CGFloat = 0
@@ -53,18 +53,25 @@ class MonthView: UIView {
     func dataMonth(calendarModel: CalendarModel, forMonth: Int, delegate: CalendarViewDelegate?=nil) {
         
         self.calendarModel = calendarModel
+        self.delegate = delegate
+        self.month = forMonth
+        self.year = calendarModel.year
         
         if !dayName {
             calendarModel.longMonthName = self.longMonthName
             let name = UILabel(frame: CGRect(x: Int(headerLeftSpacing), y: Int(headerTopSpacing), width: Int(self.frame.width), height: header))
             name.text = calendarModel.monthName(month: forMonth)
-            name.textColor = Theme.barTint
+            
+            if (calendarModel.today(month: self.month! + 1, year: self.year!)) {
+                name.textColor = Theme.barTint
+            }else {
+                name.textColor = UIColor.black
+            }
+            name.font = UIFont.systemFont(ofSize: 17, weight: .heavy)
             self.addSubview(name)
         }
         
-        self.delegate = delegate
-        self.month = forMonth
-        self.year = calendarModel.year
+        
         
         let dayHStep = Int(self.frame.width) / 7
         let dayVStep = (Int(self.frame.height) - header - halfSpacing) / 6
@@ -79,10 +86,10 @@ class MonthView: UIView {
         
         if dayName {
             for i in 0..<numColums {
-                let day = UILabel(frame: CGRect(x: halfSpacing + i * dayHStep, y: Int(headerTopSpacing) + header, width: dayHStep - halfSpacing, height: header))
+                let day = UILabel(frame: CGRect(x: spacing + i * dayHStep, y: Int(headerTopSpacing) + header, width: dayHStep - halfSpacing, height: header))
                 day.text = self.dayNames[i]
-                day.font = UIFont.systemFont(ofSize: fontSize)
-                day.textColor = Theme.barTint
+                day.font = UIFont.systemFont(ofSize: fontSize, weight: .medium)
+                day.textColor = UIColor.black
                 day.textAlignment = .center
                 self.addSubview(day)
             }

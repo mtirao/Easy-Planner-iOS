@@ -64,7 +64,7 @@ class ContactsViewController: UITableViewController, CNContactPickerDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == contactDetailSegue {
+        /*if segue.identifier == contactDetailSegue {
             
             if let contactDetail = segue.destination as? NewContactViewController {
                 contactDetail.editting = true;
@@ -87,7 +87,7 @@ class ContactsViewController: UITableViewController, CNContactPickerDelegate {
 
         
         }
-        
+        */
         
     }
     

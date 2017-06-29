@@ -240,7 +240,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="facebook authorization" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EUe-3e-ErM">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Facebook authorization" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EUe-3e-ErM">
                                 <rect key="frame" x="19" y="200" width="337" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="0ZK-A7-aLq"/>
@@ -272,15 +272,6 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r03-G0-CWo">
-                                <rect key="frame" x="121" y="376" width="118" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.23137254901960785" green="0.34901960784313724" blue="0.59607843137254901" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Facebook Login"/>
-                                <connections>
-                                    <action selector="facebookLoginBtnAction:" destination="YJs-R8-Fee" eventType="touchUpInside" id="Ebp-R1-mOX"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.69482468071106718" green="0.62262620608927666" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>

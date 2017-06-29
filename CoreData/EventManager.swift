@@ -199,6 +199,7 @@ import CoreData
         event.addMenu(menu: menu)
         menu.event = event
         
+        self.saveContext()
         return menu
     }
     

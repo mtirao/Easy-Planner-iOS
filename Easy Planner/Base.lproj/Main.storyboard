@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="GDx-Pd-wNB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.19" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="GDx-Pd-wNB">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.16"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -55,7 +55,7 @@
                                         <constraint firstAttribute="width" constant="82" id="PxM-Uv-l4d"/>
                                         <constraint firstAttribute="height" constant="36" id="zuA-uo-Ofv"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -118,14 +118,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" tag="1" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="44" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="1qf-LC-S9z">
-                                <rect key="frame" x="0.0" y="301" width="375" height="322"/>
+                                <rect key="frame" x="0.0" y="297" width="375" height="326"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="homeEventCell" id="ux8-VC-wtT" customClass="HomeTableViewCell" customModule="Easy_Planner" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="56" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ux8-VC-wtT" id="rC5-1Z-gQz">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23:59" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jec-Fp-Zi9">
@@ -210,7 +210,7 @@
                             <constraint firstItem="1qf-LC-S9z" firstAttribute="leading" secondItem="HI1-kC-Hhx" secondAttribute="leading" id="Hu8-pO-liQ"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="HI1-kC-Hhx" secondAttribute="bottom" constant="330" id="M8D-HS-n9l"/>
                             <constraint firstItem="1qf-LC-S9z" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="O6I-V2-CJ5"/>
-                            <constraint firstItem="1qf-LC-S9z" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="237" id="fk2-3k-6Hk"/>
+                            <constraint firstItem="1qf-LC-S9z" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="233" id="fk2-3k-6Hk"/>
                             <constraint firstItem="1qf-LC-S9z" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="nwK-uC-2X6"/>
                             <constraint firstAttribute="trailing" secondItem="1qf-LC-S9z" secondAttribute="trailing" id="zRs-ZQ-mnw"/>
                         </constraints>
@@ -282,7 +282,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="LZP-PH-cDN"/>
         <segue reference="tJO-Ei-xWi"/>
+        <segue reference="LZP-PH-cDN"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -25,7 +25,6 @@ class HomeViewController: UIViewController, CalendarViewDelegate {
     @IBOutlet weak var eventTableView: UITableView!
     @IBOutlet weak var month: MonthView!
     @IBOutlet weak var addButton: UIBarButtonItem!
-    @IBOutlet weak var calendarViewHeight: NSLayoutConstraint!
     
     
     var calendarModel : CalendarModel?
@@ -57,7 +56,7 @@ class HomeViewController: UIViewController, CalendarViewDelegate {
         
         //self.eventTableView.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: self.eventTableView.bounds.size.width, height: 0))
         
-        self.eventTableView.contentInset = UIEdgeInsetsMake(-80, 0, 0, 0);
+        self.eventTableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
         loadEvents(forDate: self.selectedDate)
         
     }

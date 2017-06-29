@@ -14,7 +14,7 @@ fileprivate let emailSegue = "emailSegue"
 
 class NewContactViewController: UIViewController {
 
-    var currentContact : Contact?
+    /*var currentContact : Contact?
     var editting = false;
     
     @IBOutlet weak var firstName: UITextField!
@@ -81,7 +81,7 @@ class NewContactViewController: UIViewController {
         }
         
     }
-    
+    */
 }
 
 //MARK: - Action Methods

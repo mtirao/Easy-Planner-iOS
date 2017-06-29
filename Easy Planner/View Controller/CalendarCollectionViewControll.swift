@@ -107,6 +107,11 @@ class CalendarCollectionViewControll: UICollectionViewController {
         let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerSection, for: indexPath)
         
         if let header = headerView as? CalendarHeader {
+            if indexPath.section == 0 {
+                header.yearLabel.textColor = Theme.barTint
+            } else {
+                header.yearLabel.textColor = UIColor.black
+            }
             header.yearLabel.text = calendars[indexPath.section].yearAsString()
         }
         

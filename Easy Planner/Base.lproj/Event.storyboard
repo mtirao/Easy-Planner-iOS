@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="8PY-Ee-fHz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.19" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="8PY-Ee-fHz">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.16"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -119,10 +119,10 @@
             </objects>
             <point key="canvasLocation" x="-1470" y="-45"/>
         </scene>
-        <!--Field View Controller-->
+        <!--View Controller-->
         <scene sceneID="mu5-cy-7aO">
             <objects>
-                <viewController id="rs4-vw-TYE" customClass="FieldViewController" customModule="Easy_Planner" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="rs4-vw-TYE" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="iol-Rp-02k"/>
                         <viewControllerLayoutGuide type="bottom" id="Fhl-t8-5gc"/>
@@ -163,9 +163,6 @@
                             <constraint firstItem="3Bx-Ok-erO" firstAttribute="top" secondItem="24i-h9-cDK" secondAttribute="top" constant="6" id="weI-nl-WQj"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="editText" destination="L6O-kP-L2C" id="vUY-Bd-r62"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kIf-NM-bWn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
