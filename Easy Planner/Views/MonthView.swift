@@ -36,7 +36,6 @@ class MonthView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
     }
     
     
@@ -86,7 +85,7 @@ class MonthView: UIView {
         
         if dayName {
             for i in 0..<numColums {
-                let day = UILabel(frame: CGRect(x: spacing + i * dayHStep, y: Int(headerTopSpacing) + header, width: dayHStep - halfSpacing, height: header))
+                let day = UILabel(frame: CGRect(x: i * dayHStep, y: Int(headerTopSpacing) + header, width: dayHStep - halfSpacing, height: header))
                 day.text = self.dayNames[i]
                 day.font = UIFont.systemFont(ofSize: fontSize, weight: .medium)
                 day.textColor = UIColor.black

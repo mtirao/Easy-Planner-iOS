@@ -18,12 +18,20 @@ fileprivate let addContactSegue = "addContactSegue"
 class ContactsViewController: UITableViewController, CNContactPickerDelegate {
 
     var contacts :[Contact]?
+    var toolbarItem = [UIBarButtonItem]()
     
-    @IBOutlet weak var toolbar: UIToolbar!
-    
+    var newContactViewController : NewContactViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: contactCell)
+        
+        toolbarItem.append(UIBarButtonItem(title: "Address Book", style: .plain , target: self, action: #selector(ContactsViewController.addressBookAction) ))
+        toolbarItem.append(UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil ))
+        toolbarItem.append(UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(ContactsViewController.addContactAction)))
+        
+        newContactViewController = NewContactViewController()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,19 +42,18 @@ class ContactsViewController: UITableViewController, CNContactPickerDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
         self.navigationController?.navigationBar.topItem?.title = "Event's contact"
         
-        
         self.navigationController?.setToolbarHidden(false, animated: true)
-        self.navigationController?.toolbar.setItems(toolbar.items, animated: true)
         
+        self.navigationController?.toolbar.tintColor = Theme.barTint
+        self.navigationController?.toolbar.setItems(toolbarItem, animated: true)
         
         if let event = EventManager.sharedInstance.currentEvent {
             self.contacts = EventManager.sharedInstance.contactsForEvent(event: event)
             self.tableView?.reloadData()
         }
-        
-        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -61,36 +68,6 @@ class ContactsViewController: UITableViewController, CNContactPickerDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        /*if segue.identifier == contactDetailSegue {
-            
-            if let contactDetail = segue.destination as? NewContactViewController {
-                contactDetail.editting = true;
-                if let selectedCell = self.tableView.indexPathForSelectedRow{
-                    contactDetail.currentContact = self.contacts?[selectedCell.row]
-                }
-                
-            }
-            
-        }else if segue.identifier == addContactSegue {
-            
-            if let contactDetail = segue.destination as? NewContactViewController {
-                contactDetail.editting = false;
-                
-                if let event = EventManager.sharedInstance.currentEvent {
-                    contactDetail.currentContact = EventManager.sharedInstance.addContactToEvent(event: event);
-                }
-                
-            }
-
-        
-        }
-        */
-        
-    }
-    
 
 }
 
@@ -98,13 +75,23 @@ class ContactsViewController: UITableViewController, CNContactPickerDelegate {
 //MARK: - Contacts view controller action methods
 extension ContactsViewController {
     
-    @IBAction func addressBookAction(sender: Any) {
+    @objc func addressBookAction() {
         
         let addressBookController = CNContactPickerViewController()
         addressBookController.delegate = self
         
         
         self.present(addressBookController, animated: true, completion: nil)
+        
+    }
+    
+    @objc func addContactAction() {
+        
+        if let event = EventManager.sharedInstance.currentEvent {
+            let contact = EventManager.sharedInstance.addContactToEvent(event: event)
+            self.contacts?.append(contact)
+            self.tableView?.reloadData()
+        }
         
     }
     
@@ -149,6 +136,16 @@ extension ContactsViewController {
 
 //MARK: - Table View Delegate and DataSource
 extension ContactsViewController {
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let newContactViewController = self.newContactViewController else {
+            return
+        }
+        
+        let selectedContact = self.contacts?[indexPath.row]
+        newContactViewController.currentContact = selectedContact
+        self.navigationController?.pushViewController(newContactViewController, animated: true)
+    }
     
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true

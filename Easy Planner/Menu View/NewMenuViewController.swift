@@ -9,37 +9,17 @@
 import UIKit
 import SnapKit
 
-fileprivate let menuDescriptionCell = "menuDescriptionCell"
-fileprivate let menuDetailNameSegue = "menuDetailNameSegue"
-fileprivate let menuPriceSegue = "menuPriceSegue"
-fileprivate let menuNameSegue = "menuNameSegue"
-fileprivate let menuDetailDescriptionSegue = "menuDetailDescriptionSegue"
-fileprivate let showDetailSegue = "showDetailSegue"
-
-fileprivate let menuDetailTag = 2
 
 class NewMenuViewController: UIViewController {
     
     private let logoSize : Int = 120
     private let top : Int = 72
     
-    var logo : UIImageView?
-    
     var fields : [FieldView] = [FieldView]()
     
     var currentMenu : Menu?
     
-    /*var menuDetail : [Option]?
-    
-    var editting = false;
-    
-    var menuPrice : FieldViewController?
-    var menuName : FieldViewController?
-    var menuDetailName : FieldViewController?
-    var menuDetailDescription : FieldViewController?
-    
-    @IBOutlet weak var detailTable: UITableView!
-    */
+    var detailMenu : DetailMenuViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,11 +29,12 @@ class NewMenuViewController: UIViewController {
         
         self.view.backgroundColor = UIColor.white
         
-        let image = UIImage(named: "menu")
-        logo = UIImageView(image: image)
+        detailMenu = DetailMenuViewController()
         
-        self.view.addSubview(logo!)
-        logo?.snp.makeConstraints { (make) -> Void in
+        let image = UIImage(named: "menu")
+        let logo = UIImageView(image: image)
+        self.view.addSubview(logo)
+        logo.snp.makeConstraints { (make) -> Void in
             make.width.height.equalTo(logoSize)
             make.centerX.equalTo(self.view)
             make.top.equalTo(top)
@@ -65,7 +46,7 @@ class NewMenuViewController: UIViewController {
         nameField.snp.makeConstraints{(make) -> Void in
             make.height.equalTo(45)
             make.leading.trailing.equalTo(self.view).inset(UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 8))
-            make.top.equalTo((logo?.snp.bottom)!).offset(8)
+            make.top.equalTo(logo.snp.bottom).offset(8)
         }
         
         let priceField = FieldView(frame: CGRect.zero, type: .currency, label: "Price:")
@@ -96,17 +77,20 @@ class NewMenuViewController: UIViewController {
         
         let priceField = self.fields[1]
         priceField.data = currentMenu?.price?.stringValue
-         
+        
         AppDelegate.trackInit(value: "NewMenuViewController")
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
+        
         let nameField = self.fields[0]
+        var result = nameField.resignFirstResponder()
         currentMenu?.menuname = nameField.data
         
         let priceField = self.fields[1]
+        result = result && priceField.resignFirstResponder()
         currentMenu?.price = NSDecimalNumber(string: priceField.data)
         
         EventManager.sharedInstance.saveContext()
@@ -130,25 +114,11 @@ class NewMenuViewController: UIViewController {
     }
     
     @objc func presentDetailMenu() {
-        
+        self.navigationController?.pushViewController(self.detailMenu!, animated: true)
+        self.detailMenu?.currentMenu = self.currentMenu
     }
     
 }
 
-//Action method
-extension NewMenuViewController {
-    
-    @IBAction func close(_ sender: AnyObject) {
-        self.dismiss(animated: true, completion: nil)
-    
-    }
-    
-    @IBAction func backButton(_ sender: AnyObject) {
-        if let nav = self.navigationController {
-            nav.popViewController(animated: true)
-        }
-    }
-        
-}
 
 

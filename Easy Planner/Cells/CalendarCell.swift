@@ -10,7 +10,31 @@ import UIKit
 
 class CalendarCell: UICollectionViewCell {
     
-    @IBOutlet weak var calendar: MonthView!
+    var calendar: MonthView
+    
+    override init(frame: CGRect) {
+        calendar = MonthView(frame: frame)
+        super.init(frame: frame)
+        
+        self.addSubview(calendar)
+        
+        calendar.snp.makeConstraints{(make) -> Void in
+            make.leading.trailing.equalTo(self).inset(UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 8))
+            make.top.bottom.equalTo(self).inset(UIEdgeInsets(top: 2, left: 0, bottom: 4, right: 0))
+        }
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        calendar = MonthView()
+        super.init(coder: aDecoder)
+        
+        self.addSubview(calendar)
+        
+        calendar.snp.makeConstraints{(make) -> Void in
+            make.leading.trailing.equalTo(self).inset(UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 8))
+            make.top.bottom.equalTo(self).inset(UIEdgeInsets(top: 2, left: 0, bottom: 4, right: 0))
+        }
+    }
     
     
     override func prepareForReuse() {

@@ -40,6 +40,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         
         _ = EventManager.sharedInstance
         
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        self.window!.backgroundColor = UIColor.white
+        
+        
         if !Preferences.onboarded {
             let onboardStoryboard = UIStoryboard(name: "OnBoard", bundle: nil)
             
@@ -52,9 +56,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             NotificationController.notificationObserver(observer: self, selector: #selector(AppDelegate.presentMain), name: Notes.endOnboardNotification.notification)
             
         } else {
+            let calendarController = CalendarCollectionViewControll()
+            let navigationController = UINavigationController(rootViewController: calendarController)
+            self.window?.rootViewController = navigationController
             
             enablePushNotification()
         }
+        
+        self.window!.makeKeyAndVisible()
         
         locationManager.delegate = self
         

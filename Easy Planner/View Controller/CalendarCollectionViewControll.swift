@@ -17,7 +17,29 @@ private let newEventSegue = "newEventSegue"
 class CalendarCollectionViewControll: UICollectionViewController {
     
     var calendars : [CalendarModel] = [CalendarModel]()
+    
+    let homeViewController : HomeViewController
+    
+    init() {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        layout.headerReferenceSize = CGSize(width: 50, height: 35)
+        layout.itemSize = CGSize(width: 107, height: 105)
+        layout.minimumLineSpacing = 5
+        layout.minimumInteritemSpacing = 5
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 16)
         
+        homeViewController = HomeViewController()
+        
+        super.init(collectionViewLayout: layout)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        
+        homeViewController = HomeViewController()
+        super.init(coder: aDecoder)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,17 +48,35 @@ class CalendarCollectionViewControll: UICollectionViewController {
         }
         
         self.navigationController?.navigationBar.tintColor = Theme.barTint
-
+        
+        self.collectionView?.register(CalendarCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        self.collectionView?.register(CalendarHeader.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: headerSection)
+        self.collectionView?.backgroundColor = UIColor.white
+        
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "New Event", style: .plain, target: self, action: #selector(CalendarCollectionViewControll.newEventAction))
     }
-
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
 
-    // MARK: - Navigation
-
+    // MARK: - Action Method
+    
+    @objc func newEventAction() {
+        
+        let date = Date()
+        EventManager.sharedInstance.createEvent(forDate: date)
+        
+        let backItem = UIBarButtonItem()
+        backItem.title = CalendarUtil.string(from: date, timeOnly: false)
+        self.navigationItem.backBarButtonItem = backItem
+    }
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == eventSegue {
@@ -66,8 +106,6 @@ class CalendarCollectionViewControll: UICollectionViewController {
             let date = Date()
             EventManager.sharedInstance.createEvent(forDate: date)
             
-            
-            
             let backItem = UIBarButtonItem()
             backItem.title = CalendarUtil.string(from: date, timeOnly: false)
             self.navigationItem.backBarButtonItem = backItem
@@ -76,9 +114,8 @@ class CalendarCollectionViewControll: UICollectionViewController {
         }
         
     }
-
-
-    // MARK: UICollectionViewDataSource
+    
+    // MARK: UICollectionViewDataSource & Delegate
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 12
@@ -104,6 +141,7 @@ class CalendarCollectionViewControll: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
         let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerSection, for: indexPath)
         
         if let header = headerView as? CalendarHeader {
@@ -116,6 +154,24 @@ class CalendarCollectionViewControll: UICollectionViewController {
         }
         
         return headerView
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let model = calendars[indexPath.section]
+        
+        model.longMonthName = true;
+        homeViewController.calendarModel = model
+        homeViewController.selectedMonth = indexPath.row
+        
+        self.navigationController?.pushViewController(self.homeViewController, animated: true)
+        
+        let backItem = UIBarButtonItem()
+        backItem.title = "\(model.monthName(month: indexPath.row )) \(model.year)"
+        self.navigationItem.backBarButtonItem = backItem
+        
+        model.longMonthName = false
+        
     }
     
 }

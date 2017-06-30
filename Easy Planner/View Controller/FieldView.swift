@@ -174,6 +174,14 @@ class FieldView: UIView {
         return format.number(from: text)?.stringValue ?? ""
         
     }
+    
+    override func resignFirstResponder() -> Bool {
+        var result = super.resignFirstResponder()
+        
+        result = result && self.editText.resignFirstResponder()
+        
+        return result
+    }
 }
 
 
@@ -192,12 +200,12 @@ extension FieldView: UITextFieldDelegate {
         
         switch fieldType {
         case .currency:
-            self.editText.text = convertToCurrency(text: editText.text!)
+            self.editText.text = convertToCurrency(text: textField.text!)
             break;
         case .text:
             break;
         case .number:
-            self.editText.text = convertToNumber(text: editText.text!).stringValue
+            self.editText.text = convertToNumber(text: textField.text!).stringValue
             break;
         }
     }

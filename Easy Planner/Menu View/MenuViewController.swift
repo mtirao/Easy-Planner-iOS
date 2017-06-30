@@ -64,27 +64,6 @@ class MenuViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        /*if segue.identifier == menuDetailSegue {
-            
-            if let menuDetail = segue.destination as? NewMenuViewController{
-                
-                if let selectedCell = self.tableView.indexPathForSelectedRow{
-                    menuDetail.editting = true
-                    menuDetail.currentMenu = self.menus?[selectedCell.row]
-                }else {
-                    menuDetail.editting = false;
-                    menuDetail.currentMenu = self.currentMenu
-                }
-                
-            }
-            
-        }*/
-        
-        
-    }
-    
 }
 
 

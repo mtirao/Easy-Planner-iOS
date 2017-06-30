@@ -22,9 +22,9 @@ enum TableViewTag : Int {
 
 class HomeViewController: UIViewController, CalendarViewDelegate {
     
-    @IBOutlet weak var eventTableView: UITableView!
-    @IBOutlet weak var month: MonthView!
-    @IBOutlet weak var addButton: UIBarButtonItem!
+    var eventTableView: UITableView?
+    var month: MonthView?
+    var addButton: UIBarButtonItem?
     
     
     var calendarModel : CalendarModel?
@@ -34,29 +34,68 @@ class HomeViewController: UIViewController, CalendarViewDelegate {
     
     var events :[Event]?
     
+    var mainEventViewController : MainEventViewController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.navigationController?.navigationBar.tintColor = Theme.barTint
+        self.view.backgroundColor = UIColor.white
         
+        
+        month = MonthView(frame:CGRect.zero)
+        month?.fontSize = 17
+        month?.headerTopSpacing = 4
+        month?.headerLeftSpacing = 24
+        month?.longMonthName = true
+        month?.monthTopSpacing = 10
+        month?.dayName = true
+        
+        
+        self.view.addSubview(month!)
+        self.month!.snp.makeConstraints { (make) -> Void in
+            make.leading.trailing.equalTo(self.view).inset(UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0))
+            make.height.equalTo(230)
+            make.top.equalTo(64)
+        }
+        
+        eventTableView = UITableView(frame: CGRect.zero, style: .grouped)
+        self.view.addSubview(eventTableView!)
+        let nib : UINib = UINib(nibName: "HomeTableViewCell", bundle: nil)
+        eventTableView!.register(nib, forCellReuseIdentifier: homeEventCell)
+        eventTableView!.delegate = self
+        eventTableView!.dataSource = self
+        eventTableView!.snp.makeConstraints { (make) -> Void in
+            make.leading.trailing.equalTo(self.view).inset(UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0))
+            make.top.equalTo(month!.snp.bottom)
+            make.bottom.equalTo(self.view.snp.bottom)
+        }
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(HomeViewController.addEventAction))
+        
+        mainEventViewController = MainEventViewController()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
-        self.addButton.isEnabled = false
-        self.month.dataMonth(calendarModel: calendarModel!, forMonth: selectedMonth!, delegate: self)
+        self.addButton?.isEnabled = false
         
         AppDelegate.trackInit(value: "HomeViewController")
+        
+        self.view.layoutSubviews()
+        self.month?.dataMonth(calendarModel: calendarModel!, forMonth: selectedMonth!, delegate: self)
         
         if self.selectedDate == nil && (self.calendarModel?.today(month: self.selectedMonth! + 1))! {
             self.selectedDate = Date()
         }
         
-        
-        //self.eventTableView.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: self.eventTableView.bounds.size.width, height: 0))
-        
-        self.eventTableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
+        self.eventTableView?.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
         loadEvents(forDate: self.selectedDate)
         
     }
@@ -68,7 +107,7 @@ class HomeViewController: UIViewController, CalendarViewDelegate {
         
         self.selectedDate = nil
         
-        self.month.removeAllMonth()
+        self.month?.removeAllMonth()
     }
 
     override func didReceiveMemoryWarning() {
@@ -80,7 +119,7 @@ class HomeViewController: UIViewController, CalendarViewDelegate {
         
         if segue.identifier == eventDetailSegue {
             
-            if let selectedCell = self.eventTableView.indexPathForSelectedRow {
+            if let selectedCell = self.eventTableView?.indexPathForSelectedRow {
                 
                 EventManager.sharedInstance.currentEvent = self.events?[selectedCell.row]
                 
@@ -97,18 +136,17 @@ class HomeViewController: UIViewController, CalendarViewDelegate {
     
     func loadEvents(forDate: Date?) {
         
-        guard let date = forDate else {
-            return
+        if forDate == nil {
+            self.events?.removeAll()
+        }else {
+            let firstDate = CalendarUtil.firstHourOfCurrentDate(forDate: forDate!)
+            let lastDate = CalendarUtil.lastHourOfCurrentDate(forDate: forDate!)
+            
+            self.events = EventManager.sharedInstance.eventsForDate(firstDate: firstDate as NSDate, lastDate: lastDate as NSDate)
         }
         
         DispatchQueue.main.async(execute: {
-            
-            let firstDate = CalendarUtil.firstHourOfCurrentDate(forDate: date)
-            let lastDate = CalendarUtil.lastHourOfCurrentDate(forDate: date)
-            
-            self.events = EventManager.sharedInstance.eventsForDate(firstDate: firstDate as NSDate, lastDate: lastDate as NSDate)
             self.eventTableView?.reloadData()
-            
         })
 
     }
@@ -116,7 +154,7 @@ class HomeViewController: UIViewController, CalendarViewDelegate {
     
     func didSelectDate(day: Int, month: Int, year: Int) {
         
-        self.addButton.isEnabled = true
+        self.addButton?.isEnabled = true
         
         let date = CalendarUtil.dateFromComponents(day: day, month: month, year: year)
         
@@ -126,7 +164,6 @@ class HomeViewController: UIViewController, CalendarViewDelegate {
         
         print("Selected Date: \(day)/\(month)/\(year)")
         
-        
     }
     
 }
@@ -134,20 +171,26 @@ class HomeViewController: UIViewController, CalendarViewDelegate {
 // MARK: - Action method
 extension HomeViewController {
     
-    @IBAction func addEventAction(_ sender: AnyObject) {
+   @objc func addEventAction() {
 
         EventManager.sharedInstance.createEvent(forDate: self.selectedDate!)
         loadEvents(forDate: self.selectedDate!)
         
     }
     
-    
 }
 
 // MARK: - Table view datasource methods
-extension HomeViewController: UITableViewDataSource {
+extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if let event = self.events?[indexPath.row] {
+            EventManager.sharedInstance.currentEvent = event
+            self.navigationController?.pushViewController(self.mainEventViewController!, animated: true)
+        }
+        
+    }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "EVENTS FOR SELECTED DAY"
@@ -178,9 +221,8 @@ extension HomeViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView,
                    numberOfRowsInSection section: Int) -> Int {
-  
-        return self.events?.count ?? 0
 
+        return self.events?.count ?? 0
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -207,8 +249,6 @@ extension HomeViewController: UITableViewDataSource {
         }
         
             return cell!
-
-        
     }
     
 }
