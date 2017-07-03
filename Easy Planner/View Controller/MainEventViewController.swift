@@ -18,6 +18,7 @@ class MainEventViewController: UIViewController {
     
     var contactViewController: ContactsViewController?
     var menuViewController: MenuViewController?
+    var cloudEventViewControler: CloudEventViewController?
     
     var nameField : FieldView?
     var mapView : MKMapView?
@@ -113,6 +114,7 @@ class MainEventViewController: UIViewController {
         
         menuViewController = MenuViewController(style: .plain)
         contactViewController = ContactsViewController(style: .plain)
+        cloudEventViewControler = CloudEventViewController()
         
     }
     
@@ -199,7 +201,8 @@ class MainEventViewController: UIViewController {
     }
     
     @objc func addEventCloud() {
-        
+        self.cloudEventViewControler?.nameLabel.text = EventManager.sharedInstance.currentEvent?.name ?? "No Event"
+        self.navigationController?.pushViewController(self.cloudEventViewControler!, animated: true)
     }
 }
 

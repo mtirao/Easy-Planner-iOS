@@ -8,19 +8,37 @@
 
 import UIKit
 
-class ActivityIndicator: UIViewController{
+class ActivityIndicator: UIView{
 
-    @IBOutlet weak var label:UILabel!
-    @IBOutlet weak var indicator: UIActivityIndicatorView!
-    @IBOutlet weak var background: UIView!
+    let label:UILabel = UILabel()
+    let indicator: UIActivityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
     
-    
-    override func viewDidLoad() {
-        self.background.layer.cornerRadius = 15
+    override init(frame: CGRect) {
         
-        NotificationController.notificationObserver(observer: self, selector: #selector(ActivityIndicator.setLabel), name: Notes.activityIndicatorNotification.notification)
-    
+        super.init(frame: frame)
+        
+        indicator.color = Theme.barTint
+        self.addSubview(indicator)
+        indicator.snp.makeConstraints{(make) -> Void in
+            make.top.equalTo(8)
+            make.width.height.equalTo(70)
+            make.center.equalTo(self)
+        }
+        
+        label.font = UIFont.systemFont(ofSize: 17, weight: .medium)
+        self.addSubview(label)
+        label.snp.makeConstraints{(make) -> Void in
+            make.height.equalTo(25)
+            make.centerX.equalTo(self)
+            make.top.equalTo(indicator.snp.bottom)
+        }
+        
     }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
     
     func startAnimating() {
         self.indicator.startAnimating()
@@ -30,13 +48,5 @@ class ActivityIndicator: UIViewController{
         self.indicator.stopAnimating()
     }
     
-    @objc func setLabel(notification: Notification) {
-        
-        if let labelText = notification.userInfo?["label"] as? String{
-            DispatchQueue.main.async {
-                self.label.text = labelText
-            }
-        }
-        
-    }
+    
 }

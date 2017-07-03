@@ -10,16 +10,6 @@ import UIKit
 
 let homeEventCell = "homeEventCell"
 
-//MARK: - Segue indentifiers
-let addEventSegue = "addEventSegue"
-let eventDetailSegue = "eventDetailSegue"
-let cloudSegue = "cloudSegue"
-
-enum TableViewTag : Int {
-    case event = 1
-    case calendar = 0
-}
-
 class HomeViewController: UIViewController, CalendarViewDelegate {
     
     var eventTableView: UITableView?
@@ -84,6 +74,8 @@ class HomeViewController: UIViewController, CalendarViewDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        self.navigationController?.setToolbarHidden(true, animated: false)
+        
         self.addButton?.isEnabled = false
         
         AppDelegate.trackInit(value: "HomeViewController")
@@ -113,26 +105,7 @@ class HomeViewController: UIViewController, CalendarViewDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if segue.identifier == eventDetailSegue {
-            
-            if let selectedCell = self.eventTableView?.indexPathForSelectedRow {
-                
-                EventManager.sharedInstance.currentEvent = self.events?[selectedCell.row]
-                
-            }
-            
-        }else if segue.identifier == cloudSegue {
-            if let cloudEvent = segue.destination as? CloudEventViewController, let date = self.selectedDate {
-                cloudEvent.selectedDate = date
-            }
-        }
-        
-    }
-    
+    }    
     
     func loadEvents(forDate: Date?) {
         
@@ -202,18 +175,16 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         
-        if tableView.tag == TableViewTag.event.rawValue {
-            switch editingStyle {
-            case .delete:
-                if let event = self.events?[indexPath.row] {
-                    EventManager.sharedInstance.deleteEvent(event: event)
-                    self.events?.remove(at: indexPath.row)
-                    tableView.deleteRows(at: [indexPath], with: .fade)
-                }
-                break
-            default: break
-            
+        
+        switch editingStyle {
+        case .delete:
+            if let event = self.events?[indexPath.row] {
+                EventManager.sharedInstance.deleteEvent(event: event)
+                self.events?.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .fade)
             }
+            break
+        default: break
             
         }
         

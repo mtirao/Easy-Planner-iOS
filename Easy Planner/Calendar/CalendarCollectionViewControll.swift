@@ -77,44 +77,6 @@ class CalendarCollectionViewControll: UICollectionViewController {
     }
     
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if segue.identifier == eventSegue {
-            let cell = sender as! UICollectionViewCell
-            if let indexPath = self.collectionView!.indexPath(for: cell) {
-            
-                let model = calendars[indexPath.section]
-                let destination = segue.destination as! HomeViewController
-                
-                model.longMonthName = true;
-                destination.calendarModel = model
-                destination.selectedMonth = indexPath.row
-                
-                let backItem = UIBarButtonItem()
-                backItem.title = "\(model.monthName(month: indexPath.row )) \(model.year)"
-                self.navigationItem.backBarButtonItem = backItem
-                
-                model.longMonthName = false
-                
-            }
-        } else if segue.identifier == cloudEventSegue {
-            if let cloudEvent = segue.destination as? CloudEventViewController {
-                cloudEvent.yearly = true
-                cloudEvent.selectedDate = Date()
-            }
-        } else if segue.identifier == newEventSegue {
-            let date = Date()
-            EventManager.sharedInstance.createEvent(forDate: date)
-            
-            let backItem = UIBarButtonItem()
-            backItem.title = CalendarUtil.string(from: date, timeOnly: false)
-            self.navigationItem.backBarButtonItem = backItem
-
-            
-        }
-        
-    }
-    
     // MARK: UICollectionViewDataSource & Delegate
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
