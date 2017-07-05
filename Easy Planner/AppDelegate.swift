@@ -26,8 +26,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     
     var tracking: TrackingClient?
     
-    var mainViewController : UIViewController?
-    
     public static var sharedInstance : AppDelegate {
         
         get {
@@ -41,21 +39,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         _ = EventManager.sharedInstance
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        self.window!.backgroundColor = UIColor.white
         
         
         if !Preferences.onboarded {
+            self.window!.backgroundColor = UIColor.black
             let onboardStoryboard = UIStoryboard(name: "OnBoard", bundle: nil)
             
             let viewController = onboardStoryboard.instantiateInitialViewController()
-            
-            self.mainViewController = self.window?.rootViewController
             
             self.window?.rootViewController = viewController
             
             NotificationController.notificationObserver(observer: self, selector: #selector(AppDelegate.presentMain), name: Notes.endOnboardNotification.notification)
             
         } else {
+            self.window!.backgroundColor = UIColor.white
             let calendarController = CalendarCollectionViewControll()
             let navigationController = UINavigationController(rootViewController: calendarController)
             self.window?.rootViewController = navigationController
@@ -121,12 +118,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     
     @objc func presentMain() {
         
-        guard let mainView = self.mainViewController else {
-            return
-        }
+        let calendarController = CalendarCollectionViewControll()
+        let navigationController = UINavigationController(rootViewController: calendarController)
         
-        mainView.modalTransitionStyle = .crossDissolve
-        self.window?.rootViewController?.present(mainView, animated: true, completion: nil)
+        navigationController.modalTransitionStyle = .crossDissolve
+        self.window?.rootViewController?.present(navigationController, animated: true, completion: nil)
         
         Preferences.onboarded = true
     }

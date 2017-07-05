@@ -8,7 +8,6 @@
 
 import UIKit
 
-fileprivate let menuDetailSegue = "menuSegue"
 fileprivate let menuCell = "menuCell"
 
 class MenuViewController: UITableViewController {

@@ -18,8 +18,6 @@ class CloudEventViewController: UIViewController {
     private let activityIndicator: ActivityIndicator = ActivityIndicator(frame: CGRect.zero)
     private let saveButton = UIButton()
     
-    weak var cloudViewModel : CloudEventViewModel?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -113,23 +111,12 @@ class CloudEventViewController: UIViewController {
     }
    
     @objc func saveAction() {
+        let cloudEvent = CloudEvent()
         
-        /*if let indicator = activityIndicator {
-            
-            let navController = UINavigationController(rootViewController: indicator)
-            navController.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
-            
-            let appDelegate = UIApplication.shared.delegate as? AppDelegate
-            appDelegate?.window?.rootViewController?.present(navController, animated: false, completion:  { [weak activityIndicator = self.activityIndicator] in
-                
-                activityIndicator?.startAnimating()
-                
-                NotificationController.postNotification(name: Notes.activityIndicatorNotification.notification, userInfo: ["label" as NSObject : "Saving..." as AnyObject])
-                
-                self.cloudViewModel?.saveToCloud()
-            })
-            
-        }*/
+        activityIndicator.startAnimating()
+        
+        cloudEvent.saveToCloud()
+        
     
     }
 

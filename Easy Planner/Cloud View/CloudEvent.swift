@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CloudEventViewModel: NSObject {
+class CloudEvent: NSObject {
     
     private var events :[Event]?
     
@@ -63,11 +63,10 @@ class CloudEventViewModel: NSObject {
         let loginOperation = LoginOperation(userName: Preferences.userName, password: Preferences.password)
         
         loginOperation.completionBlock = {
-            print(loginOperation.userName)
+            print("Completion block:\(loginOperation.userToken)")
         }
         
         queue.addOperation(loginOperation)
-        
         
     }
 }

@@ -18,7 +18,7 @@
 		DA26950C1EDF9B4000EB73B7 /* OnBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA26950A1EDF9B4000EB73B7 /* OnBoard.storyboard */; };
 		DA3941631E70A23800E14D01 /* TrackingClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3941621E70A23800E14D01 /* TrackingClient.swift */; };
 		DA3941651E70B0D700E14D01 /* TrackValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3941641E70B0D700E14D01 /* TrackValue.swift */; };
-		DA5D57E61E8ADF8100F50CE1 /* CloudEventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5D57E51E8ADF8100F50CE1 /* CloudEventViewModel.swift */; };
+		DA5D57E61E8ADF8100F50CE1 /* CloudEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5D57E51E8ADF8100F50CE1 /* CloudEvent.swift */; };
 		DA71725E1E93E639007F414A /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA71725D1E93E639007F414A /* LoginModel.swift */; };
 		DA75FEA01EA5619200B2FD2D /* EventOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA75FE9F1EA5619200B2FD2D /* EventOperation.swift */; };
 		DA75FEA21EA564B200B2FD2D /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA75FEA11EA564B200B2FD2D /* EventModel.swift */; };
@@ -113,7 +113,7 @@
 		DA26950B1EDF9B4000EB73B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/OnBoard.storyboard; sourceTree = "<group>"; };
 		DA3941621E70A23800E14D01 /* TrackingClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrackingClient.swift; path = Network/TrackingClient.swift; sourceTree = "<group>"; };
 		DA3941641E70B0D700E14D01 /* TrackValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrackValue.swift; path = Misc/TrackValue.swift; sourceTree = "<group>"; };
-		DA5D57E51E8ADF8100F50CE1 /* CloudEventViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CloudEventViewModel.swift; path = "View Model/CloudEventViewModel.swift"; sourceTree = "<group>"; };
+		DA5D57E51E8ADF8100F50CE1 /* CloudEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudEvent.swift; sourceTree = "<group>"; };
 		DA71725D1E93E639007F414A /* LoginModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginModel.swift; path = Network/LoginModel.swift; sourceTree = "<group>"; };
 		DA75FE9F1EA5619200B2FD2D /* EventOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventOperation.swift; path = Network/EventOperation.swift; sourceTree = "<group>"; };
 		DA75FEA11EA564B200B2FD2D /* EventModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventModel.swift; path = Network/EventModel.swift; sourceTree = "<group>"; };
@@ -275,7 +275,6 @@
 		DA5D57E41E8ADF4700F50CE1 /* View Model */ = {
 			isa = PBXGroup;
 			children = (
-				DA5D57E51E8ADF8100F50CE1 /* CloudEventViewModel.swift */,
 			);
 			name = "View Model";
 			sourceTree = "<group>";
@@ -307,6 +306,7 @@
 			isa = PBXGroup;
 			children = (
 				DAEDBE651E8EC25C0097D3AD /* CloudEventViewController.swift */,
+				DA5D57E51E8ADF8100F50CE1 /* CloudEvent.swift */,
 			);
 			path = "Cloud View";
 			sourceTree = "<group>";
@@ -675,7 +675,7 @@
 				DAE2923D1D71E39E005799CB /* Text+CoreDataProperties.swift in Sources */,
 				DADC85571F0998E400967EDE /* SwitchFieldView.swift in Sources */,
 				DA3941651E70B0D700E14D01 /* TrackValue.swift in Sources */,
-				DA5D57E61E8ADF8100F50CE1 /* CloudEventViewModel.swift in Sources */,
+				DA5D57E61E8ADF8100F50CE1 /* CloudEvent.swift in Sources */,
 				DADC855C1F0998F400967EDE /* CalendarModel.swift in Sources */,
 				DAE2924C1D71EB7E005799CB /* NotificationController.swift in Sources */,
 				DAE292441D71E3A9005799CB /* Contact.swift in Sources */,

@@ -10,8 +10,9 @@ import Foundation
 
 class LoginOperation: Operation {
     
-    let userName: String
-    let password: String
+    private let userName: String
+    private let password: String
+    var userToken : String = ""
     
     init(userName: String, password: String) {
         self.userName = userName
@@ -26,14 +27,20 @@ class LoginOperation: Operation {
             return
         }
         
+        let semaphore = DispatchSemaphore(value: 0)
+        
         SocialClient.defaultClient.login(completion: { loginInfo in
             
             if let login = loginInfo {
-                Preferences.userToken = login.userToken
+                self.userToken = login.userToken!
+                print("User Token:\(self.userToken)" )
             }
+            
+            semaphore.signal()
             
         })
         
+        semaphore.wait()
     }
     
 }
