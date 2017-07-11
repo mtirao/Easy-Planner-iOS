@@ -28,7 +28,7 @@ class CalendarUtil {
     class func mysqlString(from date: Date) -> String {
         
         let formatter = DateFormatter()
-        formatter.dateFormat = " YYYY-MM-DD HH:mm:SS"
+        formatter.dateFormat = " YYYY-MM-dd hh:mm:ss"
         
         return formatter.string(from: date)
         

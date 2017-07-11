@@ -57,16 +57,35 @@ class CloudEvent: NSObject {
     }
     
     
-    func saveToCloud() {
+    func saveToCloud(progress:UILabel, completion: @escaping ()->Void) {
         
-        let queue = OperationQueue()
-        let loginOperation = LoginOperation(userName: Preferences.userName, password: Preferences.password)
+        let semaphore = DispatchSemaphore(value: 0)
         
-        loginOperation.completionBlock = {
-            print("Completion block:\(loginOperation.userToken)")
+        let loginOperation = SocialClient.defaultClient.login() { loginInfo in
+            if let login = loginInfo {
+                Preferences.userToken = login.userToken
+            }
+            semaphore.signal()
+        }
+        loginOperation?.resume()
+        
+        
+        semaphore.wait()
+        
+        if let currentEvent = EventManager.sharedInstance.currentEvent {
+            
+            let eventOperation = SocialClient.defaultClient.addEvent(date: (currentEvent.date as Date?)!, name: currentEvent.name!) { eventInfo in
+                if let event = eventInfo {
+                    print("\(event.eventId!)")
+                    completion()
+                    semaphore.signal()
+                    currentEvent.serverId = eventInfo?.eventId
+                    EventManager.sharedInstance.saveContext()
+                }
+            }
+            eventOperation?.resume()
         }
         
-        queue.addOperation(loginOperation)
-        
+        semaphore.wait()
     }
 }

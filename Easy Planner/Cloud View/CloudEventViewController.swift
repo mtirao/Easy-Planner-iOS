@@ -85,8 +85,6 @@ class CloudEventViewController: UIViewController {
             make.bottom.equalTo(self.view.snp.bottom).inset(UIEdgeInsets(top: 0, left: 0, bottom: 8, right: 0))
         }
         
-        activityIndicator.label.text = "Loading..."
-        activityIndicator.startAnimating()
         self.view.addSubview(activityIndicator)
         activityIndicator.snp.makeConstraints{(make) -> Void in
             make.leading.trailing.equalTo(self.view).inset(UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 8))
@@ -114,10 +112,15 @@ class CloudEventViewController: UIViewController {
         let cloudEvent = CloudEvent()
         
         activityIndicator.startAnimating()
+        activityIndicator.label.text = "Uploading..."
         
-        cloudEvent.saveToCloud()
+        cloudEvent.saveToCloud(progress: self.activityIndicator.label) {[unowned self] in
+            DispatchQueue.main.async {
+                self.activityIndicator.stopAnimating()
+                self.activityIndicator.label.text = "Event uploaded"
+            }
+        }
         
-    
     }
 
 }

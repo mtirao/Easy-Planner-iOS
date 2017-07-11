@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 
 class SocialClient {
@@ -17,6 +18,7 @@ class SocialClient {
     
     private let appId = "1ac1df94-bb2b-45aa-b55b-d96cdb080945"
     private let secret = "70f68c46-c96b-4ba8-8d4d-8554f6ac481c"
+    private let platform = "\(UIDevice.current.systemName)\(UIDevice.current.systemName)\(UIDevice.current.model)"
     
     let kSocialServerUrl = "https://social-argsoftsolutions.rhcloud.com/api/v1"
     
@@ -24,18 +26,18 @@ class SocialClient {
         
     }
 
-    func login(completion:@escaping (LoginModel?) -> Void) {
+    func login(completion:@escaping (LoginModel?) -> Void) -> URLSessionDataTask? {
         
         let resource = kSocialServerUrl + "/login"
         
-        let parameters : [String : String] = ["appId" : appId,
-                                              "appToken" : Preferences.appToken!,
+        let parameters : [String : String] = ["app_id" : appId,
+                                              "app_token" : Preferences.appToken!,
                                               "email" : "",
                                               "password" : Preferences.password,
                                               "phone" : "",
-                                              "secretId" : secret]
+                                              "secret_id" : secret]
         
-        makeRequest(url: resource, parameters: parameters) {data in
+        let dataTask = makeRequest(url: resource, parameters: parameters) {data in
             
             if let response = data {
                 
@@ -47,16 +49,20 @@ class SocialClient {
             
         }
         
+        return dataTask
+        
     }
     
-    func addEvent(date: Date, name: String, completion:@escaping (EventModel?) -> Void) {
+    func addEvent(date: Date, name: String, completion:@escaping (EventModel?) -> Void) -> URLSessionDataTask? {
         
         let resource = kSocialServerUrl + "/createEvent"
         
-        let parameters : [String : String] = ["name" : name,
-                                              "date" : CalendarUtil.mysqlString(from: date)]
+        let parameters : [String : String] = ["platform" : platform,
+                                              "event_name" : name,
+                                              "date" : CalendarUtil.mysqlString(from: date),
+                                              "user_token" : Preferences.userToken ?? "invalid"]
         
-        makeRequest(url: resource, parameters: parameters) {data in
+        let dataTask = makeRequest(url: resource, parameters: parameters) {data in
             
             if let response = data {
                 
@@ -67,7 +73,8 @@ class SocialClient {
             }
             
         }
-
+        
+        return dataTask
         
     }
     

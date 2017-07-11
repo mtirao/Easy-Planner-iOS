@@ -7,4 +7,5 @@ target 'Easy Planner' do
     pod 'FacebookCore'
     pod 'FacebookLogin'
     pod 'SnapKit', '~> 3.2.0'
+    pod 'ObjectMapper', '~> 2.2'
 end

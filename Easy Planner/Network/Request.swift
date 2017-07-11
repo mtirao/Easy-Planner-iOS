@@ -9,7 +9,7 @@
 import Foundation
 
 
-func makeRequest(url: String, parameters: [String : String]? = nil,  completion:@escaping (Data?) -> Void) {
+func makeRequest(url: String, parameters: [String : String]? = nil,  completion:@escaping (Data?) -> Void) -> URLSessionDataTask?  {
     
     if let httpUrl = NSURL(string: url, relativeTo: nil) as URL? {
         
@@ -20,8 +20,11 @@ func makeRequest(url: String, parameters: [String : String]? = nil,  completion:
         // insert json data to the request
         if let postParameters = parameters,  let jsonData = try? JSONSerialization.data(withJSONObject: postParameters) {
             request.httpBody = jsonData
+            let json = String(data:jsonData, encoding:.utf8)
+            print("JSON Data: \(json!)")
         }
-    
+        
+        
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             
             if let err = error {
@@ -37,10 +40,11 @@ func makeRequest(url: String, parameters: [String : String]? = nil,  completion:
             }
         }
         
-        task.resume()
+        return task
+        //task.resume()
         
     }else {
-        completion(nil)
+       return nil
     }
     
 }
