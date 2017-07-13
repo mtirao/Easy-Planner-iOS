@@ -11,7 +11,6 @@ import UIKit
 class CloudEvent: NSObject {
     
     private var events :[Event]?
-    
     private var indexPath : IndexPath = IndexPath(row: 0, section: 0)
     
     func fetchEventsForMonth(month: Date, yearly: Bool) {
@@ -61,29 +60,36 @@ class CloudEvent: NSObject {
         
         let semaphore = DispatchSemaphore(value: 0)
         
-        let loginOperation = SocialClient.defaultClient.login() { loginInfo in
-            if let login = loginInfo {
-                Preferences.userToken = login.userToken
+        if(Preferences.userToken == "") {
+            let loginOperation = SocialClient.defaultClient.login() { loginInfo in
+                if let login = loginInfo {
+                    Preferences.userToken = login.userToken
+                }
+                semaphore.signal()
             }
-            semaphore.signal()
+            loginOperation?.resume()
+            
+            semaphore.wait()
         }
-        loginOperation?.resume()
         
-        
-        semaphore.wait()
         
         if let currentEvent = EventManager.sharedInstance.currentEvent {
             
-            let eventOperation = SocialClient.defaultClient.addEvent(date: (currentEvent.date as Date?)!, name: currentEvent.name!) { eventInfo in
-                if let event = eventInfo {
-                    print("\(event.eventId!)")
-                    completion()
-                    semaphore.signal()
-                    currentEvent.serverId = eventInfo?.eventId
-                    EventManager.sharedInstance.saveContext()
+            if currentEvent.serverId == nil {
+                let eventOperation = SocialClient.defaultClient.addEvent(date: (currentEvent.date as Date?)!, name: currentEvent.name!) { eventInfo in
+                    if let event = eventInfo {
+                        print("\(event.eventId!)")
+                        completion()
+                        semaphore.signal()
+                        currentEvent.serverId = eventInfo?.eventId
+                        EventManager.sharedInstance.saveContext()
+                    }
                 }
+                eventOperation?.resume()
+            }else {
+                semaphore.signal()
+                Alert().showAlert(title: "Save Event", message: "This Event was already upload. It will be update.")
             }
-            eventOperation?.resume()
         }
         
         semaphore.wait()

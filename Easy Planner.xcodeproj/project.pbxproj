@@ -16,6 +16,7 @@
 		DA11C27B1D7B6F1700ADB348 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA11C27A1D7B6F1700ADB348 /* MenuViewController.swift */; };
 		DA11C2801D7DE84B00ADB348 /* NewContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA11C27F1D7DE84B00ADB348 /* NewContactViewController.swift */; };
 		DA26950C1EDF9B4000EB73B7 /* OnBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA26950A1EDF9B4000EB73B7 /* OnBoard.storyboard */; };
+		DA2BB3251F15199600973B9B /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2BB3241F15199600973B9B /* Alert.swift */; };
 		DA3941631E70A23800E14D01 /* TrackingClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3941621E70A23800E14D01 /* TrackingClient.swift */; };
 		DA3941651E70B0D700E14D01 /* TrackValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3941641E70B0D700E14D01 /* TrackValue.swift */; };
 		DA5D57E61E8ADF8100F50CE1 /* CloudEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5D57E51E8ADF8100F50CE1 /* CloudEvent.swift */; };
@@ -110,6 +111,7 @@
 		DA11C27F1D7DE84B00ADB348 /* NewContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewContactViewController.swift; sourceTree = "<group>"; };
 		DA26950B1EDF9B4000EB73B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/OnBoard.storyboard; sourceTree = "<group>"; };
 		DA2BB3231F0FFB5700973B9B /* EasyPlanner 13.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "EasyPlanner 13.xcdatamodel"; sourceTree = "<group>"; };
+		DA2BB3241F15199600973B9B /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Alert.swift; path = Misc/Alert.swift; sourceTree = "<group>"; };
 		DA3941621E70A23800E14D01 /* TrackingClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrackingClient.swift; path = Network/TrackingClient.swift; sourceTree = "<group>"; };
 		DA3941641E70B0D700E14D01 /* TrackValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrackValue.swift; path = Misc/TrackValue.swift; sourceTree = "<group>"; };
 		DA5D57E51E8ADF8100F50CE1 /* CloudEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudEvent.swift; sourceTree = "<group>"; };
@@ -471,6 +473,7 @@
 				DAE2924B1D71EB7E005799CB /* NotificationController.swift */,
 				DAE732CD1D833DC700B58160 /* Preferences.swift */,
 				DA3941641E70B0D700E14D01 /* TrackValue.swift */,
+				DA2BB3241F15199600973B9B /* Alert.swift */,
 			);
 			name = Misc;
 			sourceTree = "<group>";
@@ -657,6 +660,7 @@
 				DAC4CF641D7F671D00577376 /* NewMenuViewController.swift in Sources */,
 				DAE292421D71E3A9005799CB /* Chair.swift in Sources */,
 				DAE292311D71E39E005799CB /* Menu+CoreDataProperties.swift in Sources */,
+				DA2BB3251F15199600973B9B /* Alert.swift in Sources */,
 				DAE292351D71E39E005799CB /* Music+CoreDataProperties.swift in Sources */,
 				DAE2922A1D71E39E005799CB /* EventMisc.swift in Sources */,
 				DAB2CA4A1E79F7DA004AB652 /* PushAnalytics.swift in Sources */,
