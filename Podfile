@@ -2,10 +2,12 @@ platform :ios, '9.3'
 use_frameworks!
 
 target 'Easy Planner' do
-    pod 'Firebase/Core'
-    pod 'Firebase/Auth'
+    pod 'SnapKit', '~> 3.2.0'
     pod 'FacebookCore'
     pod 'FacebookLogin'
-    pod 'SnapKit', '~> 3.2.0'
-    pod 'ObjectMapper', '~> 2.2'
+    pod 'UIFontComplete'
+    pod 'Fabric'
+    pod 'Crashlytics'
+    pod 'DateTimePicker'
+    pod 'AccountKit'
 end

@@ -66,7 +66,7 @@ public extension LayoutConstraint {
             }
         }
         
-        if self.priority != UILayoutPriorityRequired {
+        if self.priority != UILayoutPriority.required {
             description += " ^\(self.priority)"
         }
         

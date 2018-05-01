@@ -11,7 +11,6 @@ import CoreData
 import CoreLocation
 import UserNotifications
 import Foundation
-import Firebase
 import FBSDKCoreKit
 
 

@@ -7,13 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DA0E94521F052CC00019FE19 /* DetailMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7C511C1F02E7DC00D5924C /* DetailMenuViewController.swift */; };
 		DA11C2701D75183B00ADB348 /* CalendarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA11C26F1D75183B00ADB348 /* CalendarDelegate.swift */; };
 		DA11C2721D761EA500ADB348 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA11C2711D761EA500ADB348 /* Theme.swift */; };
 		DA11C2741D77B5A400ADB348 /* MainEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA11C2731D77B5A400ADB348 /* MainEventViewController.swift */; };
 		DA11C2771D7B59E700ADB348 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA11C2761D7B59E700ADB348 /* MapKit.framework */; };
 		DA11C2791D7B65CF00ADB348 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA11C2781D7B65CF00ADB348 /* ContactsViewController.swift */; };
-		DA11C27B1D7B6F1700ADB348 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA11C27A1D7B6F1700ADB348 /* MenuViewController.swift */; };
 		DA11C2801D7DE84B00ADB348 /* NewContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA11C27F1D7DE84B00ADB348 /* NewContactViewController.swift */; };
 		DA26950C1EDF9B4000EB73B7 /* OnBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA26950A1EDF9B4000EB73B7 /* OnBoard.storyboard */; };
 		DA2BB3251F15199600973B9B /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2BB3241F15199600973B9B /* Alert.swift */; };
@@ -23,12 +21,8 @@
 		DA71725E1E93E639007F414A /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA71725D1E93E639007F414A /* LoginModel.swift */; };
 		DA75FEA21EA564B200B2FD2D /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA75FEA11EA564B200B2FD2D /* EventModel.swift */; };
 		DAA1562A1F05C25C00D39D12 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAA156281F05C25C00D39D12 /* HomeTableViewCell.xib */; };
-		DAB2CA461E79F7DA004AB652 /* ClientDeviceInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB2CA401E79F7DA004AB652 /* ClientDeviceInformation.swift */; };
-		DAB2CA471E79F7DA004AB652 /* ClientDeviceInformationImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB2CA411E79F7DA004AB652 /* ClientDeviceInformationImpl.swift */; };
-		DAB2CA481E79F7DA004AB652 /* DeviceRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB2CA421E79F7DA004AB652 /* DeviceRegistration.swift */; };
-		DAB2CA491E79F7DA004AB652 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DAB2CA431E79F7DA004AB652 /* Info.plist */; };
-		DAB2CA4A1E79F7DA004AB652 /* PushAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB2CA451E79F7DA004AB652 /* PushAnalytics.swift */; };
-		DAC4CF641D7F671D00577376 /* NewMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC4CF631D7F671D00577376 /* NewMenuViewController.swift */; };
+		DAC5A05B2086AED900478C96 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC5A05A2086AED900478C96 /* DataController.swift */; };
+		DAC5A05E2086AF3E00478C96 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DAC5A05C2086AF3E00478C96 /* DataModel.xcdatamodeld */; };
 		DACB22831EE05CC8007D6C4A /* OnboardPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACB22821EE05CC8007D6C4A /* OnboardPageController.swift */; };
 		DACB228D1EE0646F007D6C4A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DACB228C1EE0646F007D6C4A /* GoogleService-Info.plist */; };
 		DACB228F1EE0DC8C007D6C4A /* LocatioOnboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACB228E1EE0DC8C007D6C4A /* LocatioOnboardViewController.swift */; };
@@ -51,36 +45,7 @@
 		DAE291D41D6E432B005799CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAE291D31D6E432B005799CB /* Assets.xcassets */; };
 		DAE291D71D6E432B005799CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAE291D51D6E432B005799CB /* LaunchScreen.storyboard */; };
 		DAE291ED1D6E432B005799CB /* Easy_PlannerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE291EC1D6E432B005799CB /* Easy_PlannerUITests.swift */; };
-		DAE292071D70D6EF005799CB /* EasyPlanner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DAE291FB1D70D6EF005799CB /* EasyPlanner.xcdatamodeld */; };
 		DAE2920B1D70DF8B005799CB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE2920A1D70DF8B005799CB /* HomeViewController.swift */; };
-		DAE292281D71E39E005799CB /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE292121D71E39E005799CB /* Event.swift */; };
-		DAE292291D71E39E005799CB /* Event+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE292131D71E39E005799CB /* Event+CoreDataProperties.swift */; };
-		DAE2922A1D71E39E005799CB /* EventMisc.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE292141D71E39E005799CB /* EventMisc.swift */; };
-		DAE2922B1D71E39E005799CB /* EventMisc+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE292151D71E39E005799CB /* EventMisc+CoreDataProperties.swift */; };
-		DAE2922C1D71E39E005799CB /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE292161D71E39E005799CB /* Image.swift */; };
-		DAE2922D1D71E39E005799CB /* Image+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE292171D71E39E005799CB /* Image+CoreDataProperties.swift */; };
-		DAE2922E1D71E39E005799CB /* Invitation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE292181D71E39E005799CB /* Invitation.swift */; };
-		DAE2922F1D71E39E005799CB /* Invitation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE292191D71E39E005799CB /* Invitation+CoreDataProperties.swift */; };
-		DAE292301D71E39E005799CB /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE2921A1D71E39E005799CB /* Menu.swift */; };
-		DAE292311D71E39E005799CB /* Menu+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE2921B1D71E39E005799CB /* Menu+CoreDataProperties.swift */; };
-		DAE292321D71E39E005799CB /* Misc.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE2921C1D71E39E005799CB /* Misc.swift */; };
-		DAE292331D71E39E005799CB /* Misc+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE2921D1D71E39E005799CB /* Misc+CoreDataProperties.swift */; };
-		DAE292341D71E39E005799CB /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE2921E1D71E39E005799CB /* Music.swift */; };
-		DAE292351D71E39E005799CB /* Music+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE2921F1D71E39E005799CB /* Music+CoreDataProperties.swift */; };
-		DAE292361D71E39E005799CB /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE292201D71E39E005799CB /* Option.swift */; };
-		DAE292371D71E39E005799CB /* Option+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE292211D71E39E005799CB /* Option+CoreDataProperties.swift */; };
-		DAE292381D71E39E005799CB /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE292221D71E39E005799CB /* Place.swift */; };
-		DAE292391D71E39E005799CB /* Place+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE292231D71E39E005799CB /* Place+CoreDataProperties.swift */; };
-		DAE2923A1D71E39E005799CB /* Tables.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE292241D71E39E005799CB /* Tables.swift */; };
-		DAE2923B1D71E39E005799CB /* Tables+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE292251D71E39E005799CB /* Tables+CoreDataProperties.swift */; };
-		DAE2923C1D71E39E005799CB /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE292261D71E39E005799CB /* Text.swift */; };
-		DAE2923D1D71E39E005799CB /* Text+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE292271D71E39E005799CB /* Text+CoreDataProperties.swift */; };
-		DAE292421D71E3A9005799CB /* Chair.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE2923E1D71E3A9005799CB /* Chair.swift */; };
-		DAE292431D71E3A9005799CB /* Chair+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE2923F1D71E3A9005799CB /* Chair+CoreDataProperties.swift */; };
-		DAE292441D71E3A9005799CB /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE292401D71E3A9005799CB /* Contact.swift */; };
-		DAE292451D71E3A9005799CB /* Contact+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE292411D71E3A9005799CB /* Contact+CoreDataProperties.swift */; };
-		DAE292471D71E578005799CB /* EventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE292461D71E578005799CB /* EventManager.swift */; };
-		DAE292491D71E5B0005799CB /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE292481D71E5B0005799CB /* DataController.swift */; };
 		DAE2924C1D71EB7E005799CB /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE2924B1D71EB7E005799CB /* NotificationController.swift */; };
 		DAE2D1DC1EDE142800550EA2 /* FacebookSDKStrings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DAE2D1DB1EDE142800550EA2 /* FacebookSDKStrings.bundle */; };
 		DAE732CE1D833DC700B58160 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE732CD1D833DC700B58160 /* Preferences.swift */; };
@@ -101,32 +66,23 @@
 /* Begin PBXFileReference section */
 		4496E25103AD86445CF7A855 /* Pods-Easy Planner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Easy Planner.release.xcconfig"; path = "Pods/Target Support Files/Pods-Easy Planner/Pods-Easy Planner.release.xcconfig"; sourceTree = "<group>"; };
 		53EA6DF5B1C66C47F4A48B91 /* Pods_Easy_Planner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Easy_Planner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DA0E94531F0532970019FE19 /* EasyPlanner 12.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "EasyPlanner 12.xcdatamodel"; sourceTree = "<group>"; };
 		DA11C26F1D75183B00ADB348 /* CalendarDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarDelegate.swift; path = Protocol/CalendarDelegate.swift; sourceTree = "<group>"; };
 		DA11C2711D761EA500ADB348 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Theme.swift; path = Misc/Theme.swift; sourceTree = "<group>"; };
 		DA11C2731D77B5A400ADB348 /* MainEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainEventViewController.swift; path = "View Controller/MainEventViewController.swift"; sourceTree = "<group>"; };
 		DA11C2761D7B59E700ADB348 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		DA11C2781D7B65CF00ADB348 /* ContactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
-		DA11C27A1D7B6F1700ADB348 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		DA11C27F1D7DE84B00ADB348 /* NewContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewContactViewController.swift; sourceTree = "<group>"; };
 		DA26950B1EDF9B4000EB73B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/OnBoard.storyboard; sourceTree = "<group>"; };
-		DA2BB3231F0FFB5700973B9B /* EasyPlanner 13.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "EasyPlanner 13.xcdatamodel"; sourceTree = "<group>"; };
 		DA2BB3241F15199600973B9B /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Alert.swift; path = Misc/Alert.swift; sourceTree = "<group>"; };
 		DA3941621E70A23800E14D01 /* TrackingClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrackingClient.swift; path = Network/TrackingClient.swift; sourceTree = "<group>"; };
 		DA3941641E70B0D700E14D01 /* TrackValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrackValue.swift; path = Misc/TrackValue.swift; sourceTree = "<group>"; };
 		DA5D57E51E8ADF8100F50CE1 /* CloudEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudEvent.swift; sourceTree = "<group>"; };
 		DA71725D1E93E639007F414A /* LoginModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginModel.swift; path = Network/LoginModel.swift; sourceTree = "<group>"; };
 		DA75FEA11EA564B200B2FD2D /* EventModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventModel.swift; path = Network/EventModel.swift; sourceTree = "<group>"; };
-		DA7C511C1F02E7DC00D5924C /* DetailMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMenuViewController.swift; sourceTree = "<group>"; };
 		DAA156281F05C25C00D39D12 /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
 		DAB2CA3B1E79F5B2004AB652 /* Easy Planner-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Easy Planner-Bridging-Header.h"; sourceTree = "<group>"; };
-		DAB2CA401E79F7DA004AB652 /* ClientDeviceInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClientDeviceInformation.swift; path = AeroGear/ClientDeviceInformation.swift; sourceTree = "<group>"; };
-		DAB2CA411E79F7DA004AB652 /* ClientDeviceInformationImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClientDeviceInformationImpl.swift; path = AeroGear/ClientDeviceInformationImpl.swift; sourceTree = "<group>"; };
-		DAB2CA421E79F7DA004AB652 /* DeviceRegistration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeviceRegistration.swift; path = AeroGear/DeviceRegistration.swift; sourceTree = "<group>"; };
-		DAB2CA431E79F7DA004AB652 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = AeroGear/Info.plist; sourceTree = "<group>"; };
-		DAB2CA441E79F7DA004AB652 /* push-sdk-swift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "push-sdk-swift.h"; path = "AeroGear/push-sdk-swift.h"; sourceTree = "<group>"; };
-		DAB2CA451E79F7DA004AB652 /* PushAnalytics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PushAnalytics.swift; path = AeroGear/PushAnalytics.swift; sourceTree = "<group>"; };
-		DAC4CF631D7F671D00577376 /* NewMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMenuViewController.swift; sourceTree = "<group>"; };
+		DAC5A05A2086AED900478C96 /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		DAC5A05D2086AF3E00478C96 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		DACB22821EE05CC8007D6C4A /* OnboardPageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnboardPageController.swift; path = Onboard/OnboardPageController.swift; sourceTree = "<group>"; };
 		DACB228C1EE0646F007D6C4A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DACB228E1EE0DC8C007D6C4A /* LocatioOnboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocatioOnboardViewController.swift; path = Onboard/LocatioOnboardViewController.swift; sourceTree = "<group>"; };
@@ -156,46 +112,7 @@
 		DAE291E81D6E432B005799CB /* Easy PlannerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Easy PlannerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAE291EC1D6E432B005799CB /* Easy_PlannerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Easy_PlannerUITests.swift; sourceTree = "<group>"; };
 		DAE291EE1D6E432B005799CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DAE291FC1D70D6EF005799CB /* EasyPlanner 10.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "EasyPlanner 10.xcdatamodel"; sourceTree = "<group>"; };
-		DAE291FD1D70D6EF005799CB /* EasyPlanner 11.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "EasyPlanner 11.xcdatamodel"; sourceTree = "<group>"; };
-		DAE291FE1D70D6EF005799CB /* EasyPlanner 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "EasyPlanner 2.xcdatamodel"; sourceTree = "<group>"; };
-		DAE291FF1D70D6EF005799CB /* EasyPlanner 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "EasyPlanner 3.xcdatamodel"; sourceTree = "<group>"; };
-		DAE292001D70D6EF005799CB /* EasyPlanner 4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "EasyPlanner 4.xcdatamodel"; sourceTree = "<group>"; };
-		DAE292011D70D6EF005799CB /* EasyPlanner 5.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "EasyPlanner 5.xcdatamodel"; sourceTree = "<group>"; };
-		DAE292021D70D6EF005799CB /* EasyPlanner 6.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "EasyPlanner 6.xcdatamodel"; sourceTree = "<group>"; };
-		DAE292031D70D6EF005799CB /* EasyPlanner 7.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "EasyPlanner 7.xcdatamodel"; sourceTree = "<group>"; };
-		DAE292041D70D6EF005799CB /* EasyPlanner 8.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "EasyPlanner 8.xcdatamodel"; sourceTree = "<group>"; };
-		DAE292051D70D6EF005799CB /* EasyPlanner 9.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "EasyPlanner 9.xcdatamodel"; sourceTree = "<group>"; };
-		DAE292061D70D6EF005799CB /* EasyPlanner.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EasyPlanner.xcdatamodel; sourceTree = "<group>"; };
 		DAE2920A1D70DF8B005799CB /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = "View Controller/HomeViewController.swift"; sourceTree = "<group>"; };
-		DAE292121D71E39E005799CB /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Event.swift; path = CoreData/Event.swift; sourceTree = SOURCE_ROOT; };
-		DAE292131D71E39E005799CB /* Event+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Event+CoreDataProperties.swift"; path = "CoreData/Event+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
-		DAE292141D71E39E005799CB /* EventMisc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventMisc.swift; path = CoreData/EventMisc.swift; sourceTree = SOURCE_ROOT; };
-		DAE292151D71E39E005799CB /* EventMisc+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "EventMisc+CoreDataProperties.swift"; path = "CoreData/EventMisc+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
-		DAE292161D71E39E005799CB /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Image.swift; path = CoreData/Image.swift; sourceTree = SOURCE_ROOT; };
-		DAE292171D71E39E005799CB /* Image+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Image+CoreDataProperties.swift"; path = "CoreData/Image+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
-		DAE292181D71E39E005799CB /* Invitation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Invitation.swift; path = CoreData/Invitation.swift; sourceTree = SOURCE_ROOT; };
-		DAE292191D71E39E005799CB /* Invitation+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Invitation+CoreDataProperties.swift"; path = "CoreData/Invitation+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
-		DAE2921A1D71E39E005799CB /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Menu.swift; path = CoreData/Menu.swift; sourceTree = SOURCE_ROOT; };
-		DAE2921B1D71E39E005799CB /* Menu+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Menu+CoreDataProperties.swift"; path = "CoreData/Menu+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
-		DAE2921C1D71E39E005799CB /* Misc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Misc.swift; path = CoreData/Misc.swift; sourceTree = SOURCE_ROOT; };
-		DAE2921D1D71E39E005799CB /* Misc+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Misc+CoreDataProperties.swift"; path = "CoreData/Misc+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
-		DAE2921E1D71E39E005799CB /* Music.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Music.swift; path = CoreData/Music.swift; sourceTree = SOURCE_ROOT; };
-		DAE2921F1D71E39E005799CB /* Music+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Music+CoreDataProperties.swift"; path = "CoreData/Music+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
-		DAE292201D71E39E005799CB /* Option.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Option.swift; path = CoreData/Option.swift; sourceTree = SOURCE_ROOT; };
-		DAE292211D71E39E005799CB /* Option+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Option+CoreDataProperties.swift"; path = "CoreData/Option+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
-		DAE292221D71E39E005799CB /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Place.swift; path = CoreData/Place.swift; sourceTree = SOURCE_ROOT; };
-		DAE292231D71E39E005799CB /* Place+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Place+CoreDataProperties.swift"; path = "CoreData/Place+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
-		DAE292241D71E39E005799CB /* Tables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tables.swift; path = CoreData/Tables.swift; sourceTree = SOURCE_ROOT; };
-		DAE292251D71E39E005799CB /* Tables+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Tables+CoreDataProperties.swift"; path = "CoreData/Tables+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
-		DAE292261D71E39E005799CB /* Text.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Text.swift; path = CoreData/Text.swift; sourceTree = SOURCE_ROOT; };
-		DAE292271D71E39E005799CB /* Text+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Text+CoreDataProperties.swift"; path = "CoreData/Text+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
-		DAE2923E1D71E3A9005799CB /* Chair.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Chair.swift; path = CoreData/Chair.swift; sourceTree = SOURCE_ROOT; };
-		DAE2923F1D71E3A9005799CB /* Chair+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Chair+CoreDataProperties.swift"; path = "CoreData/Chair+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
-		DAE292401D71E3A9005799CB /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Contact.swift; path = CoreData/Contact.swift; sourceTree = SOURCE_ROOT; };
-		DAE292411D71E3A9005799CB /* Contact+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Contact+CoreDataProperties.swift"; path = "CoreData/Contact+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
-		DAE292461D71E578005799CB /* EventManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventManager.swift; path = CoreData/EventManager.swift; sourceTree = SOURCE_ROOT; };
-		DAE292481D71E5B0005799CB /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataController.swift; path = CoreData/DataController.swift; sourceTree = SOURCE_ROOT; };
 		DAE2924B1D71EB7E005799CB /* NotificationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationController.swift; path = Misc/NotificationController.swift; sourceTree = "<group>"; };
 		DAE2D1DB1EDE142800550EA2 /* FacebookSDKStrings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FacebookSDKStrings.bundle; sourceTree = "<group>"; };
 		DAE732CD1D833DC700B58160 /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Preferences.swift; path = Misc/Preferences.swift; sourceTree = "<group>"; };
@@ -291,16 +208,6 @@
 			path = Calendar;
 			sourceTree = "<group>";
 		};
-		DA7C511B1F02E74D00D5924C /* Menu View */ = {
-			isa = PBXGroup;
-			children = (
-				DA11C27A1D7B6F1700ADB348 /* MenuViewController.swift */,
-				DAC4CF631D7F671D00577376 /* NewMenuViewController.swift */,
-				DA7C511C1F02E7DC00D5924C /* DetailMenuViewController.swift */,
-			);
-			path = "Menu View";
-			sourceTree = "<group>";
-		};
 		DAA156261F059CDA00D39D12 /* Cloud View */ = {
 			isa = PBXGroup;
 			children = (
@@ -308,19 +215,6 @@
 				DA5D57E51E8ADF8100F50CE1 /* CloudEvent.swift */,
 			);
 			path = "Cloud View";
-			sourceTree = "<group>";
-		};
-		DAB2CA3F1E79F7C8004AB652 /* AeroGear */ = {
-			isa = PBXGroup;
-			children = (
-				DAB2CA401E79F7DA004AB652 /* ClientDeviceInformation.swift */,
-				DAB2CA411E79F7DA004AB652 /* ClientDeviceInformationImpl.swift */,
-				DAB2CA421E79F7DA004AB652 /* DeviceRegistration.swift */,
-				DAB2CA431E79F7DA004AB652 /* Info.plist */,
-				DAB2CA441E79F7DA004AB652 /* push-sdk-swift.h */,
-				DAB2CA451E79F7DA004AB652 /* PushAnalytics.swift */,
-			);
-			name = AeroGear;
 			sourceTree = "<group>";
 		};
 		DAD362171D9DBD1200B692F9 /* Network */ = {
@@ -363,11 +257,9 @@
 			children = (
 				DAA156261F059CDA00D39D12 /* Cloud View */,
 				DAF9F6721F0542C900588825 /* Contact View */,
-				DA7C511B1F02E74D00D5924C /* Menu View */,
 				DA26950D1EDF9B5800EB73B7 /* OnBoard */,
 				DAE2D1DB1EDE142800550EA2 /* FacebookSDKStrings.bundle */,
 				DA73E40B1ECE3E3C0046B56A /* Calendar */,
-				DAB2CA3F1E79F7C8004AB652 /* AeroGear */,
 				DAD362161D9DA9BE00B692F9 /* Easy Planner.entitlements */,
 				DAD362171D9DBD1200B692F9 /* Network */,
 				DA11C26E1D75180A00ADB348 /* Protocol */,
@@ -377,7 +269,7 @@
 				DA5D57E41E8ADF4700F50CE1 /* View Model */,
 				DAE292091D70DD80005799CB /* Main View */,
 				DAE292081D70DD4A005799CB /* Storyboard & xib */,
-				DAE291FA1D70D6D2005799CB /* CoreData */,
+				DAE291FA1D70D6D2005799CB /* DataModel */,
 				DAE291C91D6E432B005799CB /* AppDelegate.swift */,
 				DAE291D31D6E432B005799CB /* Assets.xcassets */,
 				DACB228C1EE0646F007D6C4A /* GoogleService-Info.plist */,
@@ -404,40 +296,13 @@
 			path = "Easy PlannerUITests";
 			sourceTree = "<group>";
 		};
-		DAE291FA1D70D6D2005799CB /* CoreData */ = {
+		DAE291FA1D70D6D2005799CB /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
-				DAE2923E1D71E3A9005799CB /* Chair.swift */,
-				DAE2923F1D71E3A9005799CB /* Chair+CoreDataProperties.swift */,
-				DAE292401D71E3A9005799CB /* Contact.swift */,
-				DAE292411D71E3A9005799CB /* Contact+CoreDataProperties.swift */,
-				DAE292121D71E39E005799CB /* Event.swift */,
-				DAE292131D71E39E005799CB /* Event+CoreDataProperties.swift */,
-				DAE292461D71E578005799CB /* EventManager.swift */,
-				DAE292141D71E39E005799CB /* EventMisc.swift */,
-				DAE292151D71E39E005799CB /* EventMisc+CoreDataProperties.swift */,
-				DAE292161D71E39E005799CB /* Image.swift */,
-				DAE292171D71E39E005799CB /* Image+CoreDataProperties.swift */,
-				DAE292181D71E39E005799CB /* Invitation.swift */,
-				DAE292191D71E39E005799CB /* Invitation+CoreDataProperties.swift */,
-				DAE2921A1D71E39E005799CB /* Menu.swift */,
-				DAE2921B1D71E39E005799CB /* Menu+CoreDataProperties.swift */,
-				DAE2921C1D71E39E005799CB /* Misc.swift */,
-				DAE2921D1D71E39E005799CB /* Misc+CoreDataProperties.swift */,
-				DAE2921E1D71E39E005799CB /* Music.swift */,
-				DAE2921F1D71E39E005799CB /* Music+CoreDataProperties.swift */,
-				DAE292201D71E39E005799CB /* Option.swift */,
-				DAE292211D71E39E005799CB /* Option+CoreDataProperties.swift */,
-				DAE292221D71E39E005799CB /* Place.swift */,
-				DAE292231D71E39E005799CB /* Place+CoreDataProperties.swift */,
-				DAE292241D71E39E005799CB /* Tables.swift */,
-				DAE292251D71E39E005799CB /* Tables+CoreDataProperties.swift */,
-				DAE292261D71E39E005799CB /* Text.swift */,
-				DAE292271D71E39E005799CB /* Text+CoreDataProperties.swift */,
-				DAE291FB1D70D6EF005799CB /* EasyPlanner.xcdatamodeld */,
-				DAE292481D71E5B0005799CB /* DataController.swift */,
+				DAC5A05A2086AED900478C96 /* DataController.swift */,
+				DAC5A05C2086AF3E00478C96 /* DataModel.xcdatamodeld */,
 			);
-			name = CoreData;
+			path = DataModel;
 			sourceTree = "<group>";
 		};
 		DAE292081D70DD4A005799CB /* Storyboard & xib */ = {
@@ -535,7 +400,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Marcos Tirao";
 				TargetAttributes = {
 					DAE291C51D6E432A005799CB = {
@@ -585,7 +450,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DAB2CA491E79F7DA004AB652 /* Info.plist in Resources */,
 				DAE2D1DC1EDE142800550EA2 /* FacebookSDKStrings.bundle in Resources */,
 				DA26950C1EDF9B4000EB73B7 /* OnBoard.storyboard in Resources */,
 				DAE291D71D6E432B005799CB /* LaunchScreen.storyboard in Resources */,
@@ -611,13 +475,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Easy Planner-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		72C13A94154E81E99A5D7E44 /* [CP] Copy Pods Resources */ = {
@@ -626,9 +493,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Easy Planner/Pods-Easy Planner-resources.sh",
+				"${PODS_ROOT}/AccountKit/AccountKitStrings.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AccountKitStrings.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -641,9 +511,26 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Easy Planner/Pods-Easy Planner-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/DateTimePicker/DateTimePicker.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/UIFontComplete/UIFontComplete.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DateTimePicker.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIFontComplete.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -657,75 +544,41 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DAC4CF641D7F671D00577376 /* NewMenuViewController.swift in Sources */,
-				DAE292421D71E3A9005799CB /* Chair.swift in Sources */,
-				DAE292311D71E39E005799CB /* Menu+CoreDataProperties.swift in Sources */,
 				DA2BB3251F15199600973B9B /* Alert.swift in Sources */,
-				DAE292351D71E39E005799CB /* Music+CoreDataProperties.swift in Sources */,
-				DAE2922A1D71E39E005799CB /* EventMisc.swift in Sources */,
-				DAB2CA4A1E79F7DA004AB652 /* PushAnalytics.swift in Sources */,
 				DADC85561F0998E100967EDE /* ActivityIndicator.swift in Sources */,
-				DAB2CA481E79F7DA004AB652 /* DeviceRegistration.swift in Sources */,
 				DA3941631E70A23800E14D01 /* TrackingClient.swift in Sources */,
 				DADC855A1F0998F400967EDE /* CalendarCollectionViewControll.swift in Sources */,
-				DAE2922D1D71E39E005799CB /* Image+CoreDataProperties.swift in Sources */,
-				DAE292321D71E39E005799CB /* Misc.swift in Sources */,
-				DAE292391D71E39E005799CB /* Place+CoreDataProperties.swift in Sources */,
-				DAE2923D1D71E39E005799CB /* Text+CoreDataProperties.swift in Sources */,
 				DADC85571F0998E400967EDE /* SwitchFieldView.swift in Sources */,
 				DA3941651E70B0D700E14D01 /* TrackValue.swift in Sources */,
 				DA5D57E61E8ADF8100F50CE1 /* CloudEvent.swift in Sources */,
 				DADC855C1F0998F400967EDE /* CalendarModel.swift in Sources */,
 				DAE2924C1D71EB7E005799CB /* NotificationController.swift in Sources */,
-				DAE292441D71E3A9005799CB /* Contact.swift in Sources */,
-				DAE2923C1D71E39E005799CB /* Text.swift in Sources */,
-				DAB2CA461E79F7DA004AB652 /* ClientDeviceInformation.swift in Sources */,
-				DAE2922F1D71E39E005799CB /* Invitation+CoreDataProperties.swift in Sources */,
-				DAB2CA471E79F7DA004AB652 /* ClientDeviceInformationImpl.swift in Sources */,
-				DAE292371D71E39E005799CB /* Option+CoreDataProperties.swift in Sources */,
 				DACB22831EE05CC8007D6C4A /* OnboardPageController.swift in Sources */,
-				DA11C27B1D7B6F1700ADB348 /* MenuViewController.swift in Sources */,
 				DA11C2721D761EA500ADB348 /* Theme.swift in Sources */,
 				DADC855F1F0998F400967EDE /* CalendarCell.swift in Sources */,
-				DAE292431D71E3A9005799CB /* Chair+CoreDataProperties.swift in Sources */,
-				DAE292491D71E5B0005799CB /* DataController.swift in Sources */,
 				DAE732CE1D833DC700B58160 /* Preferences.swift in Sources */,
 				DA75FEA21EA564B200B2FD2D /* EventModel.swift in Sources */,
-				DAE292361D71E39E005799CB /* Option.swift in Sources */,
-				DAE2922C1D71E39E005799CB /* Image.swift in Sources */,
 				DAD8C6A11EE353CF00D13C98 /* RegistrationOnboardViewController.swift in Sources */,
+				DAC5A05E2086AF3E00478C96 /* DataModel.xcdatamodeld in Sources */,
 				DADC85581F0998E700967EDE /* FieldView.swift in Sources */,
-				DAE292291D71E39E005799CB /* Event+CoreDataProperties.swift in Sources */,
 				DACB22911EE0E5E3007D6C4A /* PushOnboardViewController.swift in Sources */,
-				DAE292071D70D6EF005799CB /* EasyPlanner.xcdatamodeld in Sources */,
 				DAD362231D9E9E0200B692F9 /* SocialClient.swift in Sources */,
 				DAD3621F1D9DBD5E00B692F9 /* Parser.swift in Sources */,
 				DACB228F1EE0DC8C007D6C4A /* LocatioOnboardViewController.swift in Sources */,
 				DADC855E1F0998F400967EDE /* MonthView.swift in Sources */,
-				DA0E94521F052CC00019FE19 /* DetailMenuViewController.swift in Sources */,
 				DADC855D1F0998F400967EDE /* CalendarUtilities.swift in Sources */,
 				DAE291CA1D6E432B005799CB /* AppDelegate.swift in Sources */,
 				DADC855B1F0998F400967EDE /* CalendarHeader.swift in Sources */,
-				DAE292451D71E3A9005799CB /* Contact+CoreDataProperties.swift in Sources */,
-				DAE292381D71E39E005799CB /* Place.swift in Sources */,
-				DAE292341D71E39E005799CB /* Music.swift in Sources */,
 				DA71725E1E93E639007F414A /* LoginModel.swift in Sources */,
-				DAE2923B1D71E39E005799CB /* Tables+CoreDataProperties.swift in Sources */,
 				DAE2920B1D70DF8B005799CB /* HomeViewController.swift in Sources */,
-				DAE292471D71E578005799CB /* EventManager.swift in Sources */,
 				DAD362201D9DBD5E00B692F9 /* Request.swift in Sources */,
 				DA11C2791D7B65CF00ADB348 /* ContactsViewController.swift in Sources */,
 				DA11C2701D75183B00ADB348 /* CalendarDelegate.swift in Sources */,
-				DAE292301D71E39E005799CB /* Menu.swift in Sources */,
+				DAC5A05B2086AED900478C96 /* DataController.swift in Sources */,
 				DA11C2741D77B5A400ADB348 /* MainEventViewController.swift in Sources */,
-				DAE2922E1D71E39E005799CB /* Invitation.swift in Sources */,
-				DAE2922B1D71E39E005799CB /* EventMisc+CoreDataProperties.swift in Sources */,
 				DAEDBE661E8EC25C0097D3AD /* CloudEventViewController.swift in Sources */,
-				DAE292281D71E39E005799CB /* Event.swift in Sources */,
-				DAE2923A1D71E39E005799CB /* Tables.swift in Sources */,
 				DA11C2801D7DE84B00ADB348 /* NewContactViewController.swift in Sources */,
 				DADC85591F0998E900967EDE /* HomeTableViewCell.swift in Sources */,
-				DAE292331D71E39E005799CB /* Misc+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -780,6 +633,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -787,6 +641,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -836,6 +691,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -843,6 +699,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -984,26 +841,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		DAE291FB1D70D6EF005799CB /* EasyPlanner.xcdatamodeld */ = {
+		DAC5A05C2086AF3E00478C96 /* DataModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				DA2BB3231F0FFB5700973B9B /* EasyPlanner 13.xcdatamodel */,
-				DA0E94531F0532970019FE19 /* EasyPlanner 12.xcdatamodel */,
-				DAE291FC1D70D6EF005799CB /* EasyPlanner 10.xcdatamodel */,
-				DAE291FD1D70D6EF005799CB /* EasyPlanner 11.xcdatamodel */,
-				DAE291FE1D70D6EF005799CB /* EasyPlanner 2.xcdatamodel */,
-				DAE291FF1D70D6EF005799CB /* EasyPlanner 3.xcdatamodel */,
-				DAE292001D70D6EF005799CB /* EasyPlanner 4.xcdatamodel */,
-				DAE292011D70D6EF005799CB /* EasyPlanner 5.xcdatamodel */,
-				DAE292021D70D6EF005799CB /* EasyPlanner 6.xcdatamodel */,
-				DAE292031D70D6EF005799CB /* EasyPlanner 7.xcdatamodel */,
-				DAE292041D70D6EF005799CB /* EasyPlanner 8.xcdatamodel */,
-				DAE292051D70D6EF005799CB /* EasyPlanner 9.xcdatamodel */,
-				DAE292061D70D6EF005799CB /* EasyPlanner.xcdatamodel */,
+				DAC5A05D2086AF3E00478C96 /* DataModel.xcdatamodel */,
 			);
-			currentVersion = DA0E94531F0532970019FE19 /* EasyPlanner 12.xcdatamodel */;
-			name = EasyPlanner.xcdatamodeld;
-			path = ../CoreData/EasyPlanner.xcdatamodeld;
+			currentVersion = DAC5A05D2086AF3E00478C96 /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
